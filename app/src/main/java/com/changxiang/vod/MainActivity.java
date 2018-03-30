@@ -16,6 +16,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void handMsg(Message msg) {
+        switch (msg.what){
+            case 1:
+                break;
+
+        }
 
     }
 
