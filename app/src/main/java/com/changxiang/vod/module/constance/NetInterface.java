@@ -13,15 +13,6 @@ public class NetInterface {
     public static boolean isDevelopment = true;// 是否测试版(主要用于数据是否本地缓存true表示需要缓存)
     //    public static String ALL_URL = "http://app.srv.quchangkeji.com:8082/tosing";//换商城接口
     public static String ALL_URL = " http://srv.ifunsing.com:8080/kingpk-service";//歌王外网地址
-//    public static String ALL_URL = "http://192.168.3.137:8080/kingpk-service";//歌王后台本地机器
-//    public static String ALL_URL = "http://192.168.3.125:8080/kingpk-service";//桂后台本地机器
-//    public static String ALL_URL = "http://192.168.3.6:8080/tsAPI";//后台本地机器
-//    public static String ALL_URL = "http://test.app.srv.quchangkeji.com:8082/tosing/";//开发测试的后台管理地址为
-//    public static String ALL_URL = "http://app.srv.quchangkeji.com:8083/tsAPI";//外网地址（旧）
-//public static String ALL_URL = "http://192.168.3.66:8083/tsAPI";
-//	public static String ALL_URL = "http://192.168.3.6:8880/tsAPI/";
-//	public static String ALL_URL = "http://116.62.62.161:8083/tsAPI";
-//	public static String ALL_URL = "http://test.app.srv.quchangkeji.com:8083/tsAPI";
 
     public static String SERVER_URL = ALL_URL + "/";// 测试接口地址（1.0版本）
     public static String SERVER_XIEYI = "https://www.baidu.com/";//注册协议
