@@ -1,0 +1,82 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <dimen name="text_size_0">8sp</dimen>
+    <dimen name="text_size_1">9sp</dimen>
+    <dimen name="text_size_2">10sp</dimen>
+    <dimen name="text_size_3">11sp</dimen>
+
+    <dimen name="text_size_4">12sp</dimen>
+    <dimen name="text_size_5">13sp</dimen>
+    <dimen name="text_size_6">14sp</dimen>
+    <dimen name="text_size_7">15sp</dimen>
+
+    <dimen name="text_size_8">16sp</dimen>
+    <dimen name="text_size_9">17sp</dimen>
+    <dimen name="text_size_10">18sp</dimen>
+    <dimen name="text_size_11">19sp</dimen>
+
+    <dimen name="text_size_12">14sp</dimen>
+    <dimen name="text_size_13">21sp</dimen>
+    <dimen name="text_size_14">22sp</dimen>
+    <dimen name="text_size_15">23sp</dimen>
+
+    <dimen name="key_height">50.0dip</dimen>
+    <dimen name="height_top_bar">46dp</dimen>
+    <dimen name="padding_search_bar">5dp</dimen>
+    <dimen name="height_row_weixin">59dp</dimen>
+    <dimen name="size_avatar">50dp</dimen>
+    <dimen name="margin_chat_activity">5dp</dimen>
+    <dimen name="field_textsize">14sp</dimen>
+    <dimen name="field_margin_right">5dp</dimen>
+    <dimen name="call_button_padding_vertical">10dp</dimen>
+    <dimen name="call_button_padding_left">25dp</dimen>
+    <dimen name="call_button_padding_right">25dp</dimen>
+    <dimen name="sidebar_text_size">10dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="image_thumbnail_size">100dp</dimen>
+    <dimen name="image_thumbnail_spacing">1dp</dimen>
+    <dimen name="emoticon_message_size">180dp</dimen>
+
+    <dimen name="line_height">0.5dp</dimen>
+    <dimen name="line_width">@dimen/line_height</dimen>
+    <dimen name="shopping_text_size1">10dip</dimen>
+    <dimen name="shopping_text_margin">7dip</dimen>
+    <dimen name="radius">62dp</dimen>
+    <dimen name="muscic_play_marinLeft">10dp</dimen>
+
+    <dimen name="video_height">200dp</dimen>
+    <dimen name="lrc_height">390dp</dimen>
+    <!--编辑图片-->
+    <dimen name="image_edit_text_size">16sp</dimen>
+    <dimen name="image_edit_text_padding">7dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="image_edit_menu_margin">20dp</dimen>
+    <dimen name="materialcolorpicker__activity_horizontal_margin">16dp</dimen>
+    <dimen name="materialcolorpicker__activity_vertical_margin">16dp</dimen>
+    <dimen name="bottom_banner_height">80dp</dimen>
+    <dimen name="voice_effect_margin">28dp</dimen>
+
+    <dimen name="bqmm_titlebar_height">55dip</dimen>
+
+    <!-- 商店标题字号 -->
+    <dimen name="bqmm_title_text_size">19sp</dimen>
+    <!-- 我的表情排序按钮和完成按钮字体大小 -->
+    <dimen name="bqmm_sort_button_text_size">20sp</dimen>
+    <!-- 页面加载失败提示内容字体大小 -->
+    <dimen name="bqmm_shop_network_error_text_size">18sp</dimen>
+    <!-- 键盘初始化失败提示内容字体大小 -->
+    <dimen name="bqmm_keyboard_network_error_text_size">18sp</dimen>
+    <!-- 重新加载按钮内容字体大小 -->
+    <dimen name="bqmm_reload_button_text_size">14sp</dimen>
+    <!-- 点击刷新按钮内容字体大小 -->
+    <dimen name="bqmm_refresh_button_text_size">14sp</dimen>
+
+    <!-- 默认大表情包标题内容字体大小 -->
+    <dimen name="bqmm_preload_package_name_text_size">18sp</dimen>
+
+    <dimen name="pop_left">18dp</dimen>
+</resources>

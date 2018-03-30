@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--<string name="crop__saving">Saving picture…</string>-->
+    <!--<string name="crop_wait">Please wait…</string>-->
+    <!--<string name="crop_pick_error">No image sources available</string>-->
+    <!--<string name="crop_done">DONE</string>-->
+    <!--<string name="crop_cancel">@android:string/cancel</string>-->
+    <!--<string name="action_select">Select</string>-->
+
+    <string name="crop__saving">保存图片…</string>
+    <string name="crop_wait">请稍等…</string>
+    <string name="crop_pick_error">No image sources available</string>
+    <string name="crop_done">DONE</string>
+    <string name="crop_cancel">@android:string/cancel</string>
+    <string name="action_select">选择</string>
+
+</resources>

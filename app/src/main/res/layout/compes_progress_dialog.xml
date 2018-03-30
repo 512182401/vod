@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="#00ffffff"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="5dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="5dip">
+
+    <com.changxiang.vod.common.view.CompesProgressBar
+        android:id="@+id/tip_compes_progressbar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android_custom:roundColor="#B2B2B2"
+        android_custom:roundProgressColor="#FF5F5F"
+        android_custom:roundWidth="10dip"
+        android_custom:textColor="#ffffff"
+        android_custom:textSize="14sp"
+        android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:layout_gravity="center"
+        android:layout_marginLeft="8dip"
+        android:padding="10dip"
+        android:scaleType="centerInside"
+        android:visibility="gone"/>
+
+</LinearLayout>

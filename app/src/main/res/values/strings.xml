@@ -1,0 +1,1223 @@
+<resources>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="app_name">PK歌王</string>
+    <string name="hot_listen">热听</string>
+    <string name="action_settings">Settings</string>
+    <!--DIY-->
+    <string name="saving_image">save...</string>
+    <string-array name="fliters">
+        <item>原始</item>
+        <item>软化</item>
+        <item>黑白</item>
+        <item>经典</item>
+        <item>华丽</item>
+        <item>复古</item>
+        <item>优雅</item>
+        <item>电影</item>
+        <item>回忆</item>
+        <item>优格</item>
+        <item>流年</item>
+        <item>发光</item>
+    </string-array>
+    <string name="get_main_bitmap_fail">获取底图不成功,重新获取！</string>
+    <string name="had_get_image_01">你已经选择了</string>
+    <string name="had_get_image_02">张图片，当前视频必须选择10到20张图片。</string>
+    <string name="check_image_fail_show">你选取的图片不符合数量。当前视频必须选择10到20张图片。</string>
+    <string name="had_choose_image_01">共导入</string>
+    <string name="had_choose_image_02">张图片，所有图片都经过裁剪后效果 才最佳。</string>
+    <string name="give_up_diy">确认要放弃DIY吗?</string>
+    <string name="confirm_give_up">确认放弃</string>
+    <string name="champion_singer">冠军歌王</string>
+    <string name="runner_up_singer">亚军歌王</string>
+    <string name="third_singer">季军歌王</string>
+
+    <!--极光推送-->
+    <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
+    <string name="alias_hint">Alias为大小写字母，数字，下划线</string>
+    <string name="style_hint">style为数字</string>
+    <string name="error_style_empty">style不能为空</string>
+    <string name="error_alias_empty">alias不能为空</string>
+    <string name="error_tag_empty">tag不能为空</string>
+    <string name="error_tag_gs_empty">格式不对</string>
+    <string name="error_network">网络连接异常,初始化失败 请检查网络！</string>
+    <string name="logining">程序在后台执行, 请查看日志！</string>
+    <string name="setting_su">设置成功</string>
+
+    <!--登录，注册-->
+    <string name="login_yihouzhangh">已有账号登录</string>
+    <string name="login_zhuche">注册</string>
+    <string name="login_zhuche_phone">手机号注册</string>
+    <string name="login_zhuche_yzm">填写验证码</string>
+    <string name="login_forget_pwd">填写新密码</string>
+    <string name="login_denglu">登 录</string>
+    <string name="login_exit">退出登录</string>
+    <string name="login_done">完 成</string>
+    <string name="login_getcheck">获取验证码</string>
+    <string name="login_forgetpwd">忘记密码</string>
+
+    <string name="collte_success">收藏成功</string>
+    <string name="collte_desc">你可以点击“我”</string>
+    <string name="konw">知道了</string>
+    <string name="go_look">去看看</string>
+    <!-- 下拉刷新，上拉加载更多 -->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">上拉查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+
+    <!--讯飞相关-->
+    <string name="pref_key_iat_show">iat_show</string>
+    <string name="text_begin">请开始说话…</string>
+    <!-- 请替换成在语音云官网申请的appid -->
+    <string name="app_id">5844e44c</string>
+    <!--公司：5844e44c 个人57fb50b9-->
+
+
+    <string name="settings">设置</string>
+    <string name="title_activity_local_music">LocalMusicActivity</string>
+    <string name="select_image_title">选择图片(%1$s/%2$s)</string>
+    <string name="money">￥</string>
+    <string name="duo">朵</string>
+
+
+    //TODO
+    <string name="facebook_app_id">487692214752558</string>
+    <string name="umeng_share">分享</string>
+    <string name="umeng_auth">授权</string>
+    <string name="umeng_deleauth">清除对应授权</string>
+    <string name="umeng_shake">摇一摇</string>
+    <string name="umeng_comment">评论相关</string>
+    <string name="umeng_openshare">打开分享面板</string>
+    <string name="umeng_openshare_custom">打开自定义分享面板</string>
+    <string name="umeng_sharebutton_custom">复制链接</string>
+    <string name="umeng_sharebutton_home_page">我的主页</string>
+    <string name="umeng_share1">默认分享面板可编辑分享页</string>
+    <string name="umeng_share2">自定义分享面板可编辑分享页</string>
+    <string name="umeng_share3">单平台直接分享</string>
+    <string name="umeng_share4">多平台直接分享</string>
+    <string name="umeng_share5">默认分享面板可编辑分享页多平台</string>
+
+    <!--homeactivity_person_update，设置-->
+    <string name="person_account_cano_getsms">短信验证码已发送至银行预留手机。
+\n如未收到：
+\n1.请确认当前使用的号码是否为银行预留手机号。
+\n2.请检查短信是否被安全软件拦截。</string>
+
+    <string name="person_apply_now">立即申请</string>
+    <string name="person_mfz_done">麦分子</string>
+    <string name="person_apply_done">您已是麦分子</string>
+    <string name="person_apply_about_microphone">什么是「麦分子」？</string>
+    <string name="person_apply_about_identification">认证特权</string>
+    <string name="person_apply_identification">1.麦分子了可以获得趣唱商城所有商品分销权；
+        \n2.麦分子可通过发布原创或者转发作品成为麦商城分店；
+        \n3.分店流量在麦商城交易成功后可获得提成；
+        \n4.账户余额及时提现；</string>
+    <string name="apply_condition">1.年满18周岁；\n 2.级别Lv.3及以上者； \n3.个人资料完整度达100%； \n4.个人主页最少发布一首原创作品或者最少转发三首原创作品；</string>
+    <string name="person_apply_about_info">\u3000\u3000级别达到Lv.3以上的趣唱歌友通过实名认证后，即可申请趣唱麦克 风商城的三级分销，认证通过后即可成为麦分子。</string>
+    <string name="call_phone">0755-28349477</string>
+    <string name="setting_version_content1.1">
+\n1、参加歌王PK赛事，获得歌王荣誉，领取超值奖品；
+\n2、可录制MP3音频和MV视频歌曲，设置歌词字号、音效、美颜滤镜等功能；
+\n3、查看、分享PK赛活动，邀请好友一起拉票助威。</string>
+    <string name="setting_version_content1.1.0">
+\n1、【优化】PK歌王页面改版；
+\n2、【优化】我的主页增加活动分类及活动期数；
+\n3、【删减】取消音频录歌；
+\n4、【优化】修复已知BUG；</string>
+    <string name="setting_version_about_us">\u3000\u3000    PK歌王，是一款专门提供给歌友PK歌曲的手机应用APP。在这里，你可以快速体验时下最流行的K歌综艺节目，与各类节目的歌王进行PK。
+    \n\u3000\u3000 在这里，有最实时的PK曲目响应，有最魔力的演唱体验，有最热情忠实的粉丝，更有最惊喜的奖品在等你。
+\n
+    \n\u3000\u3000 来吧 ，你来了就是歌王！
+    \n\n\u3000\u3000【PK歌王】收录的各类音乐、视频及其资料大部分来源用户网络上传，其版权均归原作者及其网站所有。我们一向注重网络版权及用户权益保护，如您认为【PK歌王】上传、传播的视听内容侵犯您的合法权益，请您向我们发出权利通知，我们将根据相关法律规定采取强制措施删除相关内容及其他措施，也可以向我们的邮箱发送通知书。
+\nE-mail:technology@quchangkeji.com</string>
+    <string name="protocol_daoyu">\u3000\u3000本《趣唱软件许可及服务协议》是您（下称“用户”）与深圳趣唱科技有限公司之间在使用其出品的“趣唱”软件或相关网络服务中注册使用时签署的协议（以下以“趣唱”指代深圳趣唱科技有限公司以及“趣唱”软件）。为使用趣唱软件及服务，您应当阅读并遵守《趣唱软件许可及服务协议》（以下简称“本协议”）。请您务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款，并选择接受或不接受。
+除非您已阅读并接受本协议所有条款，否则您无权下载、安装或使用本软件及相关服务。您的下载、安装、使用、获取趣唱帐号、登录等行为即视为您已阅读并同意该协议的约束。
+如果您未满18周岁，请在法定监护人的陪同下阅读本协议及其他上述协议，并特别注意未成年人使用条款。</string>
+    <string name="protocol_1_1">1.1 【协议适用主体范围】\n
+本协议是您与趣唱之间关于您下载、安装、使用本软件，以及趣唱相关服务所订立的协议。</string>
+    <string name="protocol_2_1">2.1 【本服务的内容】
+本服务内容是指趣唱向用户提供的跨平台的多人实时视频直播、练歌、K歌、歌曲翻唱、跨平台分享原创翻唱作品功能，支持单人、多人参与，在实时K歌、视频直播、视频录制的基础上，同时为用户提供包括但不限于社交关系拓展、活动等功能或内容的软件许可及服务（以下简称“本服务”）。
+\n2.2 【本服务的形式】
+\n2.2.1 您使用本服务需要下载趣唱客户端软件，对于该软件，趣唱给予您一项个人的、不可转让及非排他性的许可。
+\n2.2.2 本服务中趣唱客户端软件提供包括iOS、android两个应用版本，用户必须选择安装与所持有手机相匹配的软件版本。
+\n2.3 【本服务许可的范围】
+\n2.3.1 趣唱给予您一项个人的、不可转让及非排他性的许可，以使用本软件。您可以为非商业目的在多台终端设备上安装、使用、显示、运行本软件。
+\n2.3.2 本条及本协议其他条款未明示授权的其他一切权利仍由趣唱保留，您在行使这些权利时须另外取得趣唱的书面许可。趣唱如果未行使前述任何权利，并不构成对该权利的放弃。
+  \n  2.4  【服务收费】
+\n2.4.1 趣唱部分服务是以收费方式提供，如您使用收费服务，请遵守相关协议。
+\n2.4.2 趣唱可能根据实际需要对收费服务的收费标准、方式进行修改和变更，趣唱也可能对部分免费服务开始收费。上述修改、变更或者开始收费前，趣唱将会在相应服务页面通知或公告，如不同意上述修改、变更或付费内容，则停止使用本服务。</string>
+    <string name="protocol_3_1">3.1 保护用户个人信息是趣唱的一项基本原则，趣唱将会采取合理的措施保护用户的个人信息。除法律法规规定的情形外，未经用户许可趣唱不会向第三方公开、透露用户个人信息。趣唱对相关信息采用专业加密存储与传输方式，保障用户个人信息的安全。
+\n3.2 您在注册帐号或使用本服务的过程中，需要提供一些必要的信息，例如：为向您提供注册和登录功能，需要您填写第三方账号的账号密码；提供视频申请服务，需要您填写手机号码等。若国家法律法规或政策有特殊规定的，您需要提供真实的身份信息。若您提供的信息不完整，则无法使用本服务或在使用过程中受到限制。
+\n3.3 一般情况下，您可随时浏览、修改自己提交的信息，但出于安全性和身份识别的考虑，您可能无法修改某些特定验证信息。
+\n3.4 趣唱将运用各种安全技术和程序建立完善的管理制度来保护您的个人信息，以免遭受未经授权的访问、使用或披露。
+\n3.5 未经您的同意，趣唱不会向趣唱以外的任何公司、组织和个人披露您的个人信息，但法律法规另有规定的除外。
+\n3.6 趣唱非常重视对未成年人个人信息的保护。若您是18周岁以下的未成年人，在使用趣唱的服务前，应事先取得您家长或法定监护人的书面同意。</string>
+    <string name="protocol_4_1">4.1 您在使用本服务前需要注册一个趣唱帐号。趣唱有权根据用户需求或产品需要对帐号注册和绑定的方式进行变更。
+\n4.2 趣唱帐号的所有权归趣唱公司所有，用户完成注册手续后，仅获得趣唱帐号的使用权，且该使用权仅属于初始申请注册人。同时，初始申请注册人不得赠与、借用、租用、转让或售卖趣唱帐号或者以其他方式许可非初始申请注册人使用趣唱帐号。非初始申请注册人不得通过受赠、继承、承租、受让或者其他任何方式使用趣唱账号。
+\n4.3 用户有责任妥善保管注册帐户信息及帐户密码的安全，用户需要对注册帐户以及密码下的行为承担法律责任。用户同意在任何情况下不向他人透露帐户及密码信息。当在您怀疑他人在使用您的帐号时，请及时修改账户密码，如有需要请立即通知趣唱公司。
+\n4.4因您保管不善可能导致遭受盗号或密码失窃，责任由您自行承担。</string>
+    <string name="protocol_5_3">5.1 您可以直接从趣唱的网站上获取本软件，也可以从得到趣唱授权的第三方获取。
+\n5.2 如果您从未经趣唱授权的第三方获取本软件或与本软件名称相同的安装程序，趣唱无法保证该软件能够正常使用，并对因此给您造成的损失不予负责。</string>
+    <string name="protocol_6_3">六、【软件的安装与卸载】
+\n6.1 趣唱可能为不同的终端设备开发了不同的软件版本，您应当根据实际情况选择下载合适的版本进行安装。
+\n6.2 下载安装程序后，您需要按照该程序提示的步骤正确安装。
+\n6.3 如果您不再需要使用本软件或者需要安装新版软件，可以自行卸载。如果您愿意帮助趣唱改进产品服务，请意见反馈我们。
+\n七、【软件的更新】
+\n7.1 为了改善用户体验、完善服务内容，趣唱将不断努力开发新的服务，并为您不时提供软件更新（这些更新可能会采取软件替换、修改、功能强化、版本升级等形式）。
+\n7.2 为了保证本软件及服务的安全性和功能的一致性，趣唱有权不经向您特别通知而对软件进行更新，或者对软件的部分功能效果进行改变或限制。
+\n7.3 本软件新版本发布后，旧版本的软件可能无法使用。趣唱不保证旧版本软件继续可用及相应的客户服务，请您随时核对并下载最新版本。
+\n八、【用户注意事项】
+\n8.1 您理解并同意：为了向您提供有效的服务，本软件会利用您移动通讯终端的处理器和带宽等资源。本软件使用过程中可能产生数据流量的费用，用户需自行向运营商了解相关资费信息，并自行承担相关费用。
+\n8.2 您理解并同意：本软件的某些功能可能会让第三方知晓用户的信息，例如：用户的趣唱好友可以查询用户头像、昵称、登记等可公开的个人资料。
+\n8.3 您理解并同意趣唱将会尽其商业上的合理努力保障您在本软件及服务中的数据存储安全，但是，趣唱并不能就此提供完全保证，包括但不限于以下情形：
+\n8.4.1 趣唱不对您在本软件及服务中相关数据的删除或储存失败负责；
+\n8.4.2 趣唱有权根据实际情况自行决定单个用户在本软件及服务中数据的最长储存期限，并在服务器上为其分配数据最大存储空间等。您可根据自己的需要自行备份本软件及服务中的相关数据；
+\n8.4.3 如果您停止使用本软件及服务或服务被终止或取消，趣唱可以从服务器上永久地删除您的数据。服务停止、终止或取消后，趣唱没有义务向您返还任何数据。
+\n8.5 用户在使用本软件及服务时，须自行承担如下来自趣唱不可掌控的风险内容，包括但不限于：
+\n8.5.1 由于不可抗拒因素可能引起的个人信息丢失、泄漏等风险；
+\n8.5.2 用户必须选择与所安装手机相匹配的软件版本，否则，由于软件与手机型号不相匹配所导致的任何问题或损害，均由用户自行承担；
+\n8.5.3 用户在使用本软件访问第三方网站时，因第三方网站及相关内容所可能导致的风险，由用户自行承担；
+\n8.5.4 用户发布的内容被他人转发、分享，因此等传播可能带来的风险和责任；
+\n8.5.5 由于无线网络信号不稳定、无线网络带宽小等原因，所引起的趣唱登录失败、资料同步不完整、页面打开速度慢等风险。
+\n九、【用户行为规范】
+\n9.1 【信息内容规范】
+\n9.1.1 本条所述信息内容是指用户使用本软件及服务过程中所制作、复制、发布、传播的任何内容，包括但不限于趣唱帐号头像、名字、用户说明等注册信息，以及其他使用趣唱帐号或本软件及服务所产生的内容。
+\n9.1.2 您理解并同意，趣唱一直致力于为用户提供文明健康、规范有序的网络环境，您不得利用趣唱帐号或本软件及服务制作、发布、传播干扰趣唱正常运营，以及侵犯其他用户或第三方合法权益的内容。
+\n9.2 【软件使用规范】
+\n除非法律允许或趣唱书面许可，您使用本软件过程中不得从事下列行为：
+\n9.2.1 删除本软件及其副本上关于著作权的信息；
+\n9.2.2 对本软件进行反向工程、反向汇编、反向编译，或者以其他方式尝试发现本软件的源代码；
+\n9.2.3 对趣唱拥有知识产权的内容进行使用、出租、出借、复制、修改、链接、转载、汇编、发表、出版、建立镜像站点等；
+\n9.2.4 对本软件或者本软件运行过程中释放到任何终端内存中的数据、软件运行过程中客户端与服务器端的交互数据，以及本软件运行所必需的系统数据，进行复制、修改、增加、删除、挂接运行或创作任何衍生作品，形式包括但不限于使用插件、外挂或非趣唱经授权的第三方工具/服务接入本软件和相关系统；
+\n9.2.5 通过修改或伪造软件运行中的指令、数据，增加、删减、变动软件的功能或运行效果，或者将用于上述用途的软件、方法进行运营或向公众传播，无论这些行为是否为商业目的；
+\n9.2.6 通过非趣唱开发、授权的第三方软件、插件、外挂、系统，登录或使用趣唱软件及服务，或制作、发布、传播上述工具；
+\n9.2.7 自行或者授权他人、第三方软件对本软件及其组件、模块、数据进行干扰；
+\n9.2.8 其他未经趣唱明示授权的行为。
+\n9.3 【服务运营规范】
+\n除非法律允许或趣唱书面许可，您使用本服务过程中不得从事下列行为：
+\n9.3.1 提交、发布虚假信息，或冒充、利用他人名义的；
+\n9.3.2虚构事实、隐瞒真相以误导、欺骗他人的；
+\n9.3.3侵害他人名誉权、肖像权、知识产权、商业秘密等合法权利的；
+\n9.3.4利用趣唱帐号或本软件及服务从事任何违法犯罪活动的；
+\n9.3.5制作、发布与以上行为相关的方法、工具，或对此类方法、工具进行运营或传播，无论这些行为是否为商业目的；
+\n9.3.6其他违反法律法规规定、侵犯其他用户合法权益、干扰产品正常运营或趣唱未明示授权的行为；
+\n9.4 【对自己行为负责】
+\n您充分了解并同意，您必须为自己注册帐号下的一切行为负责，包括您所发表的任何内容以及由此产生的任何后果。您应对本服务中的内容自行加以判断，并承担因使用内容而引起的所有风险，包括因对内容的正确性、完整性或实用性的依赖而产生的风险。趣唱无法且不会对因前述风险而导致的任何损失或损害承担责任。
+\n9.5 【违约处理】
+\n9.5.1 如果趣唱发现或收到他人举报或投诉用户违反本协议约定的，趣唱有权不经通知随时对相关内容进行删除、屏蔽，并视行为情节对违规帐号处以包括但不限于警告、限制或禁止使用部分或全部功能、帐号封禁直至注销的处罚。
+\n9.5.2 您理解并同意，趣唱有权依合理判断对违反有关法律法规或本协议规定的行为进行处罚，对违法违规的任何用户采取适当的法律行动，并依据法律法规保存有关信息向有关部门报告等，用户应独自承担由此而产生的一切法律责任。
+\n9.5.3 您理解并同意，因您违反本协议或相关服务条款的规定，导致或产生第三方主张的任何索赔、要求或损失，您应当独立承担责任；趣唱因此遭受损失的，您也应当一并赔偿。
+\n十、【知识产权声明】
+\n10.1 趣唱是本软件的知识产权权利人。本软件的一切著作权、商标权、专利权、商业秘密等知识产权，以及与本软件相关的所有信息内容（包括但不限于文字、图片、音频、视频、图表、界面设计、版面框架、有关数据或电子文档等）均受中华人民共和国法律法规和相应的国际条约保护，趣唱享有上述知识产权，但相关权利人依照法律规定应享有的权利除外。
+\n10.2 未经趣唱或相关权利人书面同意，您不得为任何商业或非商业目的自行或许可任何第三方实施、利用、转让上述知识产权。
+\n10.3 您同意，其他用户可以在本服务中以上传、下载、分享、收听或者与您合唱等方式使用您演唱的完整歌曲或者歌曲片段。
+\n十一、【终端安全责任】
+\n11.1 您理解并同意，本软件同大多数互联网软件一样，可能会受多种因素影响，包括但不限于用户原因、网络服务质量、社会环境等；也可能会受各种安全问题的侵扰，包括但不限于他人非法利用用户资料，进行现实中的骚扰；用户下载安装的其他软件或访问的其他网站中可能含有病毒、木马程序或其他恶意程序，威胁您的终端设备信息和数据安全，继而影响本软件的正常使用等。因此，您应加强信息安全及个人信息的保护意识，注意密码保护，以免遭受损失。
+\n11.2 您不得制作、发布、使用、传播用于窃取趣唱帐号及他人个人信息、财产的恶意程序。
+\n11.3 维护软件安全与正常使用是趣唱和您的共同责任，趣唱将按照行业标准合理审慎地采取必要技术措施保护您的终端设备信息和数据安全，但是您承认和同意趣唱并不能就此提供完全保证。
+\n11.4 在任何情况下，您不应轻信借款、索要密码或其他涉及财产的网络信息。涉及财产操作的，请一定先核实对方身份。
+\n十二、【其他】
+\n12.1 您使用本软件即视为您已阅读并同意受本协议的约束。趣唱有权在必要时修改本协议条款。您可以在本软件的最新版本中查阅相关协议条款。本协议条款变更后，如果您继续使用本软件，即视为您已接受修改后的协议。如果您不接受修改后的协议，应当停止使用本软件。
+\n12.2 本协议签订地为中华人民共和国深圳市龙岗区。
+\n12.3 本协议的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律（不包括冲突法）。
+\n12.4 若您和趣唱之间发生任何纠纷或争议，首先应友好协商解决；协商不成的，您同意将纠纷或争议提交本协议签订地有管辖权的人民法院管辖。
+\n12.5 本协议所有条款的标题仅为阅读方便，本身并无实际涵义，不能作为本协议涵义解释的依据。
+\n12.6 本协议条款无论因何种原因部分无效或不可执行，其余条款仍有效，对双方具有约束力。</string>
+    <string name="protocol_7_3"></string>
+    <string name="protocol_8_3"></string>
+    <string name="protocol_9_3"></string>
+    <string name="setting_version_about_phone">客服QQ：12345687
+        \n客服邮箱：tosing@tosing.com
+        \n微信公众号：tosing
+        \n新浪微博：weibo.com/u/12345678/home </string>
+
+    <string name="help">帮助</string>
+    <string name="string_help_text">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。\n\n最后点击两次后退按钮，即可返回。</string>
+    <string name="quit">退出</string>
+    <string name="daoyan">【导言】</string>
+    <string name="xieyi_layout">一、协议范围</string>
+    <string name="xieyi_server2">二、【关于本服务】</string>
+    <string name="xieyi_server3">三、【用户个人信息保护】</string>
+    <string name="xieyi_server4">四、【帐号与密码安全】</string>
+    <string name="xieyi_server5">五、【软件的获取】</string>
+    <string name="xieyi_quchang">深圳趣唱科技有限公司</string>
+
+
+    <string name="quchangbi_info">1.趣唱币来源：
+        \n\u3000a:新用户赠送100币；
+        \n\u3000b:每天签到可以赚取5~10币，连续签到可以获取最多350币的额外奖励；
+        \n\u3000c:每邀请一位好友使用趣唱赠送100币；
+        \n\u3000d:通过充值购买趣唱币，1元=10币；
+        \n2.趣唱币可以用来购买鲜花，1币=1朵鲜花；
+        \n3.趣唱币支付后，会从趣唱币账户中扣除；
+        \n4.趣唱币只供购买平台内的虚拟物品，不可变现。</string>
+    <string name="flower_info">1、鲜花来源：
+\na、充值购买，1元=10朵鲜花。
+\nb、每天签到赚取5朵鲜花。
+\n2、给自己喜欢的PK作品献花，可以增加TA的得分，1朵花=4分，同时也可能给自己的个人主页带来人气；
+\n3、鲜花献出后，会从鲜花账户中扣除；
+\n4、每首作品获得的鲜花不计入鲜花账户。</string>
+    <string name="title_activity_image_show">ImageShow</string>
+    <string name="title_activity_protocol_show">趣唱软件许可及服务协议</string>
+
+    <string name="hint">提示</string>
+    <string name="imageview_content_description"></string>
+    <string name="record_camera_progress_message">准备中…</string>
+    <string name="record_camera_exit_dialog_message">是否放弃这段视频？</string>
+    <string name="record_camera_cancel_dialog_yes">确定</string>
+    <string name="record_camera_cancel_dialog_no">取消</string>
+    <string name="record_video_transcoding_faild">视频转码失败</string>
+    <string name="fileSize">(容量未知)</string>
+    <string name="ktv_tag">KTV</string>
+    <string name="mp3_tag">MP3</string>
+    <string name="mv_tag">MV</string>
+    <string name="diy_tag">DIY</string>
+    <string name="sing">开始</string>
+    <string name="download_song">我要PK</string>
+    <string name="wait_download">等待</string>
+
+    <string name="search_song">搜索歌曲</string>
+    <string name="hot_recommend">热听推荐</string>
+    <string name="downloaded_song">已点歌曲</string>
+    <string name="hot_community">热听社区</string>
+    <string name="hot_work_week">本周热听作品</string>
+    <string name="hot_work">热听作品</string>
+    <string name="hot_rank_week">本周排行榜</string>
+    <string name="hot_rank">排行榜</string>
+    <string name="newest_work_today">今日首发作品</string>
+    <string name="newest_work">首发作品</string>
+    <string name="more">更多>></string>
+    <string name="discover">发现</string>
+    <string name="friend_cicle">歌友圈</string>
+    <string name="nearby_person">附近的人</string>
+    <string name="nearby_work">附近的作品</string>
+    <string name="search_user">查找用户</string>
+    <string name="shopping_mall">商城</string>
+    <string name="mine">我的</string>
+    <string name="not_login">未登录</string>
+    <string name="login_now">立即登录</string>
+    <string name="sign">签到</string>
+    <string name="is_sign">已经签到</string>
+    <string name="quchang_num">ID:</string>
+    <string name="my_homePage">我的主页</string>
+    <string name="my_account">我的账户</string>
+    <string name="my_info">我的资料</string>
+    <string name="expression_shop">表情商店</string>
+    <string name="invite_friend_title">邀请好友</string>
+
+    <string name="hot_search">热听搜索</string>
+    <string name="search">搜索</string>
+    <string name="search_hint">歌曲 / 歌手 /专辑</string>
+    <string name="hot_recommend2">热门推荐</string>
+    <string name="choose_singer">歌星点歌</string>
+    <string-array name="array_location">
+        <item>全部</item>
+        <item>内地</item>
+        <item>港台</item>
+        <item>日韩</item>
+        <item>欧美</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="array_sex">
+        <item>全部</item>
+        <item>男</item>
+        <item>女</item>
+        <item>组合</item>
+    </string-array>
+
+    <!--<string name="all">全部</string>
+    <string name="inland">内地</string>
+    <string name="HK_TW">港臺</string>
+    <string name="Japan_Korean">日韓</string>
+    <string name="Europe_America">歐美</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="group">組合</string>-->
+    <string name="commit_content_come">快来听我新唱的歌吧</string>
+    <string name="commit_content_come2">友友们，快来听我新唱的《</string>
+    <string name="commit_content_come3">》吧！</string>
+    <string name="commit_content">请输入您的作品介绍</string>
+    <string name="choose_type">分类点歌</string>
+    <string name="choose_top">榜单点歌</string>
+    <string name="main_top">主打榜单</string>
+    <string name="type_top">分类榜单</string>
+    <string name="local_work">本地作品</string>
+    <string name="mine_work">我的作品</string>
+    <string name="friend_work">歌友作品</string>
+    <string name="upload_home">上传到主页</string>
+    <string name="upload_success"> 上 传 成 功</string>
+    <string name="compose_get"> 重 新 合 成</string>
+    <string name="compose_git_up"> 合 成 失 败</string>
+    <string name="downloaded_song_list">已点歌单</string>
+    <string name="downloaded">已下载</string>
+    <string name="downloading">下载中</string>
+    <string name="play_recently">最近播放</string>
+    <string name="play_oratorio">清唱</string>
+    <string name="switch_mode">切换模式</string>
+    <string name="pratice_song">练歌</string>
+    <string name="record_mv">录MV</string>
+    <string name="record_mp3">录MP3</string>
+    <string name="cancel">取  消</string>
+    <string name="quchang_music">趣唱音乐</string>
+    <string name="quchang_music_nokrc">歌词加载失败，请稍候重试！</string>
+    <string name="edit_personal_info">编辑个人资料</string>
+    <string name="head_portrait">头像</string>
+    <string name="nickname">昵称</string>
+    <string name="gender">性别</string>
+    <string name="age">年龄</string>
+    <string name="my_QR_code">我的二维码</string>
+    <string name="my_phoneNum">我的手机号</string>
+    <string name="personalized_signature">个性签名</string>
+    <string name="my_level">我的等级</string>
+    <string name="level">等级</string>
+    <string name="bind_num">绑定社交账号</string>
+    <string name="not_set">未设置</string>
+    <string name="not_bind">未绑定</string>
+    <string name="not_complete">未完成</string>
+    <string name="completed">完成</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="mobile_album">手机相册</string>
+    <string name="take_photo">拍照</string>
+    <string name="modify_nickname">修改昵称</string>
+    <string name="save">保存</string>
+    <string name="name_less_8">昵称最多8个汉字</string>
+    <string name="name_less_12">昵称最多12个汉字</string>
+    <string name="QR_code">二维码</string>
+    <string name="save_QR_code">保存二维码</string>
+    <string name="share_QR_code">分享二维码</string>
+    <string name="bind_phoneNum">绑定手机号</string>
+    <string name="bind_phoneNum_notice">绑定手机号后可以直接用来登录或者找回密码</string>
+    <string name="bind_phoneNum_treasure">为了您的账号安全，请绑定手机号码</string>
+    <string name="input_phoneNum">请输入手机号</string>
+    <string name="input_msg_code">请输入短信验证码</string>
+    <string name="input_msg_yqm">请输入邀请码（选填项）</string>
+    <string name="input_msg_yqm_need">请输入邀请码（必填）</string>
+    <string name="login_password">登录密码</string>
+    <string name="hint_login_password">请输入登录密码</string>
+    <string name="hint_login_yzm">请输入短信验证码</string>
+    <string name="input_login_password">设置登录密码</string>
+    <string name="reset_login_password">重设登录密码</string>
+    <string name="repeat_login_password">重复登录密码</string>
+    <string name="login_password_notice">登录密码为6-12位数字+字母组合</string>
+    <string name="login_by_you">已有账户</string>
+    <string name="login_in_this">用账号密码登录</string>
+    <string name="login_in_this2">用短信验证码登录</string>
+    <string name="login_xieyi01">注册即同意PK歌王</string>
+    <string name="login_xieyi">登录或注册即同意PK歌王</string>
+    <string name="login_xieyi2">「用户协议」</string>
+    <string name="default_signature">我想有个很有意思的签名~~</string>
+    <string name="message_readed">标记已读</string>
+    <string name="message_to_readed">标记为已读</string>
+    <string name="level_explain">等级说明</string>
+    <string name="modify_phoneNum">更换手机号</string>
+    <string name="how_upgrade">如何升级</string>
+    <string name="how_upgrade_info">    一个圆周360分为1级，分值累计取决于个人作品数量、粉丝量、送出鲜花数量、转发其它歌友作品数量、收到点赞数量。</string>
+    <string name="how_upgrade_info2">1、完成一首个人作品上传到个人主页+100分；
+\n2、每增加一个粉丝+50分；
+\n3、分享到微信、QQ、新浪每次各+20分，每人每天最多+200分；
+\n4、每送出一朵鲜花+1分；
+\n5、每收到一个点赞+1分。</string>
+    <string name="leave_next_level">距离下一级还差</string>
+    <string name="score">分</string>
+    <string name="bind_immediately">立即绑定</string>
+    <string name="cancel_bind">取消绑定</string>
+    <string name="bind_third_num_notice">绑定第三方社交账号（可用于登录或分享）</string>
+    <string name="wechat">微信</string>
+    <string name="weibo">新浪微博</string>
+    <string name="yqm">邀请码登录</string>
+    <string name="attention">关注</string>
+    <string name="fans">粉丝</string>
+    <string name="this_issue">本期作品</string>
+    <string name="origin_work">历届作品</string>
+    <string name="collecion_work">收藏作品</string>
+    <string name="trans_work">转发作品</string>
+    <string name="today_vistor">今日访客：</string>
+    <string name="beat_country">打败了全国</string>
+    <string name="de_user">的用户</string>
+    <string name="total_visitor">访客总计：</string>
+    <string name="quchang_tech">趣唱科技：</string>
+    <string name="quchang_ablum">趣唱相册</string>
+    <string name="share_to_homepage">分享个人主页到</string>
+    <string name="change_home_background">更换主页背景图</string>
+    <string name="change_background">更换背景图</string>
+    <string name="my_attention">我的关注</string>
+    <string name="search_in_attention">在全部关注中搜索</string>
+    <string name="my_fans">我的粉丝</string>
+    <string name="search_in_fans">在全部粉丝中搜索</string>
+    <string name="my_flower">我的鲜花</string>
+    <string name="quchangbi">趣唱币</string>
+    <string name="quchangbi_recharge">趣唱币充值</string>
+    <string name="quchangbi_account_detail">趣唱币账户明细</string>
+    <string name="my_flower_num">我的鲜花数</string>
+    <string name="my_purse">我的钱包</string>
+    <string name="notice_everytime">每次提醒</string>
+    <string name="notice_first">首次提醒</string>
+    <string name="no_notice">不做提醒</string>
+    <string name="msg_setting">消息设置</string>
+    <string name="msg_read_titl">消 息</string>
+    <string name="language_setting">语言设置</string>
+    <string name="language_mode">多语言</string>
+    <string name="zh_cn">中文简体</string>
+    <string name="zh_tw">中文繁体</string>
+    <string name="en">英文</string>
+    <string name="msg_notice">消息通知</string>
+    <string name="my_notice">我的消息</string>
+    <string name="privacy_setting">隐私设置</string>
+    <string name="allow_add_comment">允许给我的作品加评论</string>
+    <string name="allow_add_barrage">允许给我的作品加弹幕</string>
+    <string name="blacklist">黑名单</string>
+    <string name="wifi_notice">网络提醒</string>
+    <string name="no_wifi_notice_everytime">非WiFi环境下每次提醒</string>
+    <string name="no_wifi_notice_first">非WiFi环境下仅首次提醒</string>
+    <string name="no_any_notice">不做任何提醒</string>
+    <string name="no_wifi_notice">非WIFI环境消耗流量提醒</string>
+    <string name="other">其他</string>
+    <string name="about_us">关于我们</string>
+    <string name="feedback">意见反馈</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="verion_explain">版本说明</string>
+    <string name="user_agreement">用户协议</string>
+    <string name="pay_protocol">支付协议</string>
+    <string name="deposit_instructions">押金说明</string>
+    <string name="jpush_msg_notice">推送消息设置</string>
+    <string name="whistle_blowing">举报</string>
+    <string name="new_fans">新粉丝</string>
+    <string name="new_commment">新评论</string>
+    <string name="comment_reply">评论回复</string>
+    <string name="music_reply">回复</string>
+    <string name="report_msg">被举报</string>
+    <string name="system_msg">系统信息</string>
+    <string name="receive_flower">收到鲜花</string>
+    <string name="new_collection">新收藏</string>
+    <string name="new_singer_friend">歌友动态</string>
+    <string name="new_like">新点赞</string>
+    <string name="new_trans">新转发</string>
+    <string name="in_blacklist">被加黑名单</string>
+    <string name="be_reported">被举报</string>
+    <string name="new_system_message">系统消息</string>
+    <string name="music_problem">音频问题（音质、音效、伴奏等）</string>
+    <string name="work_play_problem">作品播放问题</string>
+    <string name="work_related_problem">作品发布、转发、收藏、下载问题</string>
+    <string name="flower_rank_problem">送花、排行、打分问题</string>
+    <string name="practice_record_problem">练歌、录歌问题</string>
+    <string name="function_advice">功能建议</string>
+    <string name="other_problem">其他问题</string>
+    <string name="input_your_advice">请输入您的宝贵意见</string>
+    <string name="upload">上传</string>
+    <string name="sure_to_clear_cache">您是否确定清除缓存？</string>
+    <string name="version_main_function">版本主要包括以下功能：</string>
+    <string name="current_version">当前版本</string>
+    <string name="function_explain">功能介绍</string>
+    <string name="function_explain_version">当前版本更新内容</string>
+    <string name="i_sing">我要PK</string>
+    <string name="hot_origin">热播原创</string>
+    <string name="invite_code">邀请码</string>
+    <string name="invite_content">用了趣唱才知道，原来我唱歌也不错！你快来试试吧！</string>
+    <string name="share_content">原来我唱歌也不错！小伙伴，快来听听吧！</string>
+    <string name="country">国家/地区</string>
+    <string name="pl_count">全部评论</string>
+    <string name="gewang_community">歌王社区</string>
+    <string name="pk_detail">PK赛详情</string>
+
+    <!--页面内提示问题-->
+    <string name="get_data_fail">数据请求失败</string>
+    <string name="record">录制</string>
+    <string name="song_total_score">歌曲总得分</string>
+    <string name="song_data_error">歌曲数据异常</string>
+    <string name="download_msg">已准备下载，请稍后</string>
+    <string name="come_to_listen_new_work">友友们，快来听我新唱的《</string>
+    <string name="come_to_listen_new_work2">》吧！</string>
+    <string name="pause">暂停</string>
+    <string name="preview">预览</string>
+    <string name="save_more">更多</string>
+    <string name="reRecord">重录</string>
+    <string name="release_to_homepage">发布到我的主页</string>
+    <string name="people_voice">人声音量</string>
+    <string name="acc_voice">伴奏音量</string>
+    <string name="my_acc">我的伴奏</string>
+    <string name="voice_offset">人声偏移</string>
+    <string name="resing_line">重唱该句</string>
+    <string name="listen_fail">听写失败,错误码：</string>
+    <string name="init_fail">初始化失败，错误码：</string>
+    <string name="end_speek">结束说话</string>
+    <string name="start_speek">开始说话</string>
+    <string name="export">导出</string>
+    <string name="export_work">导出个人作品</string>
+    <string name="select_export_work">请选择需要导出的作品。</string>
+    <string name="export_success_notice">已成功导出到根目录下“我的作品”文件夹。</string>
+    <string name="delete_quantity">批量删除</string>
+    <string name="delete">删除</string>
+    <string name="delete_work">删除个人作品</string>
+    <string name="delete_download">删除下载歌曲</string>
+    <string name="select_delete_work">请选择需要删除的作品</string>
+    <string name="delete_work_success_notice">已成功删除选中的作品。</string>
+    <string name="img_gone">图片文件丢失</string>
+    <string name="login_fail_or_not">未登录，或登录状态出错</string>
+    <string name="login_new_not">未登录,点击登录</string>
+    <string name="post_data">提交数据</string>
+    <string name="work_not_exist">作品不存在或已被删除！</string>
+    <string name="only_trans">只看转发作品</string>
+    <string name="only_origin">只看原创作品</string>
+    <string name="all">全部</string>
+    <string name="close_location_fail">关闭定位失败</string>
+    <string name="close_location">关闭定位</string>
+    <string name="exit_location_success">已经退出定位</string>
+    <string name="location_fail">定位不成功。</string>
+    <string name="exit_location">退出定位</string>
+    <string name="only_girl">只看女生</string>
+    <string name="only_boy">只看男生</string>
+    <string name="close_location_notice">是否关闭开自动定位功能？</string>
+    <string name="quchang_mall_open">趣唱商城暂未开放，敬请期待！</string>
+    <string name="search_user_hint">用户昵称 / 趣唱号</string>
+    <string name="change_some">换一批</string>
+    <string name="may_interest_user">以下用户您可能感兴趣</string>
+    <string name="copy_id_success">复制我的ID成功</string>
+    <string name="sign_success">签到成功，奖励5朵鲜花</string>
+    <string name="signed_today">今日已签到</string>
+    <string name="sign_success_add">签到成功，奖励</string>
+    <string name="sign_success_add2">个币</string>
+    <string name="great">今天手气很好，可以去买彩票了</string>
+    <string name="good">今天手气不错，可以去买彩票了</string>
+    <string name="ok">今天手气一般</string>
+    <string name="bad">今天手气不好，明天再试试吧</string>
+    <string name="terrible">今天手气很糟，明天再试试吧</string>
+    <string name="get_img_error">获取图片出错，请使用其他方式更换！</string>
+    <string name="exit_login_success">退出登录成功！</string>
+    <string name="clear_cache_success">清除缓存成功！</string>
+    <string name="offset_notice">负值：表示将您的声音向后调整\n正值：表示将您的声音向前调整</string>
+    <string name="only_one_song">当前只有一首歌</string>
+    <string name="play_list">播放列表</string>
+    <string name="dealing_DIY">DIY处理中</string>
+    <string name="upload_homepage">已经上传到主页</string>
+    <string name="copy_link">复制链接成功</string>
+    <string name="copy">复制</string>
+    <string name="quchang_official">--我在参加PK歌王赛，快来帮我送花点赞投票吧！</string>
+    <string name="quchang_k">趣唱K歌</string>
+    <string name="quchang_work">趣唱作品</string>
+    <string name="quchang_album">趣唱相册</string>
+    <string name="no_choose_image">您尚未选择需要更换的图片！</string>
+    <string name="album_efit_image">编辑</string>
+    <string name="album_send_image_01">上传照片（限</string>
+    <string name="album_send_image_02">张</string>
+    <string name="album_send_image">上传图片</string>
+    <string name="album_choose_post_type">选择上传方式</string>
+    <string name="album_choose_post_mast">最多只能上传</string>
+    <string name="album_isempty">相册为空，请上传相片</string>
+    <string name="album_isempty_to_post">亲，这里还没有图片呢，快点击下 方按钮上传喜欢的图片吧</string>
+    <string name="edit_image_hint_crop">图片裁剪后视频效果更好</string>
+    <string name="add_image">添加图片</string>
+    <string name="next_edit_iimage">下一步</string>
+    <string name="choose_compose_type">选择模式</string>
+    <string name="choose_compose_chang">转场模式（默认添加转场效果）</string>
+    <string name="choose_compose_gif">动态贴纸模式（可另外再插入不同类型的动态贴纸，无特效转场效果）</string>
+    <string name="image_Crop_saveing">图片自动剪切保存中</string>
+    <string name="image_basebitmao_getting">图片加载中</string>
+    <string name="can_no_check_sd">检查不到SD卡</string>
+    <string name="zhang">张</string>
+    <string name="is_scanning_sd">正在扫描本地图片</string>
+    <string name="the_recent_shooting">最近拍摄</string>
+    <string name="choose_max">最多选择</string>
+    <string name="choose_max_image">张图片</string>
+    <string name="apply">应用</string>
+    <string name="image_edit">图片编辑</string>
+    <string name="add_sticker">添加贴纸</string>
+    <string name="rotate">旋转</string>
+    <string name="mirroring">镜像</string>
+    <string name="crop">裁剪</string>
+    <string name="stickers">贴纸</string>
+    <string name="fliter">滤镜</string>
+    <string name="delect">删除</string>
+    <string name="two_preview">第二步：预览效果</string>
+    <string name="can_progress_bar_preview">可以拖动进度条进行快速预览</string>
+    <string name="diy_my_mv">DIY我的MV</string>
+    <string name="warm_prompt">温馨提示</string>
+    <string name="compose_give_up">正在合成中，确认要放弃吗？</string>
+    <string name="doload_err">加载异常，请退出再从新加载</string>
+    <string name="subtitles">字幕</string>
+    <string name="subtitles_color">颜色</string>
+    <string name="gif_stickers">动态贴纸</string>
+    <string name="input_lyrics">插入歌词</string>
+    <string name="resources_canno_diy">当前资源不支持DIY</string>
+    <string name="resources_canno_mv">当前资源不支持添加MV</string>
+    <string name="resources_diying">当前后台正在合成DIY，请稍后再尝试</string>
+    <string name="up_app">版本更新提示</string>
+    <string name="up_now">更新</string>
+    <string name="up_now_todo">去更新</string>
+    <string name="up_next">下次提醒</string>
+    <string name="new_version">有新版本</string>
+
+
+    <!--異常提示信息-->
+    <string name="nothing">空空如也,去录制吧!</string>
+    <string name="nothing_download">空空如也,去下载吧!</string>
+    <string name="get_no_data">服务器或者网络异常，请稍后再试</string>
+    <string name="no_net">网络连接失败，请检查网络</string>
+    <string name="song_delete">该歌曲已被删除,请重新下载</string>
+    <string name="null_null">空空如也</string>
+
+    <!--正常提示信息-->
+    <string name="language">语言设置成功，请重新启动。</string>
+    <string name="notice">提示</string>
+    <string name="sure">确定</string>
+    <string name="sure2">确 定</string>
+    <string name="cancel2">取消</string>
+    <string name="no_more_data">沒有更多数据了</string>
+    <string name="save_record">保存录歌</string>
+    <string name="continue_record">继续录歌</string>
+    <string name="abandon_record">放弃录歌</string>
+    <string name="total_score">歌曲总得分</string>
+    <string name="stop_record_notice">這首歌还没有录完，确定要停止录歌吗？</string>
+    <string name="no_pause_notice">录歌时不支持暂停</string>
+    <string name="wifiDisconnected_notice">当前为运营商网络,继续点歌将消耗手机流量，您确定要继续吗？</string>
+    <string name="wifiDisconnected_notice2">当前为运营商网络,继续听歌将消耗手机流量，您确定要继续吗？</string>
+    <string name="file_not_exist">文件不存在</string>
+    <string name="play_fail">歌曲播放失败</string>
+    <string name="composing_wait">正在合成,请耐心等待..</string>
+    <string name="init_data_wait">正在初始化数据,请耐心等待..</string>
+    <string name="loading">加载中...</string>
+    <string name="sure_to_abandon_record">确定要放弃已录制的这首作品吗？</string>
+    <string name="time_less_1_min">您录制的时长未超过1分钟</string>
+    <string name="save_success">保存成功</string>
+    <string name="save_to_local">已成功保存到本地歌曲。</string>
+    <string name="see_now">立即查看</string>
+    <string name="go_now">立即前往</string>
+    <string name="see_now_work">查看本地作品</string>
+    <string name="make_diy_mv">DIY(制作个性化MV)</string>
+    <string name="decode_fail_notice">你使用的手机不支持解码，请升级版本或者更换手机。</string>
+    <string name="compose_resource_error">合成资源获取错误！</string>
+    <string name="compose_fail">合成失败~~~</string>
+    <string name="compose_fail_redo">合成不成功，请重新合成！</string>
+    <string name="decode_success">解码成功！</string>
+    <string name="record_too_short">录制时间过短</string>
+    <string name="song_not_exist">很抱歉，你要找的这首歌暂时没有哦~我们会尽快上传这首歌。敬请期待！</string>
+    <string name="song_not_exist_new">暂时没有，联系小编上传。</string>
+    <string name="song_not_exist_nex">立即通知小编上传</string>
+    <string name="input_searchContent">请输入你需要搜索的内容</string>
+    <string name="edit_quantity">批量编辑</string>
+    <string name="select_all">全选</string>
+    <string name="sure_delete">您确定要删除吗？</string>
+    <string name="select_need_delete">请选择需要删除播放记录的歌曲</string>
+    <string name="get_data_isend">没有更多的数据了</string>
+
+    <!--新增的-->
+    <string name="delect_error_nodata">该作品已被删除或者资源不存在</string>
+    <string name="delect_error_downed">该作品已下载，请不要重复下载</string>
+    <string name="delect_error_downing">正在下载中，不能删除</string>
+    <string name="download">下载</string>
+    <string name="chang_works_top">作品置顶</string>
+    <string name="chang_works_image">更换作品封面</string>
+    <string name="share_works">分享作品</string>
+    <string name="delect_works">删除作品</string>
+    <string name="delect_zf_works">删除转发</string>
+    <string name="delect_collect_works">删除收藏</string>
+    <string name="need_5_second">结束短信大约需要5秒钟</string>
+    <string name="send_yzm2_phone">我们已经发送了验证码到您的手机</string>
+    <string name="you_phone">手机号</string>
+    <string name="chang_sex">你的性别</string>
+    <string name="chang_picture">你的头像</string>
+    <string name="skip">跳过</string>
+    <string name="edit_user_info">完善信息</string>
+    <string name="login_yqm_zc">邀请码注册登录</string>
+    <string name="your_input_error">您输入的密码不符和要求</string>
+    <string name="please_your_login_account">请为您的登录账号</string>
+    <string name="please_chang_pwd">重新设定登录密码</string>
+    <string name="login_ing_wait">正在自动登录。请稍等</string>
+    <string name="pwd_null_error">密码不能为空</string>
+    <string name="yzm_null_error">验证码不能为空</string>
+    <string name="yqm_null_error">邀请码不能为空</string>
+    <string name="phone_error">手机号格式不正确,请您正确填写电话号码！</string>
+    <string name="edit_input_phone">请填写手机号码</string>
+    <string name="data_error">数据出错</string>
+    <string name="second">秒</string>
+    <string name="yzm_send">重新发送</string>
+    <string name="exit_notice">再按一次退出程序</string>
+    <string name="location_notice">定位提示</string>
+    <string name="open_location_notice">未打开定位,请在系统设置中打开定位功能。</string>
+    <string name="open_location_notice1">未打开定位,是否打开自动定位功能？</string>
+    <string name="send_success">成功送出！</string>
+    <string name="share_success">分享成功！</string>
+    <string name="trans_homepage_success">转发到我的主页成功！</string>
+    <string name="start_sing">我要PK</string>
+    <string name="release">发布于：</string>
+    <string name="url_error">歌曲地址有误，请稍后重试！</string>
+    <string name="left_value">剩余值：</string>
+    <string name="no_comment">该作品已经禁止评论!</string>
+    <string name="input_right_num">请输入正确的数字</string>
+    <string name="not_enough">鲜花数不足，请先充值。</string>
+    <string name="recharge_flower">鲜花充值</string>
+    <string name="recharge_flower_value">1元=10朵鲜花</string>
+    <string name="recharge_flower_bypersonal">在个人中心签到一次获得5朵鲜花</string>
+    <string name="not_login_notice">您当前未登录或者登录状态出错，请重新登录！</string>
+    <string name="get_data_error">获取数据失败</string>
+    <string name="close_barrage">弹幕关</string>
+    <string name="open_barrage">弹幕开</string>
+    <string name="get_null_data">返回数据为空</string>
+    <string name="cancel_like_success">取消点赞成功</string>
+    <string name="like_success">点赞成功</string>
+    <string name="cancel_atten_success">取消关注成功</string>
+    <string name="atten_success">关注成功</string>
+    <string name="no_atten_self">不能自己关注自己</string>
+    <string name="cancel_collection_success">取消收藏成功</string>
+    <string name="collection_success">收藏成功</string>
+    <string name="has_no_comment_data">尚未有评论数据，快来抢座位吧。</string>
+    <string name="no_share_self_work">不能自己分享自己的作品到主页。</string>
+    <string name="like">点赞</string>
+    <string name="send_flower">送花</string>
+    <string name="comment">评论</string>
+    <string name="share">分享</string>
+    <string name="work_dynamic">作品动态</string>
+    <string name="resing_rank">翻唱排名</string>
+    <string name="like_rank">点赞排名</string>
+    <string name="input_report_content">请输入举报的内容</string>
+    <string name="report_success">举报成功</string>
+    <string name="sing_the_song">人唱了这首歌</string>
+    <string name="post">提 交</string>
+    <string name="listen_rank">热听排名</string>
+    <string name="flower_rank">鲜花排名</string>
+    <string name="work_name">作品名称</string>
+    <string name="send">发送</string>
+    <string name="image_show">相片预览</string>
+    <string-array name="comment_array">
+        <item>绕梁三日，余音不绝！</item>
+        <item>犹如百灵鸟的歌声一般动听</item>
+        <item>余音袅袅，不绝如缕。</item>
+        <item>歌声悠扬如清晨带着微点露珠的樟树叶</item>
+        <item>此音只应天上有，人生难得几回闻，再给我唱一首吧。</item>
+        <item>这清脆的 歌声，好似山谷中黄鹂的鸣叫，婉转动听</item>
+        <item>你在我眼中最迷人，你歌在我耳畔最动听。</item>
+        <item>你的歌声就是那传说中的天籁吧，如翠鸟弹水，黄莺吟鸣！</item>
+        <item>你的声音已经把我给感染了！暖暖的，流进心田。</item>
+        <item>声音好听到让人不敢相信人间有这么好听的声音！</item>
+        <item>你的歌声婉转动听，让人赞不绝口，令我心潮澎湃!</item>
+        <item>听的都入迷了，仿佛就置身于歌里的大自然中。</item>
+    </string-array>
+    <string name="say_some">给TA说点什么...</string>
+    <string name="recharge">去充值</string>
+    <string name="sign_everyday">每日签到</string>
+    <string name="sign_everyday_value">每日签到，赚取5朵鲜花</string>
+    <string name="sign_steady">稳赚签到</string>
+    <string name="sign_furture">手气签到</string>
+    <string name="sign_continue">连续签到</string>
+    <string name="my_money">我的币</string>
+    <string name="money_record">查看领奖记录</string>
+    <string name="money_use">趣唱币有什么用？</string>
+    <string name="money_detail">趣唱币账户明细</string>
+    <string name="money_function">趣唱币可以换购更多的鲜花和付费表情</string>
+    <string name="know">知道了</string>
+    <string name="balance">余额</string>
+    <string name="money1">币</string>
+    <string name="delete_download_work">删除下载作品</string>
+
+    <string name="total_score1">总分：</string>
+    <string name="theatre">剧场</string>
+    <string name="phonograph">留声机</string>
+    <string name="girl">经典女生</string>
+    <string name="boy">经典男声</string>
+    <string name="valley">山谷</string>
+    <string name="concert">演唱会</string>
+    <string name="record_studio">录音棚</string>
+    <string name="origin_voice">原声</string>
+    <string name="sound_effect">音效</string>
+
+    <string name="music_play_share">转发</string>
+    <string name="music_play_krc_error">报错</string>
+
+    <string name="music_play_krc_errortile">歌词报错</string>
+    <string name="music_play_krc_nodata">无歌词</string>
+    <string name="music_play_krc_checksong">歌词和歌曲不符</string>
+    <string name="music_play_krc_timeserror">歌词不同步</string>
+    <string name="music_play_krc_hinterror">请输入错误原因</string>
+    <string name="music_play_krc_input">请选择或输入错误原因</string>
+    <string name="content_input">请选择相关内容</string>
+
+
+    <string name="content_back_gyq">已加入黑名单，你可以在“个人中心--设置--黑名单”中移除TA，恢复TA的歌友身份。</string>
+    <string name="cancel_back_gyq">已取消黑名单</string>
+    <string name="ta_work">TA的作品</string>
+    <string name="ta_share">TA的转发</string>
+    <string name="ta_album">TA的相册</string>
+    <string name="ta_msg_error">TA的信息数据异常</string>
+    <string name="origin_work_count">原创作品数据</string>
+    <string name="origin_work_error">TA的原创数据异常</string>
+    <string name="origin_share_error">TA的转发数据异常</string>
+    <string name="data_null">内容不能为空</string>
+    <string name="cancel_attion">确定要取消关注TA吗？</string>
+    <string name="success">成功</string>
+    <string name="tosing">想立即唱歌点这里</string>
+    <string name="listening_other">听听别人唱的怎么样点这里</string>
+    <string name="listening_local">录制过的歌曲保存在这里哟~~</string>
+    <string name="tosing_diange">点击“点歌”\n下载你伴奏后开始唱歌~~</string>
+    <string name="tosing_Search">可以语音输入喔</string>
+    <string name="tosing_club1">可以筛选作品哟</string>
+    <string name="tosing_chang_image">点击可更换背景哟</string>
+    <string name="tosing_more">点击更多惊喜哟</string>
+    <string name="tosing_singing">每天坚持签到，\n赚取更多趣唱币</string>
+    <string name="tosing_diy">来试试好玩的DIY MV \n给歌曲添加视频吧</string>
+    <string name="tosing_mp3_camera">可以却换MP3和练歌模式</string>
+    <string name="tosing_pracyic_teach">每句歌词播放两边\n第一遍听原唱，第二遍自己跟唱</string>
+    <string name="tosing_pracyic_all">上下拖动歌词，可以从任意一句开始练</string>
+    <string name="tosing_listtening">点击歌曲，听听歌吧~</string>
+
+    <string name="bqmm_downloaded">&#160;%s %%</string>
+    <string name="bqmm_downloaded_en">&#160;%s %%</string>
+
+    <!-- 商店页面加载失败提示内容 -->
+    <string name="bqmm_shop_network_error_text">页面加载失败，请检查网络后重试</string>
+    <!-- 表情键盘初始化失败提示内容 -->
+    <string name="bqmm_keyboard_network_error_text">表情键盘初始化失败，请检查网络后重试</string>
+    <!-- 重新加载按钮的内容 -->
+    <string name="bqmm_reload_button_text">重新加载</string>
+    <!-- 点击刷新按钮的内容 -->
+    <string name="bqmm_refresh_button_text">点击刷新</string>
+    <!-- 单表情详情页表情包加载失败提示内容 -->
+    <string name="bqmm_failed_get_package_text">获取表情包信息失败</string>
+    <!-- 删除表情时提示语 -->
+    <string name="bqmm_delete_package_text">删除中...</string>
+
+
+    <!-- 商店页面加载失败提示内容 -->
+    <string name="bqmm_shop_network_error_text_en">Loading failed, please check your network and connect later</string>
+    <!-- 表情键盘初始化失败提示内容 -->
+    <string name="bqmm_keyboard_network_error_text_en">Initialize failed, please check your network and connect later</string>
+    <!-- 重新加载按钮的内容 -->
+    <string name="bqmm_reload_button_text_en">Reload</string>
+    <!-- 点击刷新按钮的内容 -->
+    <string name="bqmm_refresh_button_text_en">Try Again</string>
+    <!-- 单表情详情页表情包加载失败提示内容 -->
+    <string name="bqmm_failed_get_package_text_en">Failed to get sticker pack</string>
+    <!-- 删除表情时提示语 -->
+    <string name="bqmm_delete_package_text_en">deleting...</string>
+
+    <!--清唱模块-->
+    <string name="oratorio_text1">点击下方的开始按钮,</string>
+    <string name="oratorio_text2">开始您的清唱歌喉吧!</string>
+    <string name="oratorio_music_filter">音效选择</string>
+    <string name="oratorio_recoding">录制中</string>
+    <string name="camera_oratorio_recoding">录制剩余分秒</string>
+    <string name="camera_oratorio_record">录制中</string>
+    <string name="camera_oratorio_start_record">开始录制</string>
+    <string name="camera_oratorio_record_remian">录制剩余</string>
+    <string name="camera_oratorio_record_fen">分</string>
+    <string name="camera_oratorio_record_miao">秒</string>
+    <string name="ear_listen">耳机返听</string>
+    <string name="speed_factor">练歌速度调节</string>
+
+
+    <string name="my_pk_title">我的PK</string>
+
+
+    <string name="add_name">姓名</string>
+    <string name="add_goods_name">收货人姓名</string>
+    <string name="add_goods_phone">收货人手机</string>
+    <string name="add_choose_add">选择收货地区</string>
+    <string name="add_address">收货地址</string>
+    <string name="add_detail">详细地址</string>
+    <string name="add_input_detail">请填写详细地址</string>
+    <string name="add_name_error">请输入您的名称</string>
+    <string name="add_phone_error">请输入您的手机号码</string>
+    <string name="add_add_error">请选择您的地区</string>
+    <string name="add_detail_error">请填写您的详细地址</string>
+
+    <string name="day">天</string>
+    <string name="yuan">元</string>
+    <string name="include_account">您的账户余额有  </string>
+    <string name="value_balance">可退金额：</string>
+    <string name="include_packet">（含红包</string>
+    <string name="reimbursement_prompt">说明：
+        \n1、平台赠送的红包充值到余额中的部分不可退款；
+        \n2、平台收到您的退款申请后，立即为您办理退款手续，但退款 到账时间会根据您选择的支付方式所对应的第三方支付的处理流 程不同而有所差别；通常情况下，退款到账需要2~7个工作日。</string>
+
+    <string name="equity_refunds_title">1、你无法再继续借K歌宝；
+        \n2、你已购买的月卡将被冻结，再次交纳 押金后恢复月卡有效期；
+        \n3、无法再享受平台其它会员权益。</string>
+
+    <string name="vip_equity">会员权益</string>
+    <string name="you_equity">您当前正在享受以下权益</string>
+    <string name="you_equity1">月卡有效期内，借还无次数限制</string>
+    <string name="you_equity2">可享受不定期的红包奖励</string>
+    <string name="reimbursement_deposit">退回押金</string>
+
+    <string name="balance_can_value">余额（最多可透支20.00元）</string>
+    <string name="month_card_value">月卡剩余时间</string>
+    <string name="month_5_fold">月卡5折更划算</string>
+    <string name="purchasing">购买</string>
+    <string name="purse_recharge">充值</string>
+    <string name="recharge_refund">退余款</string>
+    <string name="my_read_packet">我的红包</string>
+    <string name="deposit_payed">已交押金，可享有平台各种会员服务</string>
+    <string name="deposit_payno">已退押金，无法再享有平台各种会员服务</string>
+    <string name="pay_deposit_too">重交押金</string>
+    <string name="look">查看</string>
+    <string name="refund_success">退款成功</string>
+    <string name="apply_refund_success">申请退款成功</string>
+    <string name="look_account_detail">查看账目明细</string>
+    <string name="deposit_backed">押金已退</string>
+    <string name="share_tosing_detail">共享K歌宝借还明细</string>
+    <string name="must_pay_deposit">交押金后方可查看</string>
+    <string name="pay_deposit">交纳押金</string>
+
+
+    <string name="pay_arrears">补交欠费</string>
+    <string name="account_arrears">您的账户共有欠费 </string>
+    <string name="refunds_end">退押金后：</string>
+    <string name="refunds_sure">退押金</string>
+    <string name="refunds_no">不退了</string>
+    <string name="protocol">点击支付即同意「共享K歌宝支付协议」</string>
+    <string name="pay">支 付</string>
+    <string name="pay_weixin">微信支付</string>
+    <string name="pay_ali">支付宝支付</string>
+
+    <!--Zxing-->
+    <string name="hello_world">Hello world!</string>
+
+    <string name="camera_open_notice">您已经开启了灯光！</string>
+    <string name="camera_close_notice">您已经关闭了灯光！</string>
+
+    <string name="camera_problem">抱歉，您相机出现问题。您可能需要重启设备。</string>
+    <string name="framwork_problem">二维码扫描暂时出现问题。您重启再试。</string>
+    <string name="msg_share_subject_line">这是我所扫描条码的内容</string>
+    <string name="msg_default_mms_subject">Hi</string>
+    <string name="msg_intent_failed">抱歉，无法打开所需软件。 条码内容可能无效。</string>
+    <string name="button_ok">确定</string>
+    <string name="result_uri">网址路径</string>
+
+    <string name="button_1">浏览器打开</string>
+    <string name="button_2">内容</string>
+    <string name="button_3">其它标题</string>
+    <string name="result_title_default">网址路径</string>
+
+    <string name="qrcode_notice">将二维码放入框内</string>
+    <string name="openorclose_light">打开或关闭灯光</string>
+    <string name="qrcode_empty"></string>
+
+    <string name="qrcode_open">用浏览器打开</string>
+
+    <string name="paramete_error">参数正确，请重新扫描</string>
+    <string name="exception_text1">您如果有以下任一种异常情况，均需要按照</string>
+    <string name="exception_text2">《共享K歌宝支付协议》</string>
+    <string name="exception_text3">规定，按照设备价值认购完成，才可完成订单。未完成的订单会影响您使用平台的其它服务和押金退回。</string>
+    <string name="exception_confirm_buy">认购支付</string>
+    <string name="zhifubao">支付宝支付</string>
+
+    <string name="myaccompany_title">我的伴奏</string>
+    <string name="pk">我要PK</string>
+    <string name="pk_new">即将开始</string>
+    <string name="pk_done">活动已结束</string>
+    <string name="pk_detail_look">查看活动详情>></string>
+    <string name="call_ta">致电TA>></string>
+
+
+    <string name="krc_font">歌词字号调节</string>
+    <string name="open_camera_offset">离演唱还有</string>
+    <string name="open_camera_skip">跳过前奏</string>
+    <string name="mv_text">MV模式可额外加１００趣豆分哦～</string>
+    <string name="open_camera_time">录制时间太短</string>
+    <string name="song_tosing">演唱</string>
+    <string name="pk_detail_header">趣豆值=鲜花数*0.5+点赞数*0.5，MV视频作品额外增100趣豆。</string>
+    <string name="account_exception_text1">1、设备丢失；</string>
+    <string name="account_exception_text2">2、设备人为损坏致他人无法正常使用</string>
+    <string name="account_exception_text3">认购</string>
+    <string name="account_deposit_text1">需要押金¥299.00</string>
+    <string name="account_deposit_text2">可随时申请退回押金</string>
+    <string name="account_deposit_text3">点击去充值即同意「共享K歌宝支付协议」</string>
+    <string name="account_deposit_btn">支付</string>
+    <string name="account_pay_text1">您的账户共有欠费 6.5元</string>
+    <string name="account_pay_text2">点击支付即同意「共享K歌宝支付协议」</string>
+    <string name="account_recharge_text1">点击去充值即同意「共享K歌宝支付协议」</string>
+    <string name="account_recharge_btn">去充值</string>
+    <string name="account_recharge_month_text1">15元/1个月</string>
+    <string name="account_recharge_month_text2">30元/2个月</string>
+    <string name="account_recharge_month_text3">81元/6个月</string>
+    <string name="account_recharge_month_text4">144元/12个月</string>
+    <string name="account_recharge_month_text5">点击去充值即同意「共享K歌宝支付协议」</string>
+    <string name="account_recharge_month_btn">去充值</string>
+    <string name="album_index">上传照片（限20张）</string>
+    <string name="attention_text1">在粉丝中搜索全部</string>
+    <string name="change_image_text1">空空如也,请上传更多相片吧！</string>
+    <string name="change_image_text2">预览图</string>
+    <string name="check_pwd_text1">请为您的登录账号13588888888重新设定登录密码</string>
+    <string name="check_code">验证码</string>
+    <string name="fan_serach_text1">在粉丝中搜索全部</string>
+    <string name="forget_pwd_text1">中国</string>
+    <string name="forget_pwd_tongyi">注册即同意趣唱</string>
+    <string name="gewang_player_text1">视屏名称</string>
+    <string name="gewang_player_text2">上一首</string>
+    <string name="gewang_player_text3">暂停</string>
+    <string name="gewang_player_text4">下一首</string>
+    <string name="gewang_player_text5">上传主页</string>
+    <string name="his_home_text1">岁月金浩</string>
+    <string name="his_home_text2">草根歌手</string>
+    <string name="his_home_text3">关注TA</string>
+    <string name="his_home_text4">我想有个很有意思的签名</string>
+    <string name="his_home_text5">今日访客：0 打败了全国1%的用户</string>
+    <string name="his_home_text6">访客总计：0</string>
+    <string name="his_home_text7">关注223</string>
+    <string name="his_home_text8">粉丝223</string>
+    <string name="his_home_text9">昵称：</string>
+    <string name="his_home_text10">我是传奇</string>
+    <string name="his_home_text11">备注：</string>
+    <string name="his_home_text12">备注</string>
+    <string name="his_home_text13">不看他的歌友圈</string>
+    <string name="his_home_text14">不让他看我的歌友圈</string>
+    <string name="his_home_text15">加入黑名单</string>
+    <string name="jpush_text">高级功能</string>
+    <string name="local_commit_text1">作品名称更改</string>
+    <string name="local_commit_text2">作品封面设置</string>
+    <string name="local_commit_text3">作品上传中</string>
+    <string name="local_commit_text4">歌曲名</string>
+    <string name="local_commit_text5">保存</string>
+    <string name="login_text1">请输入密码</string>
+    <string name="login_text2">请输入账号</string>
+    <string name="login_text3">忘记密码</string>
+    <string name="login_index_text1">中国</string>
+    <string name="login_index_text2">其他方式登录</string>
+    <string name="origin_details_text1">换一批</string>
+    <string name="origin_details_text2">剩余值：69</string>
+    <string name="origin_reply_text1">回复，我就是爱音乐</string>
+    <string name="reply_list_text">回复记录</string>
+    <string name="my_flower_text">鲜花使用规则</string>
+    <string name="my_flower_text2">获得鲜花</string>
+    <string name="read_packet_text1">PK歌王平台不定期派发红包，请多关注平台活动。红包可充入钱包支付租金，不可退款到个人。</string>
+    <string name="read_packet_text2">冲入钱包</string>
+    <string name="personal_account_recharge_text1">自定义充值</string>
+    <string name="personal_account_recharge_text2">请输入您所需充值数额</string>
+    <string name="personal_account_recharge_text3">最低一元起</string>
+    <string name="personal_account_recharge_text4">应付金额为</string>
+    <string name="comment_tab_text">搜索历史</string>
+    <string name="loading_text">数据加载中……</string>
+    <string name="flower_count_text">搜索历史</string>
+    <string name="sumbit_pop">提交成功</string>
+    <string name="menu_item">未知</string>
+    <string name="share_activity_text">营业时间:</string>
+    <string name="push_time_text1">设置接收push时间</string>
+    <string name="push_text2">确定</string>
+    <string name="album_list_item_text">最近</string>
+    <string name="album_list_item_text2">4张</string>
+    <string name="album_dialog_text">相册列表</string>
+    <string name="album_dialog_text2">完成</string>
+    <string name="push_set_dialog_text1">设置Tag和Alias</string>
+    <string name="push_set_dialog_text2">设置Tag</string>
+    <string name="push_set_dialog_text3">设置Alias</string>
+    <string name="push_set_dialog_text4">定制通知栏样式</string>
+    <string name="push_set_dialog_text5">定制通知栏样式：AddActions</string>
+    <string name="push_set_dialog_text6">定制通知栏样式：Basic</string>
+    <string name="push_set_dialog_text7">定制通知栏样式：Custom</string>
+    <string name="push_set_dialog_text8">设置</string>
+    <string name="push_set_dialog_text9">设置接收push时间</string>
+    <string name="pop_text1">全选</string>
+    <string name="pop_text2">删除</string>
+    <string name="picker_birth_text1">取消</string>
+    <string name="picker_birth_text2">确定</string>
+    <string name="map_top_text1">您尚未交纳押金，暂时无法借用K歌宝</string>
+    <string name="map_top_text2">缴纳押金</string>
+    <string name="layer_frend_text1">添加好友在这里哦</string>
+    <string name="top_search_text1">导出</string>
+    <string name="top_bqmm_text1">发送</string>
+    <string name="top_bq_text1">发送</string>
+    <string name="barrage_text">评论内容</string>
+    <string name="list_detail_text">购买搞笑表情</string>
+    <string name="liast_text">中国</string>
+    <string name="down_file_text1">正在为您更新基础文件,请稍候...</string>
+    <string name="three_button_text">提示</string>
+    <string name="home_page_text1">说点什么吧。</string>
+    <string name="home_page_text2">你的声音已经把我感染了！暖暖的，流进心田~果断转发！</string>
+    <string name="home_page_text3">重写描述</string>
+    <string name="home_page_text4">提交</string>
+    <string name="delet_pic_text">已编辑</string>
+    <string name="alertdialog_text1">取消</string>
+    <string name="alertdialog_text2">确认</string>
+    <string name="done_text1">取消</string>
+    <string name="done_text2">完成</string>
+    <string name="sing_dialog_text1">去了解</string>
+    <string name="comment_text1">正在加载...</string>
+    <string name="commen_text2">正在加载...</string>
+    <string name="confirm_text1">取消</string>
+    <string name="confirm_text2">去了解</string>
+    <string name="beautyfilte_text1">滤镜</string>
+    <string name="beautyfilter_text2">无</string>
+    <string name="beautyfilter_text3">清凉</string>
+    <string name="beautyfilter_text4">蓝调</string>
+    <string name="beautyfilter_text5">粉嫩</string>
+    <string name="beautyfilter_text6">可人</string>
+    <string name="beautyfilter_text7">黑白</string>
+    <string name="beautyfilter_text8">单色</string>
+    <string name="blowing_text1">请输入举报内容</string>
+    <string name="blowing_text2">提 交</string>
+    <string name="edit_text1">提示性语言</string>
+    <string name="edit_text2">我在想一个伟大的个性签名~</string>
+    <string name="detail_doing_text1">活动时间</string>
+    <string name="detail_doing_text2">活动奖品</string>
+    <string name="detail_doing_text3">冠军奖品</string>
+    <string name="detail_doing_text4">（*实物以发放为准）</string>
+    <string name="detail_doing_text5">冠军奖品</string>
+    <string name="detail_doing_text6">（*实物以发放为准）</string>
+    <string name="detail_doing_text7">冠军奖品</string>
+    <string name="detail_doing_text8">（*实物以发放为准）</string>
+    <string name="detail_doing_text9">活动要求</string>
+    <string name="detail_doing_text10">活动要求</string>
+    <string name="detail_doing_text11">评选规则</string>
+    <string name="detail_doing_text12">评选规则</string>
+    <string name="detail_doing_text13">全程战略合作伙伴</string>
+    <string name="detail_doing_text14">全程战略合作伙伴</string>
+    <string name="clear_text1">清除合成合成过程中的垃圾数据</string>
+    <string name="clear_text2">清除录音文件夹的数据</string>
+    <string name="clear_text3">清除解码文件夹的数据</string>
+    <string name="clear_text4">清除网络缓存数据</string>
+    <string name="clear_text5">清除KRC</string>
+    <string name="clear_text6">清除lrc</string>
+    <string name="clear_text7">清除image</string>
+    <string name="clear_text8">全选、取消</string>
+    <string name="manual_text1">姓名</string>
+    <string name="manual_text2">请输入真实姓名</string>
+    <string name="manual_text3">身份证号</string>
+    <string name="manual_text4">请输入身份证号码</string>
+    <string name="manual_text5">手持证件照</string>
+    <string name="manual_text6">证件正面照</string>
+    <string name="manual_text7">请提供两张照片，一张为本人手持身份证件的正面合影，另一张为身份证件原件照。请确保五官、证件内页内容均清晰可见（限中华人民共和国身份证、护照、台胞证）。我们将在24小时内完成人工审核。</string>
+    <string name="manual_text8">去验证</string>
+    <string name="finish_text1">实名认证没有通过</string>
+    <string name="finish_text2">您提交的信息有误，请重新提交正确的身份信息再次尝试。</string>
+    <string name="finish_text3">去验证</string>
+    <string name="finish_text4">多次认证失败,清点这里</string>
+    <string name="identification_text1">为保障你和其他用户更好地使用K歌宝，需要您完成实名验证。</string>
+    <string name="identification_text2">姓名</string>
+    <string name="identification_text3">请输入真实姓名</string>
+    <string name="identification_text4">身份证号</string>
+    <string name="identification_text5">请输入身份证号码</string>
+    <string name="identification_text6">去认证</string>
+    <string name="my_flower_text3">我的鲜花明细</string>
+    <string name="flower_text1">鲜花总数：</string>
+    <string name="flower_text">朵</string>
+    <string name="pkdetail_new_phone"><![CDATA[查看参赛手机号>>]]></string>
+    <string name="pk_new_text">距离活动开始还有：</string>
+    <string name="pk_end_text">距离活动结束还有：</string>
+    <string name="pk_new_text1">比赛负责人电话</string>
+    <string name="one_dialog_text">提交号码</string>
+    <string name="one_dialog_text1">修改号码</string>
+    <string name="hiostory_pk_text">历届PK大赛</string>
+    <string name="share_text1">收藏成功啦</string>
+    <string name="share_text2">分享成功啦</string>
+    <string name="replay_text1">回复列表</string>
+    <string name="replay_text2">回复</string>
+    <string name="commit_text1">上传到我的主页</string>
+    <string name="commit_text2">上传</string>
+    <string name="gewang_text1">不可上传</string>
+    <string name="gewang_text2">您的作品时长没有超过60秒，请重新录制长一点。</string>
+    <string name="gewang_text3">您的作品时长   =</string>
+    <string name="my_purse_text">明细</string>
+    <string name="pking_new_text1">参与pk作品有</string>
+    <string name="pking_new_text2">首 | 距离结束还有</string>
+    <string name="pking_text1">欣赏参赛作品</string>
+    <string name="pk_songs">PK曲目</string>
+    <string name="activity_time">活动时间:</string>
+    <string name="pre_activity_time">活动时间:</string>
+    <string name="pk_item_name1">进行中活动</string>
+    <string name="pk_item_name2">活动预告</string>
+</resources>

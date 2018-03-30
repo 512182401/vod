@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/ll_customdialog_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_both_red_white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_alertdialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_top_red_red"
+            android:gravity="center_vertical"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:text="标题"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_alertdialog_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="60dp"
+            android:padding="5dp"
+            android:textColor="@color/app_red"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/bt_alertdialog_cancle"
+                style="@style/bt_alertdialog"
+                android:layout_weight="1"
+                android:text="@string/alertdialog_text1" />
+
+            <Button
+                android:id="@+id/bt_alertdialog_ok"
+                style="@style/bt_alertdialog"
+                android:layout_weight="1"
+                android:text="@string/alertdialog_text2" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

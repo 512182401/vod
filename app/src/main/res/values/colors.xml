@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#dc342a</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colortop">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="black">#000000</color>
+    <color name="app_red">#dc342a</color>
+    <color name="app_def">#333333</color>
+    <color name="app_e6">#e6e6e6</color>
+    <color name="tv_b3">#b3b3b3</color>
+    <color name="tv_3b">#3b3b3b</color>
+    <color name="line_e2">#e2e2e2</color>
+    <color name="text_2e">#2e2e2e</color>
+    <color name="text_2a">#2a2a2a</color>
+    <color name="login_input_b8">#b8b7b7</color>
+    <color name="et_hint">#b8b7b7</color>
+    <color name="app_5f">#5f5e5e</color>
+    <color name="app_oher_red">#ff5f5f</color>
+    <color name="app_ef">#efeff4</color>
+    <color name="app_bg">#efeff4</color>
+    <color name="alpa_white">#88fefefe</color>
+    <color name="app_28">#282828</color>
+    <color name="app_7b">#7b7b7b</color>
+    <color name="app_2c">#2C6BEA</color>
+    <color name="app_68">#2877ee</color>
+    <color name="app_eb">#ebebeb</color>
+    <color name="alpa_white_20f">#25000000</color>
+    <color name="app_e1">#e1e1e1</color>
+    <color name="app_f1">#F1F1F1</color>//热听页面图片边框
+    <color name="app_57">#576b95</color>//热听页面图片边框
+    <color name="app_5d">#FD5E5E</color>
+    <color name="app_f9">#f9f9f9</color>
+    <color name="app_f2">#F1F1F1</color>
+    <color name="app_07f">#0072FF</color>
+    <color name="umeng_white">#ffffff</color>
+    <color name="umeng_blue">#0086DC</color>
+    <color name="umeng_black">#000000</color>
+    <color name="umeng_background">#D4E0E5</color>
+    <color name="umeng_text_color">#575A5C</color>
+    <color name="umeng_divide">#C3C6C9</color>
+    <color name="app_a7">#a7a7a9</color>
+
+
+    <color name="transparent">#00000000</color>
+    <!--完成按钮背景颜色-->
+    <color name="tb_finsh_bg">#3F51B5</color>
+    <color name="personal_item_light">#88eeeeee</color>
+    <!--登录按钮-->
+    <color name="login_item_light">#FFFF0000</color>
+
+    <color name="tv_f7">#f7f7f7</color>
+    <color name="tv_80">#808080</color>
+    <color name="tv_e6">#e6e6e6</color>
+    <color name="tv_e9">#e9e9e9</color>
+
+    <color name="list_lighted_color">#77cccccc</color>
+    <!-- 从底部弹出 -->
+    <color name="actionsheet_gray">#8F8F8F</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <!-- 从中间弹出的提示框 -->
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="app_f6">#f6f6f6</color>
+
+    <color name="nomal_text">#2a2a2a</color>
+    <color name="gray_text">#5f5e5e</color>
+    <!--SeekBar背景色-->
+    <color name="bg_seekbar">#959595</color>
+    <!--对话框点击前的颜色-->
+    <color name="bg_alert">#0078ff</color>
+    <color name="app_18">#187ef1</color>
+    <!---->
+    <color name="bg_progress">#0099ff</color>
+    <!--听歌/练歌页面背景-->
+    <color name="bg_play">#141414</color>
+    <color name="bg_floating_music">#f6f6f6</color>
+    <color name="maincolor">#84d8d1</color><!-- 主色调 -->
+    <color name="maincolor_bg">#2284d8d1</color><!-- 主色调 -->
+    <color name="halfBlack">#88000000</color>
+    <color name="home_botton">#db342b</color>
+    <!--编辑图片-->
+    <color name="materialcolorpicker__white">#ffffff</color>
+    <color name="materialcolorpicker__red">#f44336</color>
+    <color name="materialcolorpicker__green">#4caf50</color>
+    <color name="materialcolorpicker__blue">#2196f3</color>
+    <color name="materialcolorpicker__grey">#b3b3b3</color>
+    <color name="materialcolorpicker__lightgrey">#d9d9d9</color>
+    <color name="materialcolorpicker__dribble">#ea4c89</color>
+    <color name="materialcolorpicker__dribbledark">#c32361</color>
+    <color name="materialcolorpicker__black">#000000</color>
+    <color name="materialcolorpicker__dialogcolor">#009688</color>
+
+    <color name="color_381902">#381902</color>
+    <color name="transparent2">#50000000</color>
+    <color name="camera_progress_three">#24ff00</color>
+    <color name="camera_bg">#2c2c2c</color>
+    <color name="camera_progress_split">#005084</color>
+    <color name="camera_progress_delete">#f68b2b</color>
+    <color name="camera_progress_overflow">#1b5d89</color>
+    <color name="color_4e3d31">#4e3d31</color>
+    <color name="grey8">#888888</color>
+    <color name="transparent_black_85">#DA000000</color>
+
+
+    <color name="bqmm_background_tab_pressed">#6633B5E5</color>
+    <color name="bqmm_pop_bg">#eeffffff</color>
+    <color name="bqmm_transparent">#00000000</color>
+    <color name="bqmm_ui_image_bg">#ffcfcfcf</color>
+
+    <!-- 商店标题栏背景颜色 -->
+    <color name="bqmm_titlebar_bg">#ff2e2e2e</color>
+    <!-- 商店标题栏字体颜色 -->
+    <color name="bqmm_titletext_tc">#ffffffff</color>
+
+    <!-- 我的表情页面排序按钮字体颜色 -->
+    <color name="bqmm_sort_button_color">#ffffffff</color>
+    <!-- 排序页面排序完成按钮字体颜色 -->
+    <color name="bqmm_sort_finish_button_color">#ff36cab6</color>
+
+    <!-- 商店下载按钮字体颜色      下载前 -->
+    <color name="bqmm_download_button_text_color_download">#ff36cab6</color>
+    <!-- 商店下载按钮字体颜色      下载后 -->
+    <color name="bqmm_download_button_text_color_downloaded">#ffbcbcbc</color>
+    <!-- 商店下载按钮字体颜色       下载中 -->
+    <color name="bqmm_download_button_text_color_downloading">#ffffffff</color>
+    <!-- 商店下载按钮边框颜色       下载前 -->
+    <color name="bqmm_download_button_border_color_download">#ffbcbcbc</color>
+    <!-- 商店下载按钮边框颜色       下载后 -->
+    <color name="bqmm_download_button_border_color_downloaded">#ffbcbcbc</color>
+    <!-- 商店下载按钮背景颜色      下载前 -->
+    <color name="bqmm_download_button_background_color_download">#ffffffff</color>
+    <!-- 商店下载按钮背景颜色      下载后 -->
+    <color name="bqmm_download_button_background_color_downloaded">#ffffffff</color>
+    <!-- 商店下载按钮进度条颜色 -->
+    <color name="bqmm_download_button_progress_color">#ff36cab6</color>
+    <!-- 商店下载按钮进度条背景颜色 -->
+    <color name="bqmm_download_button_progress_background_color">#00000000</color>
+
+    <!-- 表情包详情页面下载按钮进度条颜色 -->
+    <color name="bqmm_emoji_package_detail_download_button_progress_color">#ff36cab6</color>
+    <!-- 表情包详情页面下载按钮进度条背景颜色 -->
+    <color name="bqmm_emoji_package_detail_download_button_progress_background_color">#00000000
+    </color>
+
+    <!-- 表情详情页面下载按钮进度条颜色 -->
+    <color name="bqmm_emoji_detail_download_button_progress_color">#ff36cab6</color>
+    <!-- 表情详情页面下载按钮进度条背景颜色 -->
+    <color name="bqmm_emoji_detail_download_button_progress_background_color">#00000000</color>
+
+    <!-- 推荐位下载按钮进度条颜色 -->
+    <color name="bqmm_recommend_download_button_progress_color">#ff36cab6</color>
+    <!-- 推荐位下载按钮进度条背景颜色 -->
+    <color name="bqmm_recommend_download_button_progress_background_color">#00000000</color>
+
+    <!-- 商店移除按钮字体颜色 -->
+    <color name="bqmm_delete_button_text_color">#ffe98182</color>
+    <!-- 商店移除按钮边框颜色 -->
+    <color name="bqmm_delete_button_border_color">#ffbcbcbc</color>
+    <!-- 商店移除按背景框颜色 -->
+    <color name="bqmm_delete_button_background_color">#00000000</color>
+
+    <!-- 页面加载失败提示内容字体颜色 -->
+    <color name="bqmm_shop_network_error_text_color">#ffbcbcbc</color>
+    <!-- 键盘初始化失败提示内容字体颜色 -->
+    <color name="bqmm_keyboard_network_error_text_color">#ffbcbcbc</color>
+    <!-- 重新加载按钮边框颜色 -->
+    <color name="bqmm_reload_button_border_color">#ffbcbcbc</color>
+    <!-- 重新加载按钮内容颜色 -->
+    <color name="bqmm_reload_button_text_color">#ff36cab6</color>
+    <!-- 重新加载按钮背景颜色 -->
+    <color name="bqmm_reload_button_background_color">#ffffffff</color>
+    <!-- 点击刷新按钮内容颜色 -->
+    <color name="bqmm_refresh_button_text_color">#ff36cab6</color>
+    <!-- 点击刷新按钮背景颜色 -->
+    <color name="bqmm_refresh_button_background_color">#ffffffff</color>
+
+    <!-- 单表情详情页表情包加载失败提示内容颜色 -->
+    <color name="bqmm_failed_get_package_text_color">#ffbcbcbc</color>
+
+    <!-- 底部tab选中状态颜色 -->
+    <color name="bqmm_tab_selected_color">#33bcbcbc</color>
+    <!-- 底部tab栏背景颜色 -->
+    <color name="bqmm_tab_background_color">#ffffffff</color>
+    <!-- 表情键盘背景颜色 -->
+    <color name="bqmm_keyboard_background_color">#fff6f6f6</color>
+
+    <!-- 表情键盘商店按钮图案颜色 -->
+    <color name="bqmm_keyboard_shop_button_color">#ffffffff</color>
+    <!-- 表情键盘商店按钮背景颜色 -->
+    <color name="bqmm_keyboard_shop_button_background_color">#ff36cab6</color>
+
+    <!-- 默认大表情表情未下载覆盖层背景颜色 -->
+    <color name="bqmm_preload_covered_layout_background_color">#88000000</color>
+    <!-- 默认大表情包标题内容颜色 -->
+    <color name="bqmm_preload_package_name_text_color">#ffffffff</color>
+
+    <!-- 默认大表情下载按钮内容颜色    下载前 -->
+    <color name="bqmm_preload_button_text_color_download">#ffffffff</color>
+    <!-- 默认大表情下载按钮内容颜色    下载中 -->
+    <color name="bqmm_preload_button_text_color_downloading">#ffffffff</color>
+    <!-- 默认大表情下载按钮边框颜色 -->
+    <color name="bqmm_preload_button_border_color">#ffffffff</color>
+    <!-- 默认大表情下载进度条颜色 -->
+    <color name="bqmm_preload_button_progress_color">#ff36cab6</color>
+    <!-- 默认大表情下载进度条背景颜色 -->
+    <color name="bqmm_preload_button_progress_background_color">#00000000</color>
+    <!-- 默认大表情下载按钮背景颜色 -->
+    <color name="bqmm_preload_button_background_color">#ff36cab6</color>
+    <!--进度条背景-->
+    <color name="progresscolor">#5F5E5E</color>
+    <color name="skr_three_color">#474646</color>
+
+    <!--Zxing-->
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color> <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <!--<color name="transparent">#00000000</color>-->
+    <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="viewfinder_frame">#ff88ae00</color>
+    <color name="exception_text1">#2A2A2A</color>
+    <color name="exception_text2">#198EDA</color>
+    <color name="copy_text">#acb9ff</color>
+
+</resources>

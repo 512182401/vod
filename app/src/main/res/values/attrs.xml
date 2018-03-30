@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--下载圆形进度条属性-->
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundColor" format="color" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="roundWidth" format="dimension"></attr>
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="max" format="integer"></attr>
+        <attr name="textIsDisplayable" format="boolean"></attr>
+        <attr name="style">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <!--krc控件属性-->
+    <declare-styleable name="Lrc">
+        <attr name="textSize2" format="dimension" />
+        <attr name="normalTextColor" format="reference|color" />
+        <attr name="currentTextColor" format="reference|color" />
+        <attr name="dividerHeight" format="dimension" />
+        <attr name="rows" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="GifMoviewView">
+        <attr name="gif" format="reference" />
+        <attr name="paused" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTheme">
+        <attr name="gifMoviewViewStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressTextView">
+        <attr name="reachBarColor" format="reference" />
+        <attr name="reachTextColor" format="reference" />
+        <attr name="unReachBarColor" format="reference" />
+        <attr name="unReachTextColor" format="reference" />
+        <attr name="progress" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="AnimDownloadProgressButton">
+        <attr name="progressbtn_radius" format="float" />
+        <attr name="progressbtn_backgroud_color" format="color" />
+        <attr name="progressbtn_backgroud_second_color" format="color" />
+        <attr name="progressbtn_text_color" format="color" />
+        <attr name="progressbtn_text_covercolor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="FlowLayout">
+        <attr name="android:gravity" />
+    </declare-styleable>
+    <declare-styleable name="FlowLayout_Layout">
+        <attr name="android:layout_gravity" />
+    </declare-styleable>
+    <!--音乐节奏-->
+    <declare-styleable name="GifView">
+        <attr name="isgifimage" format="boolean" />
+    </declare-styleable>
+    <!--仿应用宝下载进度条-->
+    <declare-styleable name="FlikerProgressBar">
+        <attr name="textSize1" format="dimension"/>
+
+        <attr name="loadingColor" format="color"/>
+
+        <attr name="stopColor" format="color"/>
+
+        <attr name="borderColor" format="color"/>
+
+        <attr name="textPaintColor" format="color"/>
+
+        <attr name="radius" format="dimension"/>
+
+        <attr name="borderWidth" format="dimension"/>
+
+
+    </declare-styleable>
+
+    <!--描边字体-->
+    <declare-styleable name="StrokeTextView">
+        <attr name="tv_border_color" format="color"/>
+        <attr name="tv_border_width" format="dimension"/>
+    </declare-styleable>
+
+    <!--百度地图-->
+    <declare-styleable name="map_top">
+        <attr name="map_top_text" format="string"/>
+        <attr name="map_top_btn_text" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="rotate_text">
+        <attr name="mytext" format="string" />
+    </declare-styleable>
+</resources>

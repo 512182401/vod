@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="crop__button_bar">#f3f3f3</color>
+    <color name="crop__button_text">#666666</color>
+    <color name="crop__selector_pressed">#1a000000</color>
+    <color name="crop__selector_focused">#77000000</color>
+
+
+    <color name="card_grey">#b3b3b3</color>
+    <color name="commit_normal">#D61008</color>
+    <color name="commit_lighted">#88D61008</color>
+    <color name="back_normal">#d01109</color>
+    <color name="back_lighted">#88cccccc</color>
+</resources>
