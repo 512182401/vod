@@ -45,6 +45,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
 
+
+    @Override
+    public void permissionSuccess(int request_code_permission) {
+        super.permissionSuccess(request_code_permission);
+        if (request_code_permission == 0x002) {
+            makeDirs();
+        }
+    }
+
     private void makeDirs() {
         File lyric = MyFileUtil.getDir("lyric");
         File image = MyFileUtil.getDir("image");
