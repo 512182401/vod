@@ -1,18 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.changxiang.vod.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--按钮区域-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/choose_tvSinger"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/choose_singer"
+            android:gravity="center"
+            android:text="@string/choose_singer"
+            android:textColor="@color/app_5f"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/choose_tvType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/choose_type1"
+            android:gravity="center"
+            android:text="@string/choose_type"
+            android:textColor="@color/app_5f"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/choose_tvTop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/choose_top"
+            android:gravity="center"
+            android:text="@string/choose_top"
+            android:textColor="@color/app_5f"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/choose_tvOratorio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/choose_ortario"
+            android:gravity="center"
+            android:text="@string/play_oratorio"
+            android:textColor="@color/app_5f"
+            android:textSize="13sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="13dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/choose_tvLocal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/choose_local"
+            android:gravity="center"
+            android:text="@string/local_work"
+            android:textColor="@color/app_5f"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/choose_tvUpdata"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:drawableTop="@mipmap/choose_has_updata"
+            android:gravity="center"
+            android:text="@string/updata_local_video"
+            android:textColor="@color/app_5f"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/choose_tvDownload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/choose_has_download"
+            android:gravity="center"
+            android:text="@string/downloaded_song"
+            android:textColor="@color/app_5f"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/choose_tvRecently"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/choose_recently"
+            android:gravity="center"
+            android:text="@string/play_recently"
+            android:textColor="@color/app_5f"
+            android:textSize="13sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

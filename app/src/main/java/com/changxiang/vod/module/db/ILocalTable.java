@@ -9,9 +9,9 @@ public interface ILocalTable {
 
     public static final String _ID = "_id";
     //表名
-    public static final String TABLE_NAME_LOCAL = "VodMedia";
+    public static final String TABLE_NAME_LOCAL = "songs";
     //数据库名
-    public static final String DB_NAME = "VodMedia.db";
+    public static final String DB_NAME = "vod.db";
 
 
 
