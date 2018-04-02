@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg">
+
+    <include
+        android:id="@+id/login_top"
+        layout="@layout/item_top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <!--音乐悬浮窗-->
+    <FrameLayout
+        android:id="@+id/top_choose_floating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_top"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/login_lin1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/top_choose_floating"
+        android:background="@color/line_e2" />
+
+    <HorizontalScrollView
+        android:id="@+id/hzts_add"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_below="@+id/login_lin1"
+        android:orientation="horizontal"
+        android:background="@color/app_bg"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/ll_add"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:background="@color/app_bg"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/login_lin2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/hzts_add"
+        android:background="@color/line_e2" />
+
+    <HorizontalScrollView
+        android:id="@+id/hzts_sex"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:background="@color/app_bg"
+        android:layout_below="@+id/login_lin2"
+        android:orientation="horizontal"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/ll_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:background="@color/app_bg"
+            android:orientation="horizontal"></LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/login_lin3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/hzts_sex"
+        android:background="@color/line_e2" />
+
+    <HorizontalScrollView
+        android:id="@+id/hzts_type"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:background="@color/app_bg"
+        android:layout_below="@+id/login_lin3"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_type"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:background="@color/app_bg"
+            android:orientation="horizontal"></LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/login_lin4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/hzts_type"
+        android:background="@color/line_e2" />
+
+    <TextView
+        android:id="@+id/show_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_lin4"
+        android:background="@color/white"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/hot_recommend2"
+        android:textColor="@color/text_2e" />
+
+    <TextView
+        android:id="@+id/login_lin5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/show_text"
+        android:background="@color/line_e2" />
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/login_lin5"
+
+        >
+    <ListView
+        android:id="@+id/xl_singer_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:scrollbars="none"
+        android:background="@color/white"/>
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+    <com.changxiang.vod.module.pinyinindexing.QuickindexBar
+        android:id="@+id/slideBar"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/login_lin4"
+        android:background="#00ffffff" />
+    <LinearLayout
+        android:id="@+id/ll_no_data_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@+id/login_lin5"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/no_data_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableTop="@drawable/empty"
+            android:drawablePadding="10dp"
+            android:text="空空如也"
+            android:gravity="center"
+            />
+    </LinearLayout>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_zimu"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ts"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@android:color/white"
+        android:textSize="30dp" />
+</RelativeLayout>

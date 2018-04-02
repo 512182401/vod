@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/login_top"
+        layout="@layout/item_top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <!--音乐悬浮窗-->
+    <FrameLayout
+        android:id="@+id/top_choose_floating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_top"
+        />
+
+    <RelativeLayout
+        android:id="@+id/local_rl"
+        android:layout_below="@+id/top_choose_floating"
+        android:background="@color/app_ef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <android.support.design.widget.TabLayout
+        android:id="@+id/local_music_tl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabBackground="@color/app_ef"
+        app:tabIndicatorColor="#FD5E5E"
+        app:tabSelectedTextColor="#FD5E5E"
+        app:tabTextColor="@color/black">
+    </android.support.design.widget.TabLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rl_daohang"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/login_top"
+        android:background="@color/app_ef"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_my_production"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/app_ef"
+            android:textSize="18sp"
+            android:text="我的作品" />
+
+        <TextView
+            android:id="@+id/tv_down_production"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:background="@color/app_ef"
+            android:textSize="18sp"
+            android:text="歌友作品" />
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_data_chang"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/local_rl"
+        android:layout_height="fill_parent"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation"/>
+    <!--<FrameLayout-->
+        <!--android:id="@+id/fl_data_show"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_below="@+id/rl_daohang"-->
+        <!--android:layout_height="match_parent">-->
+
+    <!--</FrameLayout>-->
+    <!--<ListView-->
+        <!--android:id="@+id/lv_my_production"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_below="@+id/rl_daohang"-->
+        <!--android:layout_height="match_parent"-->
+        <!--/>-->
+    <!--<ListView-->
+        <!--android:id="@+id/lv_down_production"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_below="@+id/rl_daohang"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="gone"-->
+        <!--/>-->
+</RelativeLayout>

@@ -101,6 +101,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".module.ui.SingerIndexNewActivity"
+            android:screenOrientation="portrait" />
+
+
+        <!-- 本地音乐 -->
+        <activity
+            android:name=".module.ui.LocalMusicIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

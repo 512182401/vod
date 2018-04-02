@@ -9,7 +9,7 @@ public interface ISingerTable {
 
     public static final String _ID = "_id";
     //表名
-    public static final String TABLE_NAME_LOCAL = "singers";
+    public static final String TABLE_NAME_SINGERS = "singers";
     //数据库名
     public static final String DB_NAME = "vod.db";
 
