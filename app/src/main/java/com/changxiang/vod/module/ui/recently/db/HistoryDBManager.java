@@ -6,8 +6,8 @@
 //import android.database.sqlite.SQLiteDatabase;
 //
 //
-//import com.changxiang.vod.common.utils.LogUtils;
-//import com.changxiang.vod.module.db.IDownloadTable;
+//import com.changxiang.VodMedia.common.utils.LogUtils;
+//import com.changxiang.VodMedia.module.db.IDownloadTable;
 //
 //import java.util.ArrayList;
 //import java.util.List;

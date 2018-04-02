@@ -1,7 +1,7 @@
 //package com.changxiang.vod.common.utils;
 //
 //
-//import com.changxiang.vod.R;
+//import com.changxiang.VodMedia.R;
 //
 ///**
 // * 通过随机数数获取不同图片

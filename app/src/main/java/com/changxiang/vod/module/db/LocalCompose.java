@@ -16,7 +16,7 @@ public class LocalCompose implements Serializable {
     6：解码是否完成：Compose_MuxerDecode
     7：合成是否完成：Compose_MuxerTask
     8：是否已经上传（Compose_）：
-    9：对应的songid：
+    9：对应的songid
     10：开始录制时间：Compose_begin
     11：结束录制时间：Compose_finish
     12：是否删除（预留）Compose_delete

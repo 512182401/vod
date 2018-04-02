@@ -6,8 +6,18 @@ package com.changxiang.vod.module.db;
 
 public interface ILocalTable {
 
+
+    public static final String _ID = "_id";
+    //表名
+    public static final String TABLE_NAME_LOCAL = "VodMedia";
+    //数据库名
+    public static final String DB_NAME = "VodMedia.db";
+
+
+
+
     //    SONGBM 歌曲编码
-    public static final String IDSONGBM = "SONGBM";
+    public static final String SONGBM = "SONGBM";
     //    SONGNAME  歌曲名称
     public static final String SONGNAME="SONGNAME";
     //    ZS

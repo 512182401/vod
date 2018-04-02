@@ -9,7 +9,7 @@
 //import android.view.WindowManager;
 //import android.widget.TextView;
 //
-//import com.changxiang.vod.R;
+//import com.changxiang.VodMedia.R;
 //
 //
 //public class SingDialog extends Dialog implements View.OnClickListener {

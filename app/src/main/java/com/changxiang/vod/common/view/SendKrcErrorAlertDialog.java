@@ -15,7 +15,7 @@
 //import android.widget.LinearLayout;
 //import android.widget.TextView;
 //
-//import com.changxiang.vod.R;
+//import com.changxiang.VodMedia.R;
 //
 //
 ////import tosingpk.quchangkeji.com.quchangpk.R;

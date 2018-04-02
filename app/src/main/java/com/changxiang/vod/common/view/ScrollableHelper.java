@@ -21,7 +21,7 @@
 // *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // *  SOFTWARE.
 // */
-//package com.changxiang.vod.common.view;
+//package com.changxiang.VodMedia.common.view;
 //
 //import android.annotation.SuppressLint;
 //import android.os.Build;

@@ -51,7 +51,7 @@ public class MyFileUtil {
 
     //获取应用目录
     public static File getAppDir() {
-        File dir = new File(getSDcardDir(), "vod");
+        File dir = new File(getSDcardDir(), "VodMedia");
         if (!dir.exists()) {
             dir.mkdir();
         }

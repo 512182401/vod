@@ -13,7 +13,7 @@
 //import android.widget.LinearLayout;
 //import android.widget.TextView;
 //
-//import com.changxiang.vod.R;
+//import com.changxiang.VodMedia.R;
 //
 //
 //@SuppressWarnings(value = { "all" })

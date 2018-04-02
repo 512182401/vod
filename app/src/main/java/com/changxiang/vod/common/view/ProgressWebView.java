@@ -14,7 +14,7 @@
 //import android.widget.ProgressBar;
 //import android.widget.TextView;
 //
-//import com.changxiang.vod.R;
+//import com.changxiang.VodMedia.R;
 //
 //
 ///**

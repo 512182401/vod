@@ -16,8 +16,8 @@
 //import android.util.AttributeSet;
 //import android.view.View;
 //
-//import com.changxiang.vod.R;
-//import com.changxiang.vod.common.utils.DensityUtil;
+//import com.changxiang.VodMedia.R;
+//import com.changxiang.VodMedia.common.utils.DensityUtil;
 //
 //
 ///**

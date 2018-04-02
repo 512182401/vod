@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.changxiang.vod"
+        applicationId "com.changxiang.VodMedia"
         minSdkVersion 18
         targetSdkVersion 26
         versionCode 1

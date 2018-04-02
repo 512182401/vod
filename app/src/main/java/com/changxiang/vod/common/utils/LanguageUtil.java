@@ -2,7 +2,7 @@
 //
 //import java.util.Locale;
 //
-//import static com.changxiang.vod.common.utils.SharedPrefManager.getInstance;
+//import static com.changxiang.VodMedia.common.utils.SharedPrefManager.getInstance;
 //
 //
 ///**

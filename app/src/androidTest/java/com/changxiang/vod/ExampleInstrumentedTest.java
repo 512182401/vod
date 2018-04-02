@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.changxiang.vod", appContext.getPackageName());
+        assertEquals("com.changxiang.VodMedia", appContext.getPackageName());
     }
 }

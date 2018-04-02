@@ -1,5 +1,5 @@
 //
-//package com.changxiang.vod.common.utils;
+//package com.changxiang.VodMedia.common.utils;
 //
 //import com.melink.bqmmsdk.bean.Emoji;
 //import com.melink.bqmmsdk.resourceutil.BQMMConstant;

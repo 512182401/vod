@@ -7,7 +7,7 @@
 //import android.view.SurfaceHolder;
 //import android.view.SurfaceView;
 //
-//import com.changxiang.vod.common.utils.LogUtils;
+//import com.changxiang.VodMedia.common.utils.LogUtils;
 //
 //
 ///**
