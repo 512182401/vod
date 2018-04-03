@@ -18,13 +18,13 @@
 //import android.widget.ScrollView;
 //import android.widget.TextView;
 //
-//import com.quchangkeji.tosingpk.R;
-//import com.quchangkeji.tosingpk.common.utils.LogUtils;
-//import com.quchangkeji.tosingpk.module.entry.KrcLine;
-//import com.quchangkeji.tosingpk.module.entry.KrcLineTime;
-//import com.quchangkeji.tosingpk.module.entry.KrcWord;
-//import com.quchangkeji.tosingpk.module.musicInfo.DisplayUtil;
-//import com.quchangkeji.tosingpk.module.musicInfo.ILrcStateContain;
+////import com.quchangkeji.tosingpk.R;
+////import com.quchangkeji.tosingpk.common.utils.LogUtils;
+////import com.quchangkeji.tosingpk.module.entry.KrcLine;
+////import com.quchangkeji.tosingpk.module.entry.KrcLineTime;
+////import com.quchangkeji.tosingpk.module.entry.KrcWord;
+////import com.quchangkeji.tosingpk.module.musicInfo.DisplayUtil;
+////import com.quchangkeji.tosingpk.module.musicInfo.ILrcStateContain;
 //
 //import java.util.List;
 //import java.util.regex.Pattern;
