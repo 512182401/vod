@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include android:id="@+id/login_top"
+        layout="@layout/item_top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+
+    <!--音乐悬浮窗-->
+    <FrameLayout
+        android:id="@+id/top_choose_floating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_top"
+        />
+
+    <ListView
+        android:id="@+id/activity_recently_lv"
+        android:layout_below="@+id/top_choose_floating"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:visibility="visible"/>
+    <TextView
+        android:id="@+id/tv_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableTop="@drawable/empty"
+        android:drawablePadding="10dp"
+        android:text="还没有播放记录，快去练歌吧!"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

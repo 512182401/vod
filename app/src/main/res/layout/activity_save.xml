@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/save_practice_drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/save_allRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_play">
+        <!--高斯模糊背景-->
+        <ImageView
+            android:id="@+id/blurry_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#44000000" />
+
+        <ScrollView
+            android:id="@+id/save_sv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ortario_camera_record">
+
+            <RelativeLayout
+                android:id="@+id/content_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:id="@+id/activity_play_record_fl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/video_height" />
+                <!--歌词部分-->
+                <com.quchangkeji.tosingpk.common.view.StrokeTextView
+                    android:id="@+id/last_lrcTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/next_lrcTv"
+                    android:layout_marginLeft="20dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="17dp"
+                    android:visibility="visible"
+                    app:tv_border_color="@color/app_oher_red"
+                    app:tv_border_width="1dp" />
+
+                <com.quchangkeji.tosingpk.common.view.StrokeTextView
+                    android:id="@+id/next_lrcTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/activity_save_tvTotal"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="17dp"
+                    android:visibility="visible"
+                    app:tv_border_color="@color/app_oher_red"
+                    app:tv_border_width="1dp" />
+
+                <TextView
+                    android:id="@+id/activity_save_tvCurrent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/activity_play_record_fl"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text=""
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/activity_save_tvTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/activity_play_record_fl"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="@dimen/muscic_play_marinLeft"
+                    android:text=""
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:id="@+id/activity_save_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/activity_play_record_fl"
+                    android:layout_alignTop="@+id/activity_play_record_fl">
+                    <!--歌曲封面-->
+                    <ImageView
+                        android:id="@+id/activity_save_imgCover"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/tv_mv" />
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/activity_save_tvCurrent"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/activity_save_tvTotal"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:layout_marginRight="@dimen/muscic_play_marinLeft"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:textSize="12sp" />-->
+                </RelativeLayout>
+
+                <SeekBar
+                    android:id="@+id/activity_save_playSb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activity_save_rl"
+                    android:layout_marginLeft="-15dp"
+                    android:layout_marginRight="-15dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="#00ffffff"
+                    android:maxHeight="3dp"
+                    android:minHeight="3dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/bg_seekbar"
+                    android:secondaryProgress="0"
+                    android:thumb="@drawable/seekbar_thumb"
+                    android:thumbOffset="0dp" />
+
+                <LinearLayout
+                    android:id="@+id/activity_save_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activity_save_playSb"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <!--selector_save_practice_repeat-->
+                    <TextView
+                        android:id="@+id/activity_save_repeat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="11dp"
+                        android:drawableTop="@drawable/selector_save_repeat"
+                        android:gravity="center"
+                        android:text="@string/reRecord"
+                        android:textColor="@drawable/selector_text_click"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/activity_save_preview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawablePadding="11dp"
+                        android:drawableTop="@drawable/selector_save_practice_preview"
+                        android:gravity="center"
+                        android:text="@string/preview"
+                        android:textColor="@drawable/selector_text_click"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/activity_save_more"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawablePadding="11dp"
+                        android:drawableTop="@drawable/selector_save_more"
+                        android:gravity="center"
+                        android:text="@string/save_more"
+                        android:textColor="@drawable/selector_text_click"
+                        android:textSize="12sp"
+                        android:visibility="visible" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/activity_save_voice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activity_save_ll">
+
+                    <TextView
+                        android:id="@+id/activity_save_tvVoice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/people_voice"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <SeekBar
+                        android:id="@+id/activity_save_voiceBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_toLeftOf="@+id/activity_save_voiceNum"
+                        android:layout_toRightOf="@+id/activity_save_tvVoice"
+                        android:max="100"
+                        android:maxHeight="3dp"
+                        android:minHeight="3dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/bg_seekbar"
+                        android:thumb="@drawable/thumb_red_new"
+                        android:thumbOffset="0dp" />
+
+                    <TextView
+                        android:id="@+id/activity_save_voiceNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right"
+                        android:minWidth="30dp"
+                        android:text="100"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/activity_save_accompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activity_save_voice"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/activity_save_tvAccompany"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/acc_voice"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <SeekBar
+                        android:id="@+id/activity_save_accompanyBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_toLeftOf="@+id/activity_save_accompanyNum"
+                        android:layout_toRightOf="@+id/activity_save_tvAccompany"
+                        android:max="100"
+                        android:maxHeight="3dp"
+                        android:minHeight="3dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/bg_seekbar"
+                        android:thumb="@drawable/thumb_red_new"
+                        android:thumbOffset="0dp" />
+
+                    <TextView
+                        android:id="@+id/activity_save_accompanyNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right"
+                        android:minWidth="30dp"
+                        android:text="10"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/activity_save_rlMove"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activity_save_accompany"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/activity_save_offsetBar"
+                        android:layout_alignLeft="@+id/activity_save_offsetBar"
+                        android:layout_alignRight="@+id/activity_save_offsetBar"
+                        android:layout_marginBottom="-2dp">
+
+                        <com.quchangkeji.tosingpk.common.view.MnScaleBar
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_margin="2dp"
+                            android:background="@null" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/activity_save_offset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/voice_offset"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+
+                    <SeekBar
+                        android:id="@+id/activity_save_offsetBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_toLeftOf="@+id/activity_save_offsetNum"
+                        android:layout_toRightOf="@+id/activity_save_offset"
+                        android:max="100"
+                        android:maxHeight="3dp"
+                        android:minHeight="3dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/bg_seekbar"
+                        android:thumb="@drawable/thumb_red_new"
+                        android:thumbOffset="0dp" />
+
+                    <TextView
+                        android:id="@+id/activity_save_offsetNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:gravity="right"
+                        android:minWidth="30dp"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_save_offset_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/activity_save_offset"
+                        android:padding="5dp"
+                        android:src="@mipmap/save_offset_left" />
+
+                    <ImageView
+                        android:id="@+id/iv_save_offset_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/activity_save_offsetNum"
+                        android:padding="5dp"
+                        android:src="@mipmap/save_offset_right" />
+                </RelativeLayout>
+
+                <!--偏移信息提示框-->
+                <TextView
+                    android:id="@+id/offset_notice_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/activity_save_rlMove"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/shape_offset_notice"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/offset_notice"
+                    android:textColor="@color/app_oher_red"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/activity_save_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activity_save_rlMove"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="22dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/activity_save_save"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="11dp"
+                        android:drawableTop="@drawable/selector_save_practice_save"
+                        android:gravity="center"
+                        android:text="@string/save"
+                        android:textColor="@drawable/selector_text_click"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/activity_save_release"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawablePadding="11dp"
+                        android:drawableTop="@drawable/selector_save_release"
+                        android:gravity="center"
+                        android:text="@string/release_to_homepage"
+                        android:textColor="@drawable/selector_text_click"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+        <!--控制器顶部-->
+        <RelativeLayout
+            android:id="@+id/control_top_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="#33000000">
+
+            <ImageView
+                android:id="@+id/activity_save_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@mipmap/save_practice_close"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/activity_save_name"
+                style="@style/name_song"
+                android:layout_marginTop="10dp"
+                android:text="歌曲名" />
+
+            <ImageView
+                android:id="@+id/save_edit_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:src="@mipmap/save_edit"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--右边的抽屉-->
+    <RelativeLayout
+        android:id="@+id/right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginLeft="-65dp"
+        android:background="#88000000"
+        android:clickable="true"
+        android:visibility="gone">
+        <!--android:layout_gravity="right"-->
+        <LinearLayout
+            android:id="@+id/ll_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/shape_both_red_hui"
+            android:paddingBottom="3dip"
+            android:paddingTop="3dip">
+
+            <com.quchangkeji.tosingpk.common.view.CustomEditText
+                android:id="@+id/save_practice_name_edit"
+                style="@style/editext_nodelet2"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:drawableRight="@mipmap/text_clear"
+                android:hint="歌曲名"
+                android:maxLength="16"
+                android:minHeight="32dp"
+                android:singleLine="true"
+                android:textColor="@color/text_2e"
+                android:textColorHint="@color/text_2e" />
+
+            <TextView
+                android:id="@+id/save_practice_name_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/selector_book_item"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="0/16" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save_practice_btSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_input"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="保存" />
+
+    </RelativeLayout>
+</RelativeLayout>

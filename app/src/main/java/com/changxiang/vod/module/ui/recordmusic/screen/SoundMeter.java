@@ -8,8 +8,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Toast;
 
-import com.quchangkeji.tosingpk.common.utils.LogUtils;
-import com.quchangkeji.tosingpk.module.ui.recordmusic.recordutils.ExtAudioRecorder;
+
+import com.changxiang.vod.common.utils.LogUtils;
+import com.changxiang.vod.module.ui.recordmusic.recordutils.ExtAudioRecorder;
 
 import java.util.ArrayList;
 

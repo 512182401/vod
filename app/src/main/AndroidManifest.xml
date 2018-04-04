@@ -23,7 +23,6 @@
     <uses-permission android:name="android.permission.READPHONESTATE" />
 
 
-
     <!-- 连接网络权限，用于执行云端语音能力 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
@@ -94,7 +93,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -104,12 +105,19 @@
 
         <activity
             android:name=".module.ui.SingerIndexNewActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="landscape" />
 
 
         <!-- 本地音乐 -->
         <activity
-            android:name=".module.ui.LocalMusicIndexActivity"
+            android:name=".module.ui.localmusic.LocalMusicIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+
+        <!--本地播放界面-->
+        <activity
+            android:name=".module.ui.localmusic.GeWangPlayerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
     </application>

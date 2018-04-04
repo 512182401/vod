@@ -41,6 +41,11 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     implementation files('libs/pinyin4j-2.5.0.jar')
-
     compile 'com.lcodecorex:tkrefreshlayout:1.0.3'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'org.apache.httpcomponents:httpcore:4.4.4'
+    compile files('libs/IndoorscapeAlbumPlugin.jar')
+    compile files('libs/isoviewer-1.0-RC-25.jar')
+    implementation files('libs/LeonidsLib.jar')
+    implementation files('libs/rxjava-1.1.0.jar')
 }

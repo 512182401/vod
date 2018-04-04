@@ -9,9 +9,6 @@ import android.view.SurfaceView;
 import com.changxiang.vod.common.utils.LogUtils;
 import com.changxiang.vod.module.ui.recordmusic.recordutils.CameraManager;
 
-//import com.quchangkeji.tosingpk.common.utils.LogUtils;
-//import com.quchangkeji.tosingpk.module.ui.recordmusic.recordutils.CameraManager;
-
 
 /**
  * class extends SurfaceView, main purpose is to refresh the preview

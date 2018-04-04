@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="68dp"
+    android:descendantFocusability= "blocksDescendants"
+    android:background="@color/white"
+    >
+    <CheckBox
+        android:id="@+id/adapter_recently_item_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_recently_item_selectl"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:button="@null"/>
+    <LinearLayout
+        android:layout_toRightOf="@+id/adapter_recently_item_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/adapter_recently_item_tvSong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/nomal_text"
+            android:text="容易受伤的女人"/>
+        <TextView
+            android:id="@+id/adapter_recently_item_tvSinger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/gray_text"
+            android:text="王菲"/>
+
+    </LinearLayout>
+    <View
+        style="@style/line_horizontal_gray"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/adapter_recently_item_cb"/>
+
+</RelativeLayout>

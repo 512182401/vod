@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/quchang_lLayout_bg"
+    android:orientation="vertical" android:layout_width="320dp"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_bg">
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="@string/three_button_text"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/quchang_alert_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/nomal_text"
+        android:text=""
+        android:textSize="16sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/alertdialog_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/quchang_alert_postive"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@drawable/alertdialog_left_selector"
+            android:gravity="center"
+            android:textColor="@drawable/selector_alert_text_click"
+            android:textSize="16sp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/alertdialog_line" />
+        <Button
+            android:id="@+id/quchang_alert_Neutral"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_weight="1"
+            android:background="@drawable/alertdialog_left_selector"
+            android:gravity="center"
+            android:textColor="@drawable/selector_alert_text_click"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/alertdialog_line" />
+
+        <Button
+            android:id="@+id/quchang_alert_negative"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_weight="1"
+            android:background="@drawable/alertdialog_right_selector"
+            android:gravity="center"
+            android:textColor="@drawable/selector_alert_text_click"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

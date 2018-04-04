@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/common_list_selector">
+    <!--item_singer_song-->
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/search" />
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="17dp"
+            android:text="陈香"
+            android:textColor="@color/app_5f"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line_horizontal"
+        style="@style/line_horizontal_app_e2"
+        android:layout_below="@+id/ll_item"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="8dp">
+
+        <ImageView
+            android:id="@+id/showimager"
+            android:layout_width="175dp"
+            android:layout_height="99dp"
+            android:layout_centerVertical="true"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@mipmap/singer_def_icom" />
+        <!-- android:background="@drawable/imagehead" -->
+        <RelativeLayout
+            android:id="@+id/adapter_item_song"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/adapter_topmusic_rl"
+            android:layout_alignRight="@+id/adapter_topmusic_ivIcon"
+            android:background="#88000000">
+
+            <TextView
+                android:id="@+id/adapter_topmusic_tvSong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/adapter_topmusic_tag"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingLeft="7dp"
+                android:paddingTop="4dp"
+                android:text="下一秒"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/adapter_topmusic_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/shape_song_list_tag"
+                android:paddingBottom="1dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="1dp"
+                android:text="MP3"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/adapter_topmusic_rl"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/showimager"
+            android:layout_alignLeft="@+id/showimager"
+            android:background="#88000000">
+
+            <TextView
+                android:id="@+id/adapter_topmusic_tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="2dp"
+                android:paddingLeft="7dp"
+                android:paddingTop="2dp"
+                android:singleLine="true"
+                android:text="张碧成"
+                android:textColor="#c6c6c6"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/adapter_topmusic_playedNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:drawableLeft="@drawable/earphone"
+                android:drawablePadding="2dp"
+                android:text="1111"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/statue_tv"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/shape_sing_bar_red_bg"
+            android:gravity="center"
+            android:text="@string/download_song"
+            android:textColor="@color/app_oher_red"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <com.quchangkeji.tosing.common.view.FlikerProgressBar
+            android:id="@+id/flikerProgressBar"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            app:borderWidth="1dp"
+            app:loadingColor="@color/app_oher_red"
+            app:radius="15dp"
+            app:stopColor="@color/app_oher_red"
+            app:textSize1="12sp" />
+
+        <!--歌曲大小-->
+        <TextView
+            android:id="@+id/size_tv"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="70dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/app_5f"
+            android:textSize="10sp" />
+
+        <View
+            style="@style/line_horizontal_gray"
+            android:layout_below="@+id/showimager"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

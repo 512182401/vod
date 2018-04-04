@@ -6,15 +6,21 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.changxiang.vod.common.utils.LogUtils;
 import com.changxiang.vod.common.utils.MyFileUtil;
 import com.changxiang.vod.module.ui.SingerIndexNewActivity;
 import com.changxiang.vod.module.ui.base.BaseActivity;
+import com.changxiang.vod.module.ui.localmusic.LocalMusicIndexActivity;
+import com.changxiang.vod.module.ui.recently.RecentlyIndexActivity;
 
 import java.io.File;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
+    private TextView tvSinger, tvType, tvTop, tvLocal, tvDownload, tvRecently, tvUpdata;//歌星点歌，分类点歌，榜单点歌，本地作品，已点歌曲，最近播放,上传视频
+
+    private TextView ivOratorio;
 
     @Override
     public void handMsg(Message msg) {
@@ -30,10 +36,30 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        initView();
         creatDir();
     }
 
+    public void initView() {
+        tvSinger = (TextView) findViewById(R.id.choose_tvSinger);
+        tvType = (TextView) findViewById(R.id.choose_tvType);
+        tvTop = (TextView) findViewById(R.id.choose_tvTop);
+        tvLocal = (TextView) findViewById(R.id.choose_tvLocal);
+        tvDownload = (TextView) findViewById(R.id.choose_tvDownload);
+        tvRecently = (TextView) findViewById(R.id.choose_tvRecently);
+        ivOratorio = (TextView) findViewById(R.id.choose_tvOratorio);
+        tvUpdata = (TextView) findViewById(R.id.choose_tvUpdata);
+
+
+        tvSinger.setOnClickListener(this);
+        tvType.setOnClickListener(this);
+        tvTop.setOnClickListener(this);
+        tvLocal.setOnClickListener(this);
+        tvDownload.setOnClickListener(this);
+        tvRecently.setOnClickListener(this);
+        ivOratorio.setOnClickListener(this);
+        tvUpdata.setOnClickListener(this);
+    }
 
     private void creatDir() {
         //创建文件夹  static
@@ -102,16 +128,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //                startActivity(intent);
                 break;
             case R.id.choose_tvLocal://本地作品
-//                intent = new Intent(this, LocalMusicIndexActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, LocalMusicIndexActivity.class);
+                startActivity(intent);
                 break;
             case R.id.choose_tvDownload://已点歌曲
 //                intent = new Intent(this, DownloadSongActivity.class);
 //                startActivity(intent);
                 break;
             case R.id.choose_tvRecently://最近播放
-//                intent = new Intent(this, RecentlyIndexActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, RecentlyIndexActivity.class);
+                startActivity(intent);
                 break;
             case R.id.choose_tvOratorio://清唱
 //                intent = new Intent(this, OratorioActivity.class);

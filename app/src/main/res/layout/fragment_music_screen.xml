@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rl_fg_musicscreen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#00000000"
+    >
+    <!--顶部线-->
+    <TextView
+        android:id="@+id/tv_top_Line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="总分：0"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:id="@+id/tv_score_numb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:text="5"
+        android:textColor="#ff0000"
+        android:visibility="invisible"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tv_baseLine"
+        android:layout_below="@+id/tv_top_Line"
+        android:background="#00999999"
+        android:orientation="horizontal">
+
+        <com.quchangkeji.tosingpk.module.ui.recordmusic.screen.SoundMeter
+            android:id="@+id/rl_all_one"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="#00000000"
+            />
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+
+        <com.quchangkeji.tosingpk.module.ui.recordmusic.screen.PathView
+            android:id="@+id/rl_all_two"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:background="#00000000"
+            />
+
+    </LinearLayout>
+
+    <!--基准线-->
+    <TextView
+        android:id="@+id/tv_baseLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/all_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <!--高斯模糊背景-->
+    <ImageView
+        android:id="@+id/record_camera_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000" />
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--录像界面-->
+        <RelativeLayout
+            android:id="@+id/open_camera_sv_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.seu.magicfilter.widget.MagicCameraView
+                android:id="@+id/open_camera_sv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/open_camera_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/record_mp3_bg">
+
+            <com.quchangkeji.tosingpk.common.view.SKrcViewFour
+                android:id="@+id/open_camera_all_lrc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="60dp"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--音效-->
+            <include
+                android:id="@+id/sound_effect_rl"
+                layout="@layout/sound_effect_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/open_camera_top_bg">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/open_camera_animal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <!--顶部布局  android:background="@drawable/open_camera_top_bg"-->
+                <RelativeLayout
+                    android:id="@+id/top_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+                    <ImageView
+                        android:id="@+id/open_camera_ivBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="14dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/musicplaying_back1" />
+
+                    <TextView
+                        android:id="@+id/open_camera_tvSong"
+                        style="@style/name_song"
+                        android:layout_marginTop="10dp"
+                        android:maxLength="32"
+                        android:text="歌曲名"
+                        android:textSize="19sp" />
+
+                    <LinearLayout
+                        android:id="@+id/duration_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/red_dot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/open_camera_tvSong"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/shape_home_red_dot"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/home_duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/open_camera_tvSong"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="4dp"
+                            android:gravity="center_vertical"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/open_camera_camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:button="@null"
+                        android:drawableTop="@drawable/selector_open_camera_camera"
+                        android:padding="10dp"
+                        android:paddingLeft="0dp"
+                        android:textSize="0dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/line_e2"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/open_camera_ear_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/top_rl"
+                    android:layout_marginRight="@dimen/pop_left"
+                    android:clickable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/listen"
+                    android:visibility="invisible" />
+
+                <!--3s倒计时，起唱符-->
+                <ImageView
+                    android:id="@+id/camera_count_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/top_rl"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/count_down"
+                    android:visibility="gone" />
+
+                <!--歌词-->
+                <com.quchangkeji.tosingpk.common.view.SKrcViewFour
+                    android:id="@+id/open_camera_lrc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_below="@+id/camera_count_down"
+                    android:layout_marginTop="15dp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <!--跳过前奏-->
+            <LinearLayout
+                android:id="@+id/prelude_ll"
+                android:layout_width="220dp"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/shape_practice_prelude"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/open_camera_offset"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/prelude_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="0dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/skip_prelude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/open_camera_skip"
+                    android:textColor="@drawable/selector_prelude_click"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="0dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/prelude_tvClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="0dp"
+                    android:text="x"
+                    android:textColor="@drawable/selector_text_click"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!--滤镜界面-->
+            <!--<com.quchangkeji.tosingpk.module.ui.recordmusic.BeautyFilterView-->
+            <!--android:id="@+id/beauty_filter"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:clickable="true"-->
+            <!--android:visibility="visible">-->
+
+            <!--</com.quchangkeji.tosingpk.module.ui.recordmusic.BeautyFilterView>-->
+        </RelativeLayout>
+    </FrameLayout>
+
+    <!--灯光效果-->
+    <ImageView
+        android:id="@+id/camera_light_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--点击开始后3s倒计时,避免被挡住-->
+    <ImageView
+        android:id="@+id/teach_count_down_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/anim_num_count_down"
+        android:visibility="gone" />
+
+    <!--底部整体布局-->
+    <RelativeLayout
+        android:id="@+id/open_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/record_camera_bg"
+        android:layout_toRightOf="@+id/record_camera_bg"
+        android:visibility="visible">
+
+        <!--滤镜界面-->
+        <com.quchangkeji.tosingpk.module.ui.recordmusic.BeautyFilterView
+            android:id="@+id/beauty_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/open_rl1"
+            android:clickable="true"
+            android:visibility="visible">
+
+        </com.quchangkeji.tosingpk.module.ui.recordmusic.BeautyFilterView>
+
+
+        <RelativeLayout
+            android:id="@+id/open_rl1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ortario_camera_record">
+
+            <TextView
+                android:id="@+id/seek_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/seek_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="00:00"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/fragment_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/mv"
+                android:visibility="gone" />
+            <!--<com.quchangkeji.tosingpk.common.view.AudioVideoToggle-->
+            <!--android:id="@+id/fragment_state"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="30dp" />-->
+            <RelativeLayout
+                android:id="@+id/q7_parent_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/q7_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/record_q7_image" />
+
+                <TextView
+                    android:id="@+id/q7_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/q7_image"
+                    android:background="@drawable/record_q7_text"
+                    android:gravity="center"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="8dp"
+                    android:text="连接途讯K歌宝录音效果会更好"
+                    android:textColor="#2A2A2A"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/fragment_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fragment_state"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/mv_text"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+            <!--音乐屏-->
+            <FrameLayout
+                android:id="@+id/music_screen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/practice_sing_llBotton"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="#33000000"
+                android:visibility="invisible">
+
+            </FrameLayout>
+
+            <!--歌词字号调节-->
+            <LinearLayout
+                android:id="@+id/record_font_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/practice_sing_llBotton"
+                android:background="@drawable/ortario_camera_record"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/krc_font"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/record_rg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/record_font_small"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableTop="@drawable/record_font_small_selector"
+                        android:gravity="center"
+                        android:textSize="0sp" />
+
+                    <RadioButton
+                        android:id="@+id/record_font_middle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableTop="@drawable/record_font_middle_selector"
+                        android:gravity="center"
+                        android:textSize="0sp" />
+
+                    <RadioButton
+                        android:id="@+id/record_font_big"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawableTop="@drawable/record_font_big_selector"
+                        android:gravity="center"
+                        android:textSize="0sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <!--音效-->
+            <com.quchangkeji.tosingpk.module.ui.recordmusic.SoundEffecView
+                android:id="@+id/record_sound_effect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/practice_sing_llBotton"
+                android:background="@drawable/ortario_camera_record"
+                android:visibility="invisible">
+
+            </com.quchangkeji.tosingpk.module.ui.recordmusic.SoundEffecView>
+            <!--底部控制器1-->
+            <LinearLayout
+                android:id="@+id/practice_sing_llBotton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="10dp"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/record_font"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/record_font_before" />
+
+                <ImageView
+                    android:id="@+id/home_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/record_pause"
+                    android:visibility="gone" />
+
+
+                <RelativeLayout
+                    android:id="@+id/start_iv_rl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/start_pause_animal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="19dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/home_pause_image1"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/start_pause"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/record_end"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/home_accompany"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/record_music_before" />
+
+                <ImageView
+                    android:id="@+id/end_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/home_stop_record_white"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/open_camera_beauty_filter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/open_camera_filter_before"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/grade_screen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/practice_grade"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <!--底部控制器2-->
+            <LinearLayout
+                android:id="@+id/practice_sing_llBotton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.quchangkeji.tosingpk.common.view.FlikerProgressBar
+                    android:id="@+id/open_camerac_download"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#FFDCDC"
+                    android:visibility="visible"
+                    app:borderColor="@color/bqmm_delete_button_text_color"
+                    app:loadingColor="@color/app_oher_red"
+                    app:stopColor="@color/app_oher_red"
+                    app:textPaintColor="@color/black"
+                    app:textSize1="18sp" />
+            </LinearLayout>
+        </RelativeLayout>
+        <!--进度条-->
+        <com.quchangkeji.tosingpk.module.ui.recordmusic.recordutils.NoDragSeekBar
+            android:id="@+id/open_camera_sb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/open_rl1"
+            android:layout_marginLeft="-15dp"
+            android:layout_marginRight="-15dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="-8dp"
+            android:layout_weight="1"
+            android:background="#00ffffff"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/bg_seekbar"
+            android:secondaryProgress="0"
+            android:thumb="@drawable/seekbar_thumb"
+            android:thumbOffset="0dp" />
+    </RelativeLayout>
+</RelativeLayout>

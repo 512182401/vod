@@ -17,80 +17,98 @@
         android:id="@+id/top_choose_floating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_top"
-        />
+        android:layout_below="@+id/login_top" />
 
     <RelativeLayout
         android:id="@+id/local_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/top_choose_floating"
-        android:background="@color/app_ef"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <android.support.design.widget.TabLayout
-        android:id="@+id/local_music_tl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        app:tabTextAppearance="@style/TabLayoutTextStyle"
-        app:tabBackground="@color/app_ef"
-        app:tabIndicatorColor="#FD5E5E"
-        app:tabSelectedTextColor="#FD5E5E"
-        app:tabTextColor="@color/black">
-    </android.support.design.widget.TabLayout>
+        android:layout_above="@+id/ll_edit_bottom"
+        android:background="@color/white"
+        >
+
+        <ListView
+            android:id="@+id/lv_localmusic_mypro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:scrollbars="none">
+
+        </ListView>
+
+        <TextView
+            android:id="@+id/fragment_works_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="10dp"
+            android:gravity="center_horizontal"
+            android:drawableTop="@mipmap/home_mypk_null"
+            android:text="@string/nothing"
+            android:visibility="gone" />
+
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/rl_daohang"
+        android:id="@+id/ll_edit_bottom"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/login_top"
-        android:background="@color/app_ef"
-        android:gravity="center"
-        android:visibility="gone">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E2E2E2" />
 
-        <TextView
-            android:id="@+id/tv_my_production"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/app_ef"
-            android:textSize="18sp"
-            android:text="我的作品" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_down_production"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:background="@color/app_ef"
-            android:textSize="18sp"
-            android:text="歌友作品" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/select_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pop_text1" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/select_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/pop_delete" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/pop_text2" />
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_data_chang"
-        android:layout_width="fill_parent"
-        android:layout_below="@+id/local_rl"
-        android:layout_height="fill_parent"
-        android:flipInterval="30"
-        android:persistentDrawingCache="animation"/>
-    <!--<FrameLayout-->
-        <!--android:id="@+id/fl_data_show"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_below="@+id/rl_daohang"-->
-        <!--android:layout_height="match_parent">-->
 
-    <!--</FrameLayout>-->
-    <!--<ListView-->
-        <!--android:id="@+id/lv_my_production"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_below="@+id/rl_daohang"-->
-        <!--android:layout_height="match_parent"-->
-        <!--/>-->
-    <!--<ListView-->
-        <!--android:id="@+id/lv_down_production"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_below="@+id/rl_daohang"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:visibility="gone"-->
-        <!--/>-->
+
 </RelativeLayout>
