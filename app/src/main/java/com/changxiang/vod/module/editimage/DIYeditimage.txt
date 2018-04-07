@@ -1,0 +1,142 @@
+
+图片编辑记要
+
+1：图片选择（包含更换图片路径）
+ 需要屏蔽掉编辑存储文件夹中的图片。
+2：旋转
+ 旋转为不可逆操作。
+3： 镜像
+  当前值做左右互换，
+4：  剪切
+当前值做16：9的剪切,
+5： 贴纸
+贴纸分为贴图和字幕
+6：  滤镜
+当前只有十二种滤镜，需要ndk开发
+7： 删除
+  删除需要注意删除后的图片加载
+8：  切换
+却换需要注意当前数据的保存，以及下一张图的展示
+通过标识是否编辑过，之后再判断编辑之后的图片是否存在。
+9： 保存
+10： 贴图下载
+11： 字幕编辑
+
+1： 预览检测编辑：
+2： 首次合成MV,首先需要检测是否是16：9的图片，否则需要遍历自动剪切，剪切需求注意事项（A）；合成按照4秒一个关键帧方式，合成注意事项（B）：
+3： 预览播放，
+4： 添加歌词
+5： 全屏预览
+6： 动态贴图下载
+7： 动态贴图
+8： 二次合成
+
+
+
+A：剪切需求注意事项：
+1：剪切为16:9的图片：
+2：判断剪切之后的图片是否符合480*270的图片，不符合则放大或者缩小；
+3：判断图片内存大小是否符合需求，不符合则质量压缩。
+4：按照特定路径保存图片，并修改选择图片列表数据。
+
+B:合成注意事项：
+1：确保，所有图片的分辨率统一：不统一会出现花屏卡顿，或者合成不进去：
+2：确保路径都正确
+3：相关参数需要和时间对应（关键帧）：
+4：需要判断最后一张图片（或者求余之后的值得秒数）合成的关键帧等参数：
+5：需要合成音轨；
+6：需要把视轨和音轨合成。
+
+
+
+
+
+
+数据库设计（对象）
+
+	public String id;
+	public String imageUrl;//原图路径
+	public boolean isSelected;//是否选择标志
+	private String edpath;//编辑之后的路径
+	private boolean isedit;//是否已经编辑
+	private boolean isdelect;//是否删除标志
+	private boolean isupload;//是否已经上传
+	LinkedHashMap<Integer, StickerItem> bank;//贴纸对象列表
+
+生成编辑路径（编辑图片保存路径）
+	数据保存触发点：（保存编辑图片）
+	1：却换图片的时候
+	2：保存图片的时候
+
+	图片保存：
+	1：点击完成按钮：
+
+
+
+异步流程：
+加载图片->编辑->下一张（上一张）->保存当前bitmap->保存bitmap到文件夹->加载图片（判断是否加载原图）->加载贴图->
+
+
+图片进度框：
+1s钟一张图片，每一秒钟移动一张图片的距离，即为
+
+
+转场模式:
+在编辑之前，需要通过对编辑图片与黑底图片合成之后再MV合成
+
+
+
+
+动态图合成视频：
+
+难点：
+
+gif显示：调研gif的显示方式：一：以一帧一帧播放的方式；二：以webView的方式；三：以GifView的方式显示；
+
+动态图进度条显示：
+1：考虑可以参考剪切图片的选择框，自定义一个控件，包含时间跨度框，左边可编辑按钮，右边可编辑按钮;(尝试过不灵活)
+2：参考静态贴纸，
+
+
+gif下载解压数据库：
+
+tid：动态贴纸ID
+turl:下载地址
+gifbitmap:SD卡地址
+decoder:SD卡解码文件夹
+gifDuration:gif时长
+isdecode:是否解码成功
+gifnum:
+other：
+
+
+
+http://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fs8.rr.itc.cn%2Ff%2FwapChange%2F20139_2_10%2Fa6w7yx7069280540217.gif&thumburl=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1282191591%2C4225107808%26fm%3D28%26gp%3D0.jpg
+
+http://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fimg3.sgamer.com%2Fxin%2F201611%2F_582a7ab9f07473599.gif&thumburl=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D1782653802%2C1168521618%26fm%3D28%26gp%3D0.jpg
+
+http://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160918%2Fdff875fb011b4d54a3a99df2be8348cf_th.jpg&thumburl=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D2981230016%2C3773051171%26fm%3D28%26gp%3D0.jpg
+
+http://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201507%2F01%2F20150701003859_wXH4t.thumb.224_0.gif&thumburl=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D4148752578%2C1598259008%26fm%3D28%26gp%3D0.jpg
+
+
+
+
+
+
+
+贴纸字幕设计：
+一：获取字幕背景图片，以及文字显示区域（以数据算出对于的原比例），默认字体大小，
+二：绘制文字显示区域（输入框）（bw,bh）,以高度默认字体大小：
+三：绘制光标（输入框光标）
+四：通过文字个数和显示区域获取文字字体大小：
+
+
+已知文字显示区域大小（w，h），
+
+文字大小根据字符串长度来变化，
+1：通过对比可输入区域的宽高，判定当前行数
+2：字号大小应当一个像素一个像素递减：
+
+
+

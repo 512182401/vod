@@ -14,7 +14,7 @@ public interface ISingerTable {
     public static final String DB_NAME = "vod.db";
 
 //编号
-public static final String  ID = "SONGBM";// 编号
+public static final String  ID = "ID";// 编号
     //名字
     public static final String  Name = "Name";//  名字
     //类型（大陆男歌手）

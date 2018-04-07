@@ -435,7 +435,10 @@ public class LocalMusicManager implements ILocalTable {
     }
 
     //模糊查询(语言种类)
-    public List<VodMedia> LangQuery(String search_context) {
+    public List<VodMedia> LangQuery(String search_context, int start, int end) {
+        int selectstart = start;
+        int selectend = end;
+        int count = 0;
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         //List<WorksBean> worksBeanList=new ArrayList<>();
         List<VodMedia> VodMediaList = new ArrayList<>();
@@ -446,6 +449,14 @@ public class LocalMusicManager implements ILocalTable {
             database = dbHelper.getReadableDatabase();
             cursor = database.rawQuery(sql, selectionArgs);
             while (cursor.moveToNext()) {
+                count++;
+                if (count < selectstart) {
+                    continue;
+
+                } else if (count > selectend) {
+                    break;
+
+                }
                 VodMedia listBean = new VodMedia();
                 String Songbm = cursor.getString(cursor.getColumnIndex(SONGBM));
                 String SongName = cursor.getString(cursor.getColumnIndex(SONGNAME));

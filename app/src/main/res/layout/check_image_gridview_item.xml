@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants" >
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:scaleType="fitCenter"
+        android:background="@drawable/mv_bg"
+        android:src="@drawable/pictures_no" />
+
+    <View
+        android:id="@+id/touchview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:clickable="false"
+        android:focusable="false"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/selected_flag"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:layout_gravity="top|left"
+        android:layout_margin="3dip"
+        android:padding="3dip"
+        android:scaleType="centerInside"
+        android:focusable="false"
+        android:src="@mipmap/diy_delect_pic" />
+
+    <ImageView
+        android:id="@+id/edit_image_flag"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="3dip"
+        android:focusable="false"
+        android:padding="3dip"
+        android:scaleType="centerInside"
+        android:src="@mipmap/diy_image_edit" />
+
+</FrameLayout>

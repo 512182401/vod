@@ -242,7 +242,7 @@ public class LocalMusicIndexActivity extends BaseActivity implements View.OnClic
 //                    Intent intent = new Intent(this, HomeActivity.class);
 //                    intent.putExtra("fragmentitem", "sing");
 //                    startActivity(intent);
-//                    finishActivity();
+                    finishActivity();
                 }
                 break;
             case R.id.back_next:

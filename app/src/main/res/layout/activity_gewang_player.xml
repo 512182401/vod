@@ -80,7 +80,7 @@
                 android:textColor="@color/white"
                 android:textSize="15sp" />
             <!--歌词部分-->
-            <com.quchangkeji.tosingpk.common.view.StrokeTextView
+            <com.changxiang.vod.common.view.StrokeTextView
                 android:id="@+id/last_lrcTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                 app:tv_border_color="@color/app_oher_red"
                 app:tv_border_width="1dp" />
 
-            <com.quchangkeji.tosingpk.common.view.StrokeTextView
+            <com.changxiang.vod.common.view.StrokeTextView
                 android:id="@+id/next_lrcTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

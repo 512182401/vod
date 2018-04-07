@@ -48,4 +48,6 @@ dependencies {
     compile files('libs/isoviewer-1.0-RC-25.jar')
     implementation files('libs/LeonidsLib.jar')
     implementation files('libs/rxjava-1.1.0.jar')
+    compile 'com.jaeger.statusbarutil:library:1.4.0'
+    implementation files('libs/Sunflower.jar')
 }

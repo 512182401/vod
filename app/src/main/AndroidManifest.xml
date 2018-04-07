@@ -87,12 +87,14 @@
 
 
     <application
+        android:name=".module.base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/SplashTheme">
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape">
@@ -104,15 +106,37 @@
         </activity>
 
         <activity
-            android:name=".module.ui.SingerIndexNewActivity"
-            android:screenOrientation="landscape" />
+            android:name=".module.ui.singermusic.SingerIndexNewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.ui.singermusic.SingerListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!--保存歌曲-->
+        <activity
+            android:name=".module.ui.saveutils.SavePracticeActivity"
+            android:screenOrientation="portrait" />
+        <!-- 清唱功能 -->
+        <activity
+            android:name=".module.ui.oratorio.OratorioActivity"
+            android:launchMode="singleTask" />
 
+        <activity
+            android:name=".module.ui.oratorio.CameraOratorioActivity"
+            android:hardwareAccelerated="true">
 
+        </activity>
+
+        <!-- 搜索界面 -->
+        <activity
+            android:name=".module.ui.search.SearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
         <!-- 本地音乐 -->
         <activity
             android:name=".module.ui.localmusic.LocalMusicIndexActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
 
         <!--本地播放界面-->
@@ -120,6 +144,38 @@
             android:name=".module.ui.localmusic.GeWangPlayerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <!-- 最近播放主页 -->
+        <activity
+            android:name=".module.ui.recently.RecentlyIndexActivity"
+            android:screenOrientation="portrait" />
+        <!-- 最近播放编辑页面 -->
+        <activity
+            android:name=".module.ui.recently.EditPlayedActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.ui.typemusic.TypeIndexActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.ui.typemusic.TypeListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.ui.typemusic.SingerTypeListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.ui.typemusic.TypeIndexActivityold"
+            android:screenOrientation="portrait" />
+        <!--上传视屏-->
+        <activity android:name=".module.ui.addlocal.UpdateLocalVideoActivity">
+
+        </activity>
+        <activity android:name=".module.ui.addlocal.LocalVideoListActivity">
+
+        </activity>
+        <activity android:name=".module.ui.addlocal.PreformViewActivity">
+
+        </activity>
     </application>
 
 </manifest>

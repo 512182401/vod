@@ -14,8 +14,10 @@ import android.util.DisplayMetrics;
 
 
 import com.changxiang.vod.common.utils.PreferUtil;
+import com.changxiang.vod.common.utils.SharedPrefManager;
 import com.changxiang.vod.module.constance.IPracticeMode;
 import com.changxiang.vod.module.entry.User;
+import com.changxiang.vod.module.ui.recently.db.HistoryDBManager;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -85,8 +87,8 @@ public class BaseApplication extends MultiDexApplication implements IPracticeMod
 //		Config.REDIRECT_URL = "quchang的新浪后台的回掉地址";
         //开启debug模式，方便定位错误，具体错误检查方式可以查看http://dev.umeng.com/social/android/quick-integration的报错必看，正式发布，请关闭该模式
 //        Config.DEBUG = true;
-        //HistoryDBManager是单例模式
-//        HistoryDBManager.init(this);
+//        HistoryDBManager是单例模式
+        HistoryDBManager.init(this);
         setLanguage();
 //        LeakCanary.install(this);//内存泄漏检测
 //        CanaryLog.Logger.init("LogTAG");
@@ -120,16 +122,16 @@ public class BaseApplication extends MultiDexApplication implements IPracticeMod
     }
 
     public static User getUser() {
-//        if (user != null) {
-//            return user;
-//        } else {
-//            user = SharedPrefManager.getInstance().getUserFromLocal();
-//            if (user != null) {
-//                setIslogined(true);
-//            }
-//            return user;
-//        }
-        return null;
+        if (user != null) {
+            return user;
+        } else {
+            user = SharedPrefManager.getInstance().getUserFromLocal();
+            if (user != null) {
+                setIslogined(true);
+            }
+            return user;
+        }
+//        return null;
     }
 
 

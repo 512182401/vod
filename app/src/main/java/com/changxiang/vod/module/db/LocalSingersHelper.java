@@ -9,30 +9,30 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by 15976 on 2017/4/13.
  */
 
-public class LocalSingersHelper extends SQLiteOpenHelper implements IDownloadTable {
+public class LocalSingersHelper extends SQLiteOpenHelper implements ISingerTable {
 
     public LocalSingersHelper(Context context) {
-        super(context, "VodMedia.db", null, 1);
+
+        super(new DBContext(context), "vod.db", null, 2);
+//        super(context, "vod.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        StringBuilder builder=new StringBuilder();
-        builder.append("create table "+MP3_TABLE_NAME+"(")
-                .append(_ID+" integer primary key autoincrement,")
-                .append(COLUMN_SONGID+" text,")
-                .append(COLUMN_SONG_NAME+" text,")
-                .append(COLUMN_SINGER+" text,")
-                .append(COLUMN_TYPE+" text,")
-                .append(COLUMN_NUM+" integer,")
-                .append(COLUMN_KRC_URL+" text,")
-                .append(COLUMN_LRC_URL+" text,")
-                .append(COLUMN_ACC_URL+" text,")
-                .append(COLUMN_ORI_URL+" text,")
-                .append(COLUMN_QZTIME+" text,")
-                .append(COLUMN_IMG+" text,")
-                .append(COLUMN_IS_ALL_DOWNLOAD+" integer,")
-                .append(COLUMN_IMGHEAD+" text)");
+        StringBuilder builder = new StringBuilder();
+        builder.append("create table " + TABLE_NAME_SINGERS + "(")
+                .append(_ID + " integer primary key autoincrement,")
+                .append(ID + " text,")
+                .append(Name + " text,")
+                .append(Type + " text,")
+                .append(Picture + " text,")
+                .append(Nationality + " integer,")
+                .append(SongsCount + " text,")
+                .append(Visible + " text,")
+                .append(PINYIN + " text,")
+                .append(Strokes + " text,")
+                .append(zs + " text,")
+                .append(ordertimes + " text,");
         db.execSQL(builder.toString());//创建保存播放记录的表
     }
 

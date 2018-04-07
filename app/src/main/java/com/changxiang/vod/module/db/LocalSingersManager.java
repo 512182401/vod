@@ -31,7 +31,7 @@ import static com.changxiang.vod.module.db.ISingerTable.zs;
  * Created by 15976 on 2017/1/9.
  */
 
-public class LocalSingersManager implements ILocalTable {
+public class LocalSingersManager implements ISingerTable {
 
 
     private LocalSingersHelper dbHelper;
@@ -108,7 +108,7 @@ public class LocalSingersManager implements ILocalTable {
         Cursor cursor = null;
         try {
             database = dbHelper.getReadableDatabase();
-            cursor = database.rawQuery("select * from " + TABLE_NAME_LOCAL, null);
+            cursor = database.rawQuery("select * from " + TABLE_NAME_SINGERS, null);
             while (cursor.moveToNext()) {
 
                 Singers listBean = new Singers();
@@ -155,12 +155,12 @@ public class LocalSingersManager implements ILocalTable {
     }
 
 
-    //模糊查询(歌名)
+    //模糊查询(歌手名)
     public List<Singers> fuzzyQuery(String search_context) {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         //List<WorksBean> worksBeanList=new ArrayList<>();
         List<Singers> SingersList = new ArrayList<>();
-        String sql = "select * from " + TABLE_NAME_LOCAL + " where " + SONGNAME + " like ? ";
+        String sql = "select * from " + TABLE_NAME_SINGERS + " where " + Name + " like ? ";
         String[] selectionArgs = new String[]{"%" + search_context + "%"};
         Cursor cursor = null;
         try {
@@ -215,7 +215,7 @@ public class LocalSingersManager implements ILocalTable {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         //List<WorksBean> worksBeanList=new ArrayList<>();
         List<Singers> SingersList = new ArrayList<>();
-        String sql = "select * from " + TABLE_NAME_LOCAL + " where " + SONGNAME + " like ? ";
+        String sql = "select * from " + TABLE_NAME_SINGERS + " where " + PINYIN + " like ? ";
         String[] selectionArgs = new String[]{"%" + search_context + "%"};
         Cursor cursor = null;
         try {
@@ -265,12 +265,12 @@ public class LocalSingersManager implements ILocalTable {
         return SingersList;
     }
 
-    //模糊查询(语言种类)
+    //模糊查询(类型（大陆男歌手）)
     public List<Singers> LangQuery(String search_context) {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         //List<WorksBean> worksBeanList=new ArrayList<>();
         List<Singers> SingersList = new ArrayList<>();
-        String sql = "select * from " + TABLE_NAME_LOCAL + " where " + LANG + " like ? ";
+        String sql = "select * from " + TABLE_NAME_SINGERS + " where " + Type + " like ? ";
         String[] selectionArgs = new String[]{"%" + search_context + "%"};
         Cursor cursor = null;
         try {
@@ -325,7 +325,7 @@ public class LocalSingersManager implements ILocalTable {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         //List<WorksBean> worksBeanList=new ArrayList<>();
         List<Singers> SingersList = new ArrayList<>();
-        String sql = "select * from " + TABLE_NAME_LOCAL + " where " + SINGER + " like ? ";
+        String sql = "select * from " + TABLE_NAME_SINGERS + " where " + Name + " like ? ";
         String[] selectionArgs = new String[]{"%" + search_context + "%"};
         Cursor cursor = null;
         try {
@@ -380,7 +380,7 @@ public class LocalSingersManager implements ILocalTable {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         //List<WorksBean> worksBeanList=new ArrayList<>();
         List<Singers> SingersList = new ArrayList<>();
-        String sql = "select * from " + TABLE_NAME_LOCAL + " where " + SONGTYPE + " like ? ";
+        String sql = "select * from " + TABLE_NAME_SINGERS + " where " + Name + " like ? ";
         String[] selectionArgs = new String[]{"%" + search_context + "%"};
         Cursor cursor = null;
         try {

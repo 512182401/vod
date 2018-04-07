@@ -1,4 +1,4 @@
-package com.changxiang.vod.module.ui.adapter;
+package com.changxiang.vod.module.ui.singermusic.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -114,7 +114,7 @@ public class SingerIndexAdapter extends BaseAdapter implements OnClickListener {
             holder.hostinfo.setText(nick);
             try {
 //				holder.songerinfo.setText("MP3("+item.getMp3num()+"首)/MV("+item.getMvnum()+"首)");
-                holder.songerinfo.setText(item.getSongsCount() + "首)");
+                holder.songerinfo.setText("("+item.getSongsCount() + "首)");
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -2,7 +2,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="app_name">PK歌王</string>
+    <string name="app_name">vod</string>
     <string name="hot_listen">热听</string>
     <string name="action_settings">Settings</string>
     <!--DIY-->
@@ -1221,4 +1221,23 @@
     <string name="pre_activity_time">活动时间:</string>
     <string name="pk_item_name1">进行中活动</string>
     <string name="pk_item_name2">活动预告</string>
+
+
+    <string name="work_name_need">作品名称(*必填)</string>
+    <string name="name_must_need">请填写作品名称或者作品封面</string>
+    <string name="input_work_name">请输入您的作品名称（限16字）</string>
+    <string name="work_name_remark">作品介绍(选填)</string>
+
+    <string name="local_request_text1">上传视频要求：</string>
+    <string name="local_request_text2">1、文件大小不超过100M；</string>
+    <string name="local_request_text3">2、视频时长不超过10分钟；</string>
+    <string name="local_request_text4">3、视频内容不得有广告、传播违法内容。</string>
+    <string name="local_text">添加本地视频</string>
+    <string name="local_preform_text1">重选视频</string>
+    <string name="local_preform_text2">暂停</string>
+    <string name="local_preform_text4">继续</string>
+    <string name="local_preform_text3">上传视频</string>
+    <string name="local_update_text1">选择本地视频</string>
+    <string name="local_update_text2">正在扫描数据..</string>
+    <string name="local_video_text">没有符合要求的视频</string>
 </resources>

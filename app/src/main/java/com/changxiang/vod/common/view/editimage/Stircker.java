@@ -1,7 +1,5 @@
 //package com.changxiang.vod.common.view.editimage;
 //
-//import com.google.gson.Gson;
-//import com.google.gson.reflect.TypeToken;
 //
 //import org.json.JSONException;
 //import org.json.JSONObject;
@@ -24,49 +22,7 @@
 //    private List<TzBean> tz;
 //    private List<ZmBean> zm;
 //
-//    public static Stircker objectFromData(String str) {
 //
-//        return new Gson().fromJson(str, Stircker.class);
-//    }
-//
-//    public static Stircker objectFromData(String str, String key) {
-//
-//        try {
-//            JSONObject jsonObject = new JSONObject(str);
-//
-//            return new Gson().fromJson(jsonObject.getString(key), Stircker.class);
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return null;
-//    }
-//
-//    public static List<Stircker> arrayStirckerFromData(String str) {
-//
-//        Type listType = new TypeToken<ArrayList<Stircker>>() {
-//        }.getType();
-//
-//        return new Gson().fromJson(str, listType);
-//    }
-//
-//    public static List<Stircker> arrayStirckerFromData(String str, String key) {
-//
-//        try {
-//            JSONObject jsonObject = new JSONObject(str);
-//            Type listType = new TypeToken<ArrayList<Stircker>>() {
-//            }.getType();
-//
-//            return new Gson().fromJson(jsonObject.getString(key), listType);
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return new ArrayList();
-//
-//
-//    }
 //
 //    public List<DttzBean> getDttz() {
 //        return dttz;
@@ -103,49 +59,7 @@
 //        private String type;
 //        private List<?> list;
 //
-//        public static DttzBean objectFromData(String str) {
 //
-//            return new Gson().fromJson(str, DttzBean.class);
-//        }
-//
-//        public static DttzBean objectFromData(String str, String key) {
-//
-//            try {
-//                JSONObject jsonObject = new JSONObject(str);
-//
-//                return new Gson().fromJson(jsonObject.getString(key), DttzBean.class);
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//            return null;
-//        }
-//
-//        public static List<DttzBean> arrayDttzBeanFromData(String str) {
-//
-//            Type listType = new TypeToken<ArrayList<DttzBean>>() {
-//            }.getType();
-//
-//            return new Gson().fromJson(str, listType);
-//        }
-//
-//        public static List<DttzBean> arrayDttzBeanFromData(String str, String key) {
-//
-//            try {
-//                JSONObject jsonObject = new JSONObject(str);
-//                Type listType = new TypeToken<ArrayList<DttzBean>>() {
-//                }.getType();
-//
-//                return new Gson().fromJson(jsonObject.getString(key), listType);
-//
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//            return new ArrayList();
-//
-//
-//        }
 //
 //        public String getName() {
 //            return name;
@@ -183,49 +97,8 @@
 //        private String type;
 //        private List<ListBean> list;
 //
-//        public static TzBean objectFromData(String str) {
-//
-//            return new Gson().fromJson(str, TzBean.class);
-//        }
-//
-//        public static TzBean objectFromData(String str, String key) {
-//
-//            try {
-//                JSONObject jsonObject = new JSONObject(str);
-//
-//                return new Gson().fromJson(jsonObject.getString(key), TzBean.class);
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//            return null;
-//        }
-//
-//        public static List<TzBean> arrayTzBeanFromData(String str) {
-//
-//            Type listType = new TypeToken<ArrayList<TzBean>>() {
-//            }.getType();
-//
-//            return new Gson().fromJson(str, listType);
-//        }
-//
-//        public static List<TzBean> arrayTzBeanFromData(String str, String key) {
-//
-//            try {
-//                JSONObject jsonObject = new JSONObject(str);
-//                Type listType = new TypeToken<ArrayList<TzBean>>() {
-//                }.getType();
-//
-//                return new Gson().fromJson(jsonObject.getString(key), listType);
-//
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//            return new ArrayList();
 //
 //
-//        }
 //
 //        public String getName() {
 //            return name;

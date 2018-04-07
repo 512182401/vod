@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_text">
+
+    <!--录像界面-->
+    <com.seu.magicfilter.widget.MagicCameraView
+        android:id="@+id/open_camera_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="190dp" />
+
+    <!--顶部信息-->
+    <RelativeLayout
+        android:id="@+id/record_top_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/record_iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            android:src="@drawable/pratice_close" />
+
+        <TextView
+            android:id="@+id/record_song_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="清唱"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <CheckBox
+            android:id="@+id/open_camera_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_open_camera_camera"
+            android:padding="10dp"
+            android:paddingLeft="0dp"
+            android:textSize="0dp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/oratorio_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/record_top_rl"
+        android:background="#5f5e97"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/camera_ear_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/record_top_rl"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/listen"
+        android:visibility="invisible"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/music_screen"
+        android:layout_below="@+id/top_rl">
+
+        <!--开始清唱之后的布局-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/oratorio_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:alpha="0.7"
+                android:background="@drawable/oratorio_timepiece_shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="00:00"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/timepiece_red_point_shape" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="录制中"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!--音效控制按钮-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/filter_rl"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/modify_tone_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/modify_tone"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/sound_effect_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/sound_effect"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!--点击开始后3s倒计时,避免被挡住-->
+    <ImageView
+        android:id="@+id/record_count_down_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/beauty_filter"
+        android:src="@drawable/anim_num_count_down"
+        android:visibility="gone" />
+
+
+    <FrameLayout
+        android:id="@+id/camera_fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="55dp"
+            android:max="100"
+            android:progress="50"
+            android:progressDrawable="@drawable/progress_bar"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:id="@+id/record_bottom_set"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/ortario_camera_record">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/progress_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="00:00"
+                    android:textColor="@color/white"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/progress_totle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:text="10:00"
+                    android:textColor="@color/white"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+            <!--计时器-->
+            <LinearLayout
+                android:id="@+id/record_camera_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:alpha="1.0"
+                android:background="@drawable/oratorio_timepiece_shape"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/oratorio_timepiece"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="00:00"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/oratorio_red_twinkle"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/timepiece_red_point_shape" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/camera_oratorio_record"
+                        android:textColor="@color/white"
+                        android:textSize="23sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--倒计时-->
+            <LinearLayout
+                android:id="@+id/camare_timepiece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:alpha="1.0"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/camare_timepiece_point"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/timepiece_red_point_shape" />
+
+                <TextView
+                    android:id="@+id/camare_timepiece_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="9dp"
+                    android:background="@drawable/text_bg"
+                    android:text="@string/camera_oratorio_recoding"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+
+            <!--底部控制部分-->
+            <LinearLayout
+                android:id="@+id/practice_sing_llBotton"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/record_music"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/oratorio_music_press" />
+
+                <ImageView
+                    android:id="@+id/record_start_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/home_start_record" />
+
+                <ImageView
+                    android:id="@+id/record_end_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/home_stop_record_white" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/camare_btn_start"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/btn_bg"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="@string/camera_oratorio_start_record"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+    <!--音效-->
+    <com.changxiang.vod.module.ui.oratorio.SoundEffecView
+        android:id="@+id/camera_sound_effect_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="90dp"
+        >
+
+    </com.changxiang.vod.module.ui.oratorio.SoundEffecView>
+    <!--滤镜-->
+    <com.changxiang.vod.module.ui.recordmusic.BeautyFilterView
+        android:id="@+id/beauty_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/camera_sound_effect_rl"
+        android:visibility="visible">
+
+    </com.changxiang.vod.module.ui.recordmusic.BeautyFilterView>
+
+</RelativeLayout>

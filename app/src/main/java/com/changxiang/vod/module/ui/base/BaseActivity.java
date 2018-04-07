@@ -39,6 +39,7 @@ import android.widget.Toast;
 
 import com.changxiang.vod.R;
 import com.changxiang.vod.common.utils.LogUtils;
+import com.changxiang.vod.common.utils.SharedPrefManager;
 import com.changxiang.vod.common.view.BaseProgressDialog;
 import com.changxiang.vod.module.base.AppManager;
 import com.changxiang.vod.module.engine.base.BaseEngine;
@@ -125,17 +126,17 @@ public abstract class BaseActivity extends FragmentActivity {
 //
 //    }
     private void changeAppLanguage() {
-//        String sta = SharedPrefManager.getInstance().getCacheApiLanguage();//getLanuageIsChinese() ? "zh" : "en";//这是SharedPreferences工具类，用于保存设置，代码很简单，自己实现吧
-//        // 本地语言设置
-//        String[] str = sta.split("_");
-//        if (str.length == 2) {
-//            Locale myLocale = new Locale(str[0], str[1]);
-//            Resources res = getResources();
-//            DisplayMetrics dm = res.getDisplayMetrics();
-//            Configuration conf = res.getConfiguration();
-//            conf.locale = myLocale;
-//            res.updateConfiguration(conf, dm);
-//        }
+        String sta = SharedPrefManager.getInstance().getCacheApiLanguage();//getLanuageIsChinese() ? "zh" : "en";//这是SharedPreferences工具类，用于保存设置，代码很简单，自己实现吧
+        // 本地语言设置
+        String[] str = sta.split("_");
+        if (str.length == 2) {
+            Locale myLocale = new Locale(str[0], str[1]);
+            Resources res = getResources();
+            DisplayMetrics dm = res.getDisplayMetrics();
+            Configuration conf = res.getConfiguration();
+            conf.locale = myLocale;
+            res.updateConfiguration(conf, dm);
+        }
     }
 
 

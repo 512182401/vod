@@ -3,14 +3,15 @@ package com.changxiang.vod.common.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+
 public final class PreferUtil {
 
     public static PreferUtil INSTANCE;
     private static SharedPreferences mPrefer;
     private static final String APP_NAME = "com.quchangkeji.tosing";
 
-    public  static  final String HOME_BACK ="home_back";
-    public  static  final String CURRENT ="current";
+    public  static  final  String HOME_BACK ="home_back";
+    public  static  final  String CURRENT ="current";
 
 
 
@@ -27,7 +28,7 @@ public final class PreferUtil {
     public void init(Context ctx) {
 //        mPrefer = ctx.getSharedPreferences(APP_NAME, Context.MODE_WORLD_READABLE
 //                | Context.MODE_WORLD_WRITEABLE);
-        mPrefer =ctx.getSharedPreferences( APP_NAME, Context.MODE_PRIVATE );
+        mPrefer =ctx.getSharedPreferences( APP_NAME,Context.MODE_PRIVATE );
         mPrefer.edit().commit();
     }
 
@@ -41,7 +42,7 @@ public final class PreferUtil {
     }
 
     public boolean getBoolean(String key, boolean defValue) {
-        return mPrefer.getBoolean(key, defValue);
+        return mPrefer != null ? mPrefer.getBoolean(key, defValue) : defValue;
     }
 
     public void putString(String key, String value) {
@@ -53,6 +54,7 @@ public final class PreferUtil {
     }
 
     public void putBoolean(String key, boolean value) {
+        LogUtils.w("PreferUtil", "mPrefer.edit()==" + mPrefer);
         mPrefer.edit().putBoolean(key, value).commit();
     }
 

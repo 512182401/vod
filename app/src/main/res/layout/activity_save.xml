@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/video_height" />
                 <!--歌词部分-->
-                <com.quchangkeji.tosingpk.common.view.StrokeTextView
+                <com.changxiang.vod.common.view.StrokeTextView
                     android:id="@+id/last_lrcTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                     app:tv_border_color="@color/app_oher_red"
                     app:tv_border_width="1dp" />
 
-                <com.quchangkeji.tosingpk.common.view.StrokeTextView
+                <com.changxiang.vod.common.view.StrokeTextView
                     android:id="@+id/next_lrcTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -313,7 +313,7 @@
                         android:layout_alignRight="@+id/activity_save_offsetBar"
                         android:layout_marginBottom="-2dp">
 
-                        <com.quchangkeji.tosingpk.common.view.MnScaleBar
+                        <com.changxiang.vod.common.view.MnScaleBar
                             android:layout_width="match_parent"
                             android:layout_height="5dp"
                             android:layout_margin="2dp"
@@ -495,7 +495,7 @@
             android:paddingBottom="3dip"
             android:paddingTop="3dip">
 
-            <com.quchangkeji.tosingpk.common.view.CustomEditText
+            <com.changxiang.vod.common.view.CustomEditText
                 android:id="@+id/save_practice_name_edit"
                 style="@style/editext_nodelet2"
                 android:layout_height="wrap_content"

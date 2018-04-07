@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.changxiang.vod.common.view.ScrollChangeScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/activity_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+
+            >
+
+            <ImageView
+                android:id="@+id/iv_singer_icom"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="0dp"
+
+                />
+            <RelativeLayout
+                android:id="@+id/rl_singer_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_singer_icom"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:visibility="invisible">
+
+
+            <TextView
+                android:id="@+id/tv_singer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="刘德华"
+                android:textColor="@color/text_2a"
+                android:textSize="15sp"/>
+                <TextView
+                    android:id="@+id/tv_song_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_singer_name"
+                    android:text="mp3(108)/mv(8)"
+                    android:layout_marginLeft="10dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/tv_singer_name"
+                    android:background="@color/app_f1"
+                    android:layout_marginTop="5dp"
+                    />
+            </RelativeLayout>
+            <!--<include
+                android:id="@+id/login_top"
+                layout="@layout/item_top_transparency"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                />-->
+
+
+            <!--<TextView
+                android:id="@+id/login_lin1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/iv_singer_icom"
+                android:background="@color/line_e2" />
+
+            <TextView
+                android:id="@+id/login_lin2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rl_sreach_song"
+                android:background="@color/line_e2" />-->
+
+
+            <!--<RelativeLayout
+                android:id="@+id/rl_sreach_song"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/login_lin1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/shape_both_red_hui"
+                    android:gravity="center"
+                    >
+
+                    <ImageView
+                        android:id="@+id/btn_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/selector_book_item"
+                        android:padding="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/search" />
+
+                    <EditText
+                        android:id="@+id/emoji_edit"
+                        style="@style/editext_nodelet2"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:hint="搜索此歌手的歌曲"
+                        android:maxLength="12"
+                        android:minHeight="32dp"
+                        android:singleLine="true"
+                        android:textColor="@color/text_2e"
+                        android:textColorHint="@color/et_hint" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:visibility="visible"
+                        >
+
+                        <ImageView
+                            android:id="@+id/imv_voice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/selector_book_item"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:scaleType="centerInside"
+                            android:src="@mipmap/voice" />
+
+                        <ImageView
+                            android:id="@+id/emoji_btn_lighted"
+                            android:layout_width="28dip"
+                            android:layout_height="28dip"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/selector_book_item"
+                            android:padding="2dip"
+                            android:scaleType="centerInside"
+                            android:visibility="gone" />
+                        &lt;!&ndash;android:src="@drawable/chatting_biaoqing_btn_lighted"&ndash;&gt;
+                    </FrameLayout>
+                </LinearLayout>
+            </RelativeLayout>-->
+            <com.changxiang.vod.common.view.WrapListView
+                android:id="@+id/xl_singer_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rl_singer_info"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:divider="@null"
+                android:scrollbars="none"
+                />
+
+            <TextView
+                android:id="@+id/fragment_works_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_singer_icom"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:drawablePadding="10dp"
+                android:drawableTop="@drawable/empty"
+                android:gravity="center_horizontal"
+                android:text="@string/null_null"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+    </com.changxiang.vod.common.view.ScrollChangeScrollView>
+
+
+    <include
+        android:id="@+id/search_top"
+        layout="@layout/search_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#22000000"/>
+
+</com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>

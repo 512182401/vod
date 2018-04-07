@@ -3,17 +3,19 @@ package com.changxiang.vod;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.changxiang.vod.common.utils.LogUtils;
 import com.changxiang.vod.common.utils.MyFileUtil;
-import com.changxiang.vod.module.ui.SingerIndexNewActivity;
+import com.changxiang.vod.module.ui.addlocal.UpdateLocalVideoActivity;
+import com.changxiang.vod.module.ui.singermusic.SingerIndexNewActivity;
 import com.changxiang.vod.module.ui.base.BaseActivity;
 import com.changxiang.vod.module.ui.localmusic.LocalMusicIndexActivity;
+import com.changxiang.vod.module.ui.oratorio.OratorioActivity;
 import com.changxiang.vod.module.ui.recently.RecentlyIndexActivity;
+import com.changxiang.vod.module.ui.typemusic.TypeIndexActivityold;
 
 import java.io.File;
 
@@ -120,8 +122,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.choose_tvType://分类
-//                intent = new Intent(this, TypeIndexActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, TypeIndexActivityold.class);
+                startActivity(intent);
                 break;
             case R.id.choose_tvTop://榜单
 //                intent = new Intent(this, TopIndexActivity.class);
@@ -132,6 +134,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.choose_tvDownload://已点歌曲
+                toast("准放置将要播放的歌曲列表");
 //                intent = new Intent(this, DownloadSongActivity.class);
 //                startActivity(intent);
                 break;
@@ -140,14 +143,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.choose_tvOratorio://清唱
-//                intent = new Intent(this, OratorioActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, OratorioActivity.class);
+                startActivity(intent);
 //                musicPlay(false);
                 break;
             case R.id.choose_tvUpdata://上传视频
 //                toast("上传视频");
-//                intent = new Intent(this, UpdateLocalVideoActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, UpdateLocalVideoActivity.class);
+                startActivity(intent);
 //                musicPlay(false);
                 break;
         }

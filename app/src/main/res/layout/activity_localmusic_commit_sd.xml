@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/login_top"
+        layout="@layout/item_top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/login_top"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/rl_hend_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:id="@+id/hend_song_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/app_bg"
+                    android:src="@drawable/tv_mv" />
+                <!--
+                    android:scaleType="fitXY"-->
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/edit_commit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_hend_image"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/work_name_need"
+                    android:textColor="@color/text_2a"
+                    android:textSize="15sp" />
+
+                <com.quchangkeji.tosing.common.view.CustomEditText
+                    android:id="@+id/name_edit"
+                    style="@style/editext_nodelet2"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_both_ef_fe"
+                    android:drawableRight="@mipmap/text_clear"
+                    android:hint="@string/input_work_name"
+                    android:maxLength="16"
+                    android:minHeight="32dp"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text_2e"
+                    android:textColorHint="@color/et_hint"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="作品介绍(选填)"
+                    android:textColor="@color/text_2a"
+                    android:textSize="15sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/edit_commit">
+
+                    <com.quchangkeji.tosing.common.view.CustomEditText
+                        android:id="@+id/edit_centent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/shape_both_ef_fe"
+                        android:drawableRight="@mipmap/text_clear"
+                        android:gravity="top"
+                        android:hint="@string/commit_content"
+                        android:maxLength="200"
+                        android:minHeight="100dp"
+                        android:padding="10dp"
+                        android:paddingBottom="20dp"
+                        android:textColor="@color/text_2a"
+                        android:textColorHint="@color/login_input_b8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_show_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/edit_centent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="0/200"
+                        android:textColor="@color/app_5f"
+                        android:textSize="16dp" />
+
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/bt_updata_work"
+                    style="@style/login_button_common"
+                    android:layout_width="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:background="@drawable/shape_both_red_red_light"
+                    android:text="上传" />
+                <!--shape_both_red_red_light-->
+
+                <!--shape_both_red_red-->
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <!--下载进度条显示框-->
+    <LinearLayout
+        android:id="@+id/progress_ll"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_home_download"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:visibility="gone">
+
+        <com.quchangkeji.tosing.common.view.RoundProgressBar
+
+            android:id="@+id/roundProgressBar2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android_custom:max="100"
+            android_custom:roundColor="#D1D1D1"
+            android_custom:roundProgressColor="@android:color/white"
+            android_custom:roundWidth="0dp"
+            android_custom:style="FILL" />
+
+        <TextView
+            android:id="@+id/progress_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="作品上传中"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

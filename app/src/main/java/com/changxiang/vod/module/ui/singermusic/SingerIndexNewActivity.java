@@ -1,4 +1,4 @@
-package com.changxiang.vod.module.ui;
+package com.changxiang.vod.module.ui.singermusic;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,18 +17,15 @@ import android.widget.TextView;
 
 import com.changxiang.vod.R;
 import com.changxiang.vod.common.utils.AppUtil;
+import com.changxiang.vod.module.db.LocalSingersManager;
+import com.changxiang.vod.module.db.Singers;
 import com.changxiang.vod.module.pinyinindexing.QuickindexBar;
-import com.changxiang.vod.module.ui.adapter.SingerIndexAdapter;
+import com.changxiang.vod.module.ui.singermusic.adapter.SingerIndexAdapter;
 import com.changxiang.vod.module.ui.base.BaseActivity;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
 
 
 public class SingerIndexNewActivity extends BaseActivity implements View.OnClickListener {
@@ -62,6 +59,9 @@ public class SingerIndexNewActivity extends BaseActivity implements View.OnClick
     private QuickindexBar slideBar;
     private TextView tv_zimu;
 
+    private LocalSingersManager mLocalSingersManager;//数据库：
+    private List<Singers> mList;//数据库集合
+    private List<Singers> existList = new ArrayList<>();//文件和记录都存在的集合
     private String responsemsg = "请求数据为空";//网络请求返回信息
 
     @Override
@@ -87,7 +87,7 @@ public class SingerIndexNewActivity extends BaseActivity implements View.OnClick
             case 2://刷新成功，刷新界面
                 refreshLayout.setVisibility(View.VISIBLE);
                 ll_no_data.setVisibility(View.GONE);
-//                madapter.setDataList( hotTJ.getResults() );
+                madapter.setDataList( mList );
 //                handler.sendEmptyMessageDelayed( 2, 100 );
                 break;
             case 3://加载更多成功，刷新界面
@@ -192,15 +192,15 @@ public class SingerIndexNewActivity extends BaseActivity implements View.OnClick
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //TODO
                 //取得歌手信息
-//                HotTJ.ResultsBean singer =  madapter.getItemData(position);
-//                //根据不同信息跳转到不同的界面
-//                Intent intent = new Intent( SingerIndexNewActivity.this, SingerListActivity.class );
-//                intent.putExtra("singerid", singer.getId());
-//                intent.putExtra("imgCover", singer.getImgCover());
-//                intent.putExtra("singername", singer.getName());
-////                holder.songerinfo.setText("MP3("+persons.get(arg0).getmSingerPY().getMp3num()+"首)/MV("+persons.get(arg0).getmSingerPY().getMvnum()+"首)");
-//                intent.putExtra("songcount", "MP3("+singer.getMp3num()+"首)/MV("+singer.getMvnum()+"首)");
-//                startActivity( intent );
+                Singers singer =  madapter.getItemData(position);
+                //根据不同信息跳转到不同的界面
+                Intent intent = new Intent( SingerIndexNewActivity.this, SingerListActivity.class );
+                intent.putExtra("singerid", singer.getID());
+                intent.putExtra("imgCover", singer.getPicture());
+                intent.putExtra("singername", singer.getName());
+//                holder.songerinfo.setText("MP3("+persons.get(arg0).getmSingerPY().getMp3num()+"首)/MV("+persons.get(arg0).getmSingerPY().getMvnum()+"首)");
+                intent.putExtra("songcount", "("+singer.getSongsCount()+"首)");
+                startActivity( intent );
             }
         });
 
@@ -277,8 +277,48 @@ public class SingerIndexNewActivity extends BaseActivity implements View.OnClick
     //TODO  取得热门推荐
     private void initData() {
 
+        mLocalSingersManager = LocalSingersManager.getComposeManager(getApplicationContext());
+        mList = new ArrayList<>();
+        getDataFormBD();//获取本地数据库数据
     }
 
+
+    private void getDataFormBD() {
+
+        if (existList != null && existList.size() > 0) {
+            existList.clear();
+        } else {
+            existList = new ArrayList<>();
+        }
+        if (mList != null && mList.size() > 0) {
+            mList.clear();
+        } else {
+            mList = new ArrayList<>();
+        }
+        mList = mLocalSingersManager.queryAll();
+//        mList = mComposeManager.queryNoDelect();
+//        if (mList.size() > 0) {
+//            for(int i = 0;i<mList.size();i++ ){
+//                mComposeManager.updateCompose(mList.get( i ).getCompose_id(),"Compose_delete","0"  );//标志数据库为已经上传
+//            }
+//            mComposeManager.updateCompose(mList.get( 0 ).getCompose_id(),"Compose_delete","1"  );//标志数据库为已经上传
+//        }
+        if (mList.size() > 0) {
+            for (int i = 0; i < mList.size(); i++) {
+                Singers mSingers = mList.get(i);
+                existList.add(mSingers);
+                }
+
+            if (existList.size() > 0) {
+
+                handler.sendEmptyMessageDelayed(2, 100);
+            } else {
+                handler.sendEmptyMessageDelayed(1, 100);
+            }
+        } else {
+            handler.sendEmptyMessageDelayed(1, 100);
+        }
+    }
 
     private void setAddHoriListView() {
         int size = addstr.length;
