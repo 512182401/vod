@@ -137,6 +137,11 @@
             android:name=".module.ui.localmusic.LocalMusicIndexActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+        <!-- 本地音乐 -->
+        <activity
+            android:name=".module.ui.localmusic.MusicPlayerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
         <!--本地播放界面-->

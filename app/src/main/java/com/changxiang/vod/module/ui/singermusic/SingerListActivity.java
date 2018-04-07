@@ -212,8 +212,9 @@ public class SingerListActivity extends BaseActivity implements View.OnClickList
             mList = new ArrayList<>();
         }
 //        mList = mLocalMusicManager.queryAll();//全部搜索
-//        mList = mLocalMusicManager.SingerQuery("刘德华");
-        mList = mLocalMusicManager.fuzzyQuery("刘德华");
+//        mList = mLocalMusicManager.SingerQuery("刘德华", 0, 100);
+        mList = mLocalMusicManager.SingerQuery(singername, 0, 100);
+//        mList = mLocalMusicManager.fuzzyQuery("刘德华");
 //        mList = mLocalMusicManager.fuzzyQuery(singername);
 //        mList = mLocalMusicManager.fuzzyQuery(singername);
 

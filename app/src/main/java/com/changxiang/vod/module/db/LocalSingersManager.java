@@ -102,7 +102,10 @@ public class LocalSingersManager implements ISingerTable {
 
     //查询全部记录
     //查询全部记录
-    public List<Singers> queryAll() {
+    public List<Singers> queryAll(int start, int end) {
+        int selectstart = start;
+        int selectend = end;
+        int count = 0;
         List<Singers> SingersList = new ArrayList<>();
         SQLiteDatabase database = null;
         Cursor cursor = null;
@@ -110,6 +113,7 @@ public class LocalSingersManager implements ISingerTable {
             database = dbHelper.getReadableDatabase();
             cursor = database.rawQuery("select * from " + TABLE_NAME_SINGERS, null);
             while (cursor.moveToNext()) {
+
 
                 Singers listBean = new Singers();
 
@@ -139,6 +143,16 @@ public class LocalSingersManager implements ISingerTable {
                 listBean.setOrdertimes(orderTimes);
 
                 SingersList.add(0, listBean);
+                count++;
+                if (count < selectstart) {
+                    continue;
+
+                } else if (count > selectend) {
+                    break;
+
+                } else if (cursor.getString(cursor.getColumnIndex(Name)).equals("刘德华")) {
+                    break;
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

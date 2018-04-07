@@ -1,4 +1,4 @@
-package com.changxiang.vod.module.ui.addlocal;
+package com.changxiang.vod;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,22 +18,18 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.changxiang.vod.R;
 import com.changxiang.vod.common.utils.LogUtils;
-import com.changxiang.vod.module.db.LocalCompose;
 import com.changxiang.vod.module.musicInfo.TimeUtil;
+import com.changxiang.vod.module.ui.addlocal.MediaItem;
 import com.changxiang.vod.module.ui.base.BaseActivity;
-import com.changxiang.vod.module.ui.localmusic.SDCommitActivity;
-
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 
 /**
  * Created by 15976 on 2017/11/1.
  */
 
-public class PreformViewActivity extends BaseActivity implements View.OnClickListener, SurfaceHolder.Callback, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener {
+public class MusicPlayActivity extends BaseActivity implements View.OnClickListener, SurfaceHolder.Callback, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener {
 
     private ImageView backLast;
     private TextView centerText;
@@ -73,7 +69,7 @@ public class PreformViewActivity extends BaseActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//设定为竖屏
-        setContentView(R.layout.preform_view_activity);
+        setContentView(R.layout.activity_music_play);//activity_music_play
 
         intent = getIntent();
         mediaItem = (MediaItem) intent.getExtras().getSerializable("mediaItem");

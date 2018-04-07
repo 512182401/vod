@@ -87,7 +87,7 @@ public class SingerIndexNewActivity extends BaseActivity implements View.OnClick
             case 2://刷新成功，刷新界面
                 refreshLayout.setVisibility(View.VISIBLE);
                 ll_no_data.setVisibility(View.GONE);
-                madapter.setDataList( mList );
+                madapter.setDataList(mList);
 //                handler.sendEmptyMessageDelayed( 2, 100 );
                 break;
             case 3://加载更多成功，刷新界面
@@ -192,15 +192,15 @@ public class SingerIndexNewActivity extends BaseActivity implements View.OnClick
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //TODO
                 //取得歌手信息
-                Singers singer =  madapter.getItemData(position);
+                Singers singer = madapter.getItemData(position);
                 //根据不同信息跳转到不同的界面
-                Intent intent = new Intent( SingerIndexNewActivity.this, SingerListActivity.class );
+                Intent intent = new Intent(SingerIndexNewActivity.this, SingerListActivity.class);
                 intent.putExtra("singerid", singer.getID());
                 intent.putExtra("imgCover", singer.getPicture());
                 intent.putExtra("singername", singer.getName());
 //                holder.songerinfo.setText("MP3("+persons.get(arg0).getmSingerPY().getMp3num()+"首)/MV("+persons.get(arg0).getmSingerPY().getMvnum()+"首)");
-                intent.putExtra("songcount", "("+singer.getSongsCount()+"首)");
-                startActivity( intent );
+                intent.putExtra("songcount", "(" + singer.getSongsCount() + "首)");
+                startActivity(intent);
             }
         });
 
@@ -295,7 +295,7 @@ public class SingerIndexNewActivity extends BaseActivity implements View.OnClick
         } else {
             mList = new ArrayList<>();
         }
-        mList = mLocalSingersManager.queryAll();
+        mList = mLocalSingersManager.queryAll(0, 1000);
 //        mList = mComposeManager.queryNoDelect();
 //        if (mList.size() > 0) {
 //            for(int i = 0;i<mList.size();i++ ){
@@ -307,7 +307,7 @@ public class SingerIndexNewActivity extends BaseActivity implements View.OnClick
             for (int i = 0; i < mList.size(); i++) {
                 Singers mSingers = mList.get(i);
                 existList.add(mSingers);
-                }
+            }
 
             if (existList.size() > 0) {
 

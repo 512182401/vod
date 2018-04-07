@@ -31,6 +31,7 @@ import com.changxiang.vod.module.musicInfo.TimeUtil;
 import com.changxiang.vod.module.ui.base.BaseActivity;
 import com.changxiang.vod.module.ui.saveutils.SaveRecordFragment;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -174,7 +175,7 @@ public class MusicPlayerActivity extends BaseActivity implements MediaPlayer.OnP
      * 外界转递进来的播放列表
      */
     private void getDatas() {
-        playList = (List<VodMedia>) getIntent().getSerializableExtra("LocalCompose");//播放列表
+        playList = (List<VodMedia>) getIntent().getSerializableExtra("songList");//播放列表
         position = getIntent().getIntExtra("position", 0);//播放第几个
         size = playList.size();
         localCompose = playList.get(position);
@@ -284,9 +285,18 @@ public class MusicPlayerActivity extends BaseActivity implements MediaPlayer.OnP
     private void setDatas() {
         videoPlayer.setDisplay(fragment.holder);
         if (position < size) {
-            VodMedia localCompose = playList.get(position);
+            VodMedia localMusic = playList.get(position);
 //            String videoPath = localCompose.getCompose_file();
-            String videoPath = "";
+
+            String videoPath = localMusic.getPath();
+
+            String songUrl = MyFileUtil.DIR_VEDIO.toString() + File.separator + localMusic.getPath();
+            File file = new File(songUrl);
+            if (file.exists()) {
+
+            } else {//文件不存在，则删除数据库：
+                videoPath = MyFileUtil.DIR_VEDIO.toString() + File.separator + "追光者.mp4";
+            }
             try {
                 videoPlayer.reset();
                 videoPlayer.setDataSource(videoPath);
