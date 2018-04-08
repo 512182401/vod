@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.changxiang.vod.common.utils.LogUtils;
 import com.changxiang.vod.common.utils.MyFileUtil;
 import com.changxiang.vod.module.ui.addlocal.UpdateLocalVideoActivity;
+import com.changxiang.vod.module.ui.oratorio.CameraOratorioActivity;
 import com.changxiang.vod.module.ui.singermusic.SingerIndexNewActivity;
 import com.changxiang.vod.module.ui.base.BaseActivity;
 import com.changxiang.vod.module.ui.localmusic.LocalMusicIndexActivity;
@@ -143,7 +144,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.choose_tvOratorio://清唱
-                intent = new Intent(this, OratorioActivity.class);
+//                intent = new Intent(this, OratorioActivity.class);
+                intent = new Intent(this, CameraOratorioActivity.class);
                 startActivity(intent);
 //                musicPlay(false);
                 break;

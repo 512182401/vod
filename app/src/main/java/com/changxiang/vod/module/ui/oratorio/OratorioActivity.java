@@ -580,9 +580,9 @@ public class OratorioActivity extends BaseActivity implements View.OnClickListen
             alphaUpdateListener = new MyAnimatorUpdateListener();
         }
         alphaAnimation.addUpdateListener(alphaUpdateListener);
-        if (alphaUpdateListener != null && alphaUpdateListener.isPause()){
+        if (alphaUpdateListener != null && alphaUpdateListener.isPause()) {
             alphaUpdateListener.play();
-        }else {
+        } else {
             alphaAnimation.start();
         }
     }
@@ -787,11 +787,11 @@ public class OratorioActivity extends BaseActivity implements View.OnClickListen
 
     /**
      * 开始动画
-     * */
+     */
     @SuppressLint("NewApi")
     public void startAnimation1() {
         // 设置动画，从上次停止位置开始,这里是顺时针旋转360度
-        objAnim = ObjectAnimator.ofFloat(ivTwinkle,  "alpha", 1.0f, 0.0f);
+        objAnim = ObjectAnimator.ofFloat(ivTwinkle, "alpha", 1.0f, 0.0f);
         // 设置持续时间
         objAnim.setDuration(1000);
         // 设置循环播放

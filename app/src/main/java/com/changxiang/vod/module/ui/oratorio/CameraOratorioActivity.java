@@ -43,6 +43,8 @@ import com.changxiang.vod.common.view.SwitchView;
 import com.changxiang.vod.common.view.ThreeButtonAlertDialog;
 import com.changxiang.vod.module.db.ComposeManager;
 import com.changxiang.vod.module.db.LocalCompose;
+import com.changxiang.vod.module.db.VodMedia;
+import com.changxiang.vod.module.entry.CameraSongDetail;
 import com.changxiang.vod.module.entry.SongDetail;
 import com.changxiang.vod.module.musicInfo.TimeUtil;
 import com.changxiang.vod.module.ui.base.BaseActivity;
@@ -1131,7 +1133,7 @@ public class CameraOratorioActivity extends BaseActivity implements View.OnClick
 
     private void start2CameraSaveActivity() {
         intent = new Intent(CameraOratorioActivity.this, SavePracticeActivity.class);
-        intent.putExtra("from", "camera1");//camera1:代表清唱模块的录像,camera2:代表自拍录歌
+        intent.putExtra("from", "camera1");//camera 1:代表清唱模块的录像,camera2:代表自拍录歌
         if (time > limitTime) {
             endRecordTime = total = limitTime;
         } else {
@@ -1262,7 +1264,7 @@ public class CameraOratorioActivity extends BaseActivity implements View.OnClick
     }
 
     private LocalCompose mLocalCompose;//歌曲对象
-    private SongDetail songDetail;//歌曲对象
+    private CameraSongDetail songDetail;//歌曲对象
     //    private SongDetail oldsongDetail;//歌曲对象
     private int videoHeight;//视频窗口高度
 
@@ -1281,42 +1283,19 @@ public class CameraOratorioActivity extends BaseActivity implements View.OnClick
      */
     private void parameterPass(String videoFile, String audioFile, int startReordTime, int endRecordTime) {
         //假数据
-        songDetail = new SongDetail();
-        songDetail.setSongId("acappella");
-        songDetail.setType("audio");
-        songDetail.setSingerName("清唱");
+        songDetail = new CameraSongDetail();
+        songDetail.setRecordAudio(recordAudio);
+        songDetail.setRecordVideo(audioFile);
+        songDetail.setEndReordTime(TotalTime + "");
+        songDetail.setStartReordTime(startReordTime + "");
+        songDetail.setAccPath(recordAudio + "");
         songDetail.setSongName("清唱");
-        songDetail.setImgAlbumUrl(null);
-        if (recordAudio != null) {
-            LogUtils.w("bug", "99999999999");
-            songDetail.setAccPath(recordAudio);
-        } else {
-            LogUtils.w("bug", "999999999992222222");
-//            songDetail.setAccPath(videoFile);
-            songDetail.setAccPath(audioFile);
-        }
+
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("songDetail", songDetail);
         intent.putExtras(bundle);
-        intent.putExtra("recordVideo", videoFile);
-        LogUtils.w("qwe", "videoFile----" + videoFile);
-        if (recordAudio != null) {//表示添加录像
-            intent.putExtra("startReordTime", 0);//
-            intent.putExtra("endReordTime", TotalTime);//
-            intent.putExtra("recordAudio", audioFile);
-            intent.putExtra("TotalTime", TotalTime);//
-            LogUtils.w("bug", "TotalTime" + TotalTime);
-        } else {
-            intent.putExtra("startReordTime", startReordTime);//
-            intent.putExtra("endReordTime", endRecordTime);//
-            intent.putExtra("recordAudio", audioFile);
-            intent.putExtra("TotalTime", total * 1000);//
-        }
-        intent.putExtra("videoHeight", 800);
-//        intent.putExtra("videoHeight", videoSurface.getVedioHeight());
-        intent.putExtra("recordType", "video");
-        intent.putExtra("musicType", "video");
+//        intent.putExtra("videoHeight", 800);
         intent.putExtra("oratorio", 2);//音频  0:音频  1：视屏 2:合成
     }
 

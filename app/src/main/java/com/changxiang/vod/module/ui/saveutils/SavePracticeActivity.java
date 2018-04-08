@@ -40,6 +40,7 @@ import com.changxiang.vod.module.constance.Constant;
 import com.changxiang.vod.module.db.ComposeManager;
 import com.changxiang.vod.module.db.DownloadManager;
 import com.changxiang.vod.module.db.LocalCompose;
+import com.changxiang.vod.module.entry.CameraSongDetail;
 import com.changxiang.vod.module.entry.KrcLine;
 import com.changxiang.vod.module.entry.SongDetail;
 import com.changxiang.vod.module.mediaExtractor.Function.AudioFunction;
@@ -80,7 +81,7 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
     private LocalCompose mLocalCompose;//合成后歌曲对象
     private String datetime = "888888888";
     private String createDate = "";
-    private int composeType = -1;//合成类型 composeType？ 0://录音：1://录像
+    private int composeType = 1;//合成类型 composeType？ 0://录音：1://录像
     private String composeFile;//合成之后的文件
 
     //歌曲信息：
@@ -117,7 +118,7 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
     private ImageView lastBack;
     private TextView songNameText;
     private Intent intent;
-    private SongDetail songDetail;//伴奏数据
+    private CameraSongDetail songDetail;//伴奏数据
     private AlphaAnimation out;
     private ImageView ivCover;//封面
     private AlphaAnimation in;
@@ -215,13 +216,13 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
                 if (isdecoded) {//解码成功
                     //修改伴奏数据库数据： 解码成功
 //                    dao.updateSong("lrcPath", lrcFile.toString(),downloadActivityId, downloadSongId, downloadMusicType);
-                    try {
-                        dao.updateSong("songDecode", decodeFileUrl, songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
-                        dao.updateSong("isDecode", "1", songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
-                        LogUtils.sysout("修改songDetail数据库，");
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        dao.updateSong("songDecode", decodeFileUrl, songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
+//                        dao.updateSong("isDecode", "1", songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
+//                        LogUtils.sysout("修改songDetail数据库，");
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
 
                     if (mLocalCompose != null && mLocalCompose.getCompose_MuxerTask() != null && mLocalCompose.getCompose_MuxerTask().equals("1")) {
                         isCompose = true;
@@ -337,12 +338,12 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
             decodeFileUrl = muxerDecode + datetime + "444";
             bzUrl = MyFileUtil.DIR_MP3.toString() + File.separator + "赵雷-成都.mp3";
             recordAudio = MyFileUtil.DIR_RECORDER.toString() + File.separator + "11223344.wav";
-            composeType = 0;// // composeType？ 0://MP3和MP3合成：1://MP4和MP4合成 2://录制MP4和下载MP3合成3://录制MP3和下载MP4合成
+            composeType = 1;// // composeType？ 0://MP3和MP3合成：1://MP4和MP4合成 2://录制MP4和下载MP3合成3://录制MP3和下载MP4合成
             datetime = "20170106145999";//默认一首
             recordType = "mp3";
 
-            songDetail = new SongDetail();
-            songDetail.setType("mp3");
+            songDetail = new CameraSongDetail();
+//            songDetail.setType("mp4");
             songDetail.setAccPath(bzUrl);
             songDetail.setDuration(240 * 1000 + "");
             songDetail.setSongDecode(decodeFileUrl);
@@ -371,14 +372,14 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
         } else {
 
             try {
-                SongDetail songDetailnew = dao.selectSong(songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
-                LogUtils.w("songDetail", songDetail.toString());
-                if (songDetailnew != null && !songDetailnew.equals("")) {
-                    songDetail = songDetailnew;
-                    if (!canencode) {
-                        songDetail.setIsDecode("4");
-                    }
-                }
+//                SongDetail songDetailnew = dao.selectSong(songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
+//                LogUtils.w("songDetail", songDetail.toString());
+//                if (songDetailnew != null && !songDetailnew.equals("")) {
+//                    songDetail = songDetailnew;
+//                    if (!canencode) {
+//                        songDetail.setIsDecode("4");
+//                    }
+//                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -395,60 +396,60 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
                 e.printStackTrace();
             }
 //            decodeFileUrl = cacheDir + "mp3" + File.separator + datetime + "444";
-            if (songDetail.getIsDecode() != null && songDetail.getIsDecode().equals("1") && songDetail.getSongDecode() != null && !songDetail.getSongDecode().equals("")) {
-
-                decodeFileUrl = songDetail.getSongDecode();
-                //判断SD卡是否存在：
-                File file = new File(decodeFileUrl);
-                if (file.exists()) {
-                    isdecoded = true;
-                } else {//文件不存在，则修改数据库：
-                    if (canencode) {
-                        isdecoded = false;
-                        songDetail.setIsDecode("0");
-                        try {
-                            dao.updateSong("isDecode", "0", songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-
-                    } else {
-                        isdecoded = true;
-                        songDetail.setIsDecode("4");
-                        try {
-                            dao.updateSong("isDecode", "4", songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            } else {
-                decodeFileUrl = muxerDecode + songDetail.getActivityId() + "_" + songDetail.getSongId() + "_" + songDetail.getType();
-            }
-
-            makeDB();//添加到数据库
-            //IsDecode 解码状态； 0：未开始解码：1：解码成功；2：解码进行中；解码失败，4：该手机不能解码：
-            String isDecode = songDetail.getIsDecode();
-            if (isDecode == null) {
-                isDecode = "0";
-            }
-            switch (Integer.parseInt(isDecode)) {
-                case 0:
-                    startMuxerDecode();//开始解码
-                    break;
-                case 1:
-                    MuxerCompose();//开始合成
-                    break;
-                case 2:
-                    startMuxerDecode();//开始解码
-                    break;
-                case 3:
-                    startMuxerDecode();//开始解码
-                    break;
-                case 4:
-                    MuxerCompose();//开始合成
-                    break;
-            }
+//            if (songDetail.getIsDecode() != null && songDetail.getIsDecode().equals("1") && songDetail.getSongDecode() != null && !songDetail.getSongDecode().equals("")) {
+//
+//                decodeFileUrl = songDetail.getSongDecode();
+//                //判断SD卡是否存在：
+//                File file = new File(decodeFileUrl);
+//                if (file.exists()) {
+//                    isdecoded = true;
+//                } else {//文件不存在，则修改数据库：
+//                    if (canencode) {
+//                        isdecoded = false;
+////                        songDetail.setIsDecode("0");
+////                        try {
+////                            dao.updateSong("isDecode", "0", songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
+////                        } catch (Exception e) {
+////                            e.printStackTrace();
+////                        }
+//
+//                    } else {
+//                        isdecoded = true;
+//                        songDetail.setIsDecode("4");
+////                        try {
+//////                            dao.updateSong("isDecode", "4", songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
+////                        } catch (Exception e) {
+////                            e.printStackTrace();
+////                        }
+//                    }
+//                }
+//            } else {
+////                decodeFileUrl = muxerDecode + songDetail.getActivityId() + "_" + songDetail.getSongId() + "_" + songDetail.getType();
+//            }
+//
+//            makeDB();//添加到数据库
+//            //IsDecode 解码状态； 0：未开始解码：1：解码成功；2：解码进行中；解码失败，4：该手机不能解码：
+//            String isDecode = songDetail.getIsDecode();
+//            if (isDecode == null) {
+//                isDecode = "0";
+//            }
+//            switch (Integer.parseInt(isDecode)) {
+//                case 0:
+//                    startMuxerDecode();//开始解码
+//                    break;
+//                case 1:
+//                    MuxerCompose();//开始合成
+//                    break;
+//                case 2:
+//                    startMuxerDecode();//开始解码
+//                    break;
+//                case 3:
+//                    startMuxerDecode();//开始解码
+//                    break;
+//                case 4:
+//                    MuxerCompose();//开始合成
+//                    break;
+//            }
         }
     }
 
@@ -602,39 +603,43 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
         setMediaPlayListener();
         //获取OpenCameraActivity传递过来的数据
         intent = getIntent();
-        Compose_begin = intent.getIntExtra("startReordTime", 0);//开始时间
-        Compose_finish = intent.getIntExtra("endReordTime", 0);//结束时间
+
+        songDetail = (CameraSongDetail) intent.getExtras().getSerializable("songDetail");
+        songNameText.setText(songDetail.getSongName());
+        recordAudio = songDetail.getRecordAudio();
+        recordVideo = songDetail.getRecordVideo();
+//        total = intent.getIntExtra("TotalTime", 0);//源时长
+        total = Integer.parseInt(songDetail.getDuration(), 0);//源时长
+        qzTime = songDetail.getQzTime();
+
+        Compose_begin = Integer.parseInt(songDetail.getStartReordTime(), 0);//开始时间
+        Compose_finish = Integer.parseInt(songDetail.getEndReordTime(), 0);//结束时间
+
         isSkipPreLude = intent.getBooleanExtra("isSkipPreLude", false);//是否跳过前奏
 
-        songDetail = (SongDetail) intent.getExtras().getSerializable("songDetail");
-        songNameText.setText(songDetail.getSongName());
-        recordAudio = intent.getStringExtra("recordAudio");//录音地址
-        recordVideo = intent.getStringExtra("recordVideo");
-        recordType = intent.getStringExtra("recordType");
-        total = intent.getIntExtra("TotalTime", 0);//源时长
-        qzTime = songDetail.getQzTime();
+
 //        LogUtils.sysout("recordType------------" + recordType);
 //        LogUtils.sysout("recordAudio------------" + recordAudio);
 //        LogUtils.sysout("recordVideo------------" + recordVideo);
 //        LogUtils.sysout("Compose_begin------------" + Compose_begin);
 //        LogUtils.sysout("Compose_finish------------" + Compose_finish);
 //        LogUtils.sysout("isSkipPreLude------------" + isSkipPreLude);
-        if ("mp3".equals(recordType)) {//录音为MP3
-            mp3Play();
-            outAnim();
-            composeType = 0;
-            saveMore.setVisibility(View.GONE);
-        } else if ("mp4".equals(recordType)) {//录像为MP4
-            saveMore.setVisibility(View.VISIBLE);
-            composeType = 1;
-            ivCover.setVisibility(View.INVISIBLE);//
-            FragmentManager manager = getSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-            fragment = new SaveRecordFragment();
-            transaction.commit();
-            transaction.replace(R.id.activity_play_record_fl, fragment);
-            LogUtils.w("recordType", "recordType------------");
-        }
+//        if ("mp3".equals(recordType)) {//录音为MP3
+//            mp3Play();
+//            outAnim();
+//            composeType = 0;
+//            saveMore.setVisibility(View.GONE);
+//        } else if ("mp4".equals(recordType)) {//录像为MP4
+        saveMore.setVisibility(View.VISIBLE);
+        composeType = 1;
+        ivCover.setVisibility(View.INVISIBLE);//
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        fragment = new SaveRecordFragment();
+        transaction.commit();
+        transaction.replace(R.id.activity_play_record_fl, fragment);
+        LogUtils.w("recordType", "recordType------------");
+//        }
 
         //seekbar初始值
         String voiceValue = SharedPrefManager.getInstance().getVoiceValue();
@@ -1281,8 +1286,11 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
         mLocalCompose.setCompose_name(songName);//名字
 //        mLocalCompose.setCompose_remark(getString(R.string.come_to_listen_new_work) + songName + getString(R.string.come_to_listen_new_work2));//名字
         mLocalCompose.setCompose_remark(remark);//描述
-        mLocalCompose.setActivityId(songDetail.getActivityId());
-        mLocalCompose.setSongId(songDetail.getSongId() + "");//歌曲id
+        try {
+            mLocalCompose.setSongId(songDetail.getmVodMedia().getSongbm() + "");//歌曲id
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         mLocalCompose.setCompose_type(composeType + "");//合成类型
         mLocalCompose.setRecordUrl(recordAudio + "");//录制资源路径
         mLocalCompose.setBzUrl(bzUrl + "");//伴奏资源路径
