@@ -1284,12 +1284,14 @@ public class CameraOratorioActivity extends BaseActivity implements View.OnClick
     private void parameterPass(String videoFile, String audioFile, int startReordTime, int endRecordTime) {
         //假数据
         songDetail = new CameraSongDetail();
-        songDetail.setRecordAudio(recordAudio);
-        songDetail.setRecordVideo(audioFile);
-        songDetail.setEndReordTime(TotalTime + "");
+        songDetail.setRecordAudio(audioFile);//audioFile
+        songDetail.setRecordVideo(videoFile);
+        songDetail.setEndReordTime(endRecordTime + "");
         songDetail.setStartReordTime(startReordTime + "");
-        songDetail.setAccPath(recordAudio + "");
+        songDetail.setAccPath(audioFile + "");
         songDetail.setSongName("清唱");
+        songDetail.setDuration(endRecordTime + "");
+        songDetail.setQzTime(0 + "");
 
 
         Bundle bundle = new Bundle();

@@ -23,6 +23,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    signingConfigs {
+        debug {
+            storeFile file('changxiang.jks')
+            storePassword "changxiang"
+            keyAlias "changxiang"
+            keyPassword "changxiang"
+//            v2SigningEnabled false
+        }
+    }
 }
 
 dependencies {

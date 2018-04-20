@@ -51,7 +51,7 @@
                 android:src="@drawable/tv_mv" />
 
             <!--已结束-->
-            <com.quchangkeji.tosingpk.common.view.RotateTextView
+            <com.changxiang.vod.common.view.RotateTextView
                 android:id="@+id/iv_home_over"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
@@ -170,7 +170,7 @@
             android:textSize="16dp"
             android:visibility="gone" />
 
-        <com.quchangkeji.tosingpk.common.view.FlikerProgressBar
+        <com.changxiang.vod.common.view.FlikerProgressBar
             android:id="@+id/flikerProgressBar"
             android:layout_width="100dp"
             android:layout_height="30dp"

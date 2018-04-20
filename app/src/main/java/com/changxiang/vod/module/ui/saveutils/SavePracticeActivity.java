@@ -2,6 +2,10 @@ package com.changxiang.vod.module.ui.saveutils;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.media.MediaCodec;
+import android.media.MediaExtractor;
+import android.media.MediaFormat;
+import android.media.MediaMuxer;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -49,6 +53,7 @@ import com.changxiang.vod.module.mediaExtractor.Interface.ComposeAudioInterface;
 import com.changxiang.vod.module.mediaExtractor.Interface.DecodeOperateInterface;
 import com.changxiang.vod.module.mediaExtractor.musicplus.VideoMuxerRecord;
 import com.changxiang.vod.module.mediaExtractor.musicplus.VideoMuxerRecordvedio;
+import com.changxiang.vod.module.mediaExtractor.musicplus.VideoMuxerVod;
 import com.changxiang.vod.module.musicInfo.TimeUtil;
 import com.changxiang.vod.module.ui.base.BaseActivity;
 import com.changxiang.vod.module.ui.localmusic.LocalMusicIndexActivity;
@@ -62,6 +67,7 @@ import com.googlecode.mp4parser.authoring.tracks.AppendTrack;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.EmptyStackException;
@@ -97,7 +103,7 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
     private int actualRecordTime = 240;//录音时长(先固定值) 单位：s
 
     private boolean isfailure = false;//合成失败：(可以再次合成，)
-    private boolean isdecoded;//是否已经解码成功：
+    private boolean isdecoded = true;//是否已经解码成功：
     private boolean isCompose;//是否已经合成成功：
     private boolean isSave;//已经点击过保存按钮
     private boolean isrelease = false;//是否是_发布到我的主页
@@ -116,10 +122,11 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
     private final String muxerDecode = MyFileUtil.MUXER_DECODE.toString() + File.separator;//路径(cache)
     private final String composeDir = MyFileUtil.DIR_COMPOSE.toString() + File.separator;//路径(cache)
     private ImageView lastBack;
-    private TextView songNameText;
+
     private Intent intent;
     private CameraSongDetail songDetail;//伴奏数据
     private AlphaAnimation out;
+    private TextView songNameText;
     private ImageView ivCover;//封面
     private AlphaAnimation in;
     private int bg[] = {R.mipmap.origin_detail_01, R.mipmap.origin_detail_02, R.mipmap.origin_detail_03, R.mipmap.origin_detail_05, R.mipmap.origin_detail_06,
@@ -157,6 +164,7 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
     private View dialog;//对话框布局
     private int total;
 
+    MuxerTaskVod mMuxerTaskVod;
     MuxerTask20 mMuxerTask2;
     MuxerTaskNoEncode mMuxerTaskNoEncode;
     private StrokeTextView lastLrcTv;
@@ -334,14 +342,17 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
         initEvent();
         //TODO:测试用例：
         if (songDetail == null) {//测试开发模式
+//        if (true) {//测试开发模式
             //测试解码：
-            decodeFileUrl = muxerDecode + datetime + "444";
-            bzUrl = MyFileUtil.DIR_MP3.toString() + File.separator + "赵雷-成都.mp3";
-            recordAudio = MyFileUtil.DIR_RECORDER.toString() + File.separator + "11223344.wav";
+            decodeFileUrl = muxerDecode + datetime + "source.wav";
+            bzUrl = MyFileUtil.DIR_MP3.toString() + File.separator + "赵雷-成都.mp3source.wav";
+            recordAudio = MyFileUtil.DIR_RECORDER.toString() + File.separator + "source.wav";
             composeType = 1;// // composeType？ 0://MP3和MP3合成：1://MP4和MP4合成 2://录制MP4和下载MP3合成3://录制MP3和下载MP4合成
             datetime = "20170106145999";//默认一首
-            recordType = "mp3";
-
+            recordType = "mp4";
+            composeFile = "清唱20180411205915.mp4";
+            recordVideo = "MagicCamera_test.mp4";
+//            combineVideo(composeFile, recordVideo, recordAudio);
             songDetail = new CameraSongDetail();
 //            songDetail.setType("mp4");
             songDetail.setAccPath(bzUrl);
@@ -350,27 +361,30 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
             songDetail.setIsDecode(0 + "");//解码状态； 0：未开始解码：1：解码成功；2：解码进行中；解码失败，4：该手机不能解码：
 
             makeDB();//添加到数据库：
+
+            MuxerCompose();//开始合成
             //IsDecode 解码状态； 0：未开始解码：1：解码成功；2：解码进行中；解码失败，4：该手机不能解码：
-            switch (Integer.parseInt(songDetail.getIsDecode())) {
-                case 0:
-                    startMuxerDecode();//开始解码
-                    break;
-                case 1:
-                    MuxerCompose();//开始合成
-                    break;
-                case 2:
-                    startMuxerDecode();//开始解码
-                    break;
-                case 3:
-                    startMuxerDecode();//开始解码
-                    break;
-                case 4:
-                    MuxerCompose();//开始合成
-                    break;
-            }
+//            switch (Integer.parseInt(songDetail.getIsDecode())) {
+//                case 0:
+//                    startMuxerDecode();//开始解码
+//                    break;
+//                case 1:
+//                    MuxerCompose();//开始合成
+//                    break;
+//                case 2:
+//                    startMuxerDecode();//开始解码
+//                    break;
+//                case 3:
+//                    startMuxerDecode();//开始解码
+//                    break;
+//                case 4:
+//                    MuxerCompose();//开始合成
+//                    break;
+//            }
 
         } else {
-
+            recordType = "mp4";
+            isdecoded = true;
             try {
 //                SongDetail songDetailnew = dao.selectSong(songDetail.getActivityId(), songDetail.getSongId(), songDetail.getType());
 //                LogUtils.w("songDetail", songDetail.toString());
@@ -385,8 +399,8 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
             }
 
             bzUrl = songDetail.getAccPath();
-            krcPath = songDetail.getKrcPath();
             try {
+                krcPath = songDetail.getKrcPath();
                 skipTime = Integer.parseInt(songDetail.getQzTime());
                 if (krcPath != null && !"".equals(krcPath)) {
                     krcLines = KrcParse.setKrcPath(krcPath, false);
@@ -427,7 +441,7 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
 ////                decodeFileUrl = muxerDecode + songDetail.getActivityId() + "_" + songDetail.getSongId() + "_" + songDetail.getType();
 //            }
 //
-//            makeDB();//添加到数据库
+            makeDB();//添加到数据库
 //            //IsDecode 解码状态； 0：未开始解码：1：解码成功；2：解码进行中；解码失败，4：该手机不能解码：
 //            String isDecode = songDetail.getIsDecode();
 //            if (isDecode == null) {
@@ -438,7 +452,8 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
 //                    startMuxerDecode();//开始解码
 //                    break;
 //                case 1:
-//                    MuxerCompose();//开始合成
+            MuxerCompose();//开始合成
+//
 //                    break;
 //                case 2:
 //                    startMuxerDecode();//开始解码
@@ -451,6 +466,8 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
 //                    break;
 //            }
         }
+
+        mp3Play();
     }
 
     //结束所有合成进程
@@ -609,14 +626,21 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
         recordAudio = songDetail.getRecordAudio();
         recordVideo = songDetail.getRecordVideo();
 //        total = intent.getIntExtra("TotalTime", 0);//源时长
-        total = Integer.parseInt(songDetail.getDuration(), 0);//源时长
-        qzTime = songDetail.getQzTime();
+        try {
+//            total = Integer.parseInt(songDetail.getDuration(), 0);//源时长
+            total = Integer.parseInt(songDetail.getDuration());//源时长
+            qzTime = songDetail.getQzTime();
 
-        Compose_begin = Integer.parseInt(songDetail.getStartReordTime(), 0);//开始时间
-        Compose_finish = Integer.parseInt(songDetail.getEndReordTime(), 0);//结束时间
-
-        isSkipPreLude = intent.getBooleanExtra("isSkipPreLude", false);//是否跳过前奏
-
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            Compose_begin = Integer.parseInt(songDetail.getStartReordTime(), 0);//开始时间
+            Compose_finish = Integer.parseInt(songDetail.getEndReordTime(), 0);//结束时间
+            isSkipPreLude = intent.getBooleanExtra("isSkipPreLude", false);//是否跳过前奏
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 //        LogUtils.sysout("recordType------------" + recordType);
 //        LogUtils.sysout("recordAudio------------" + recordAudio);
@@ -1041,7 +1065,8 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
         composeVoiceUrlwav = muxerDecode + "composeVoice11.wav";//解码后的音频文件（未转码）
 //        composeFile = composeDir + songName + datetime + ".mp3";
         offsetNumBase = offsetNum;
-        if (composeType == 0) {//录音为MP3
+//        if (composeType == 0) {//录音为MP3录音为MP3
+        if (false) {//录音为MP3录音为MP3
 
             if (canencode) {//如果是可以解码
                 if (offsetNum >= 0) {
@@ -1062,14 +1087,17 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
                         -1 * Constant.MusicCutEndOffset / 2 * Constant.RecordDataNumberInOneSecond, 0, this);
             }
 
-        } else if (composeType == 1) {//录像为MP4
-            if (canencode) {//如果是可以解码
-                mMuxerTask2 = new MuxerTask20();
-                mMuxerTask2.execute();//已经解码的
-            } else {
-                mMuxerTaskNoEncode = new MuxerTaskNoEncode();
-                mMuxerTaskNoEncode.execute();
-            }
+        } else {//录像为MP4
+//            if (canencode) {//如果是可以解码
+//                mMuxerTask2 = new MuxerTask20();
+//                mMuxerTask2.execute();//已经解码的
+//            } else {
+//                mMuxerTaskNoEncode = new MuxerTaskNoEncode();
+//                mMuxerTaskNoEncode.execute();
+//            }
+
+            mMuxerTaskVod = new MuxerTaskVod();
+            mMuxerTaskVod.execute();//已经解码的
         }
 
 
@@ -1082,11 +1110,12 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
         protected Boolean doInBackground(Void... params) {
 //            finalMixVideo = composeFile;//FINAL_MIX_VIDEO_FILE 合成的video
             VideoMuxerRecord videoMuxer = VideoMuxerRecord.createVideoMuxer(pathfirst);//传入第一次合成后文件地址，
-            videoMuxer.mixRawAudio(new File(recordVideo),//视频
-                    new File(recordAudio),///下载的“mp3”解码后的文件
-                    new File(recordAudio), 0, true, true, Compose_finish);////录制的录音文件
+//            videoMuxer.mixRawAudio(new File(recordVideo),//视频
+//                    new File(recordAudio),///下载的“mp3”解码后的文件
+//                    new File(recordAudio), 0, true, true, Compose_finish);////录制的录音文件
             try {
-                combineFiles(composeFile, recordVideo, pathfirst);//第二次合成
+//                combineFiles(composeFile, recordVideo, pathfirst);//第二次合成
+                combineFiles(composeFile, recordVideo, recordAudio);//第二次合成
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -1133,11 +1162,41 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
         }
     }
 
+    ////录制MP4和下载MP3合成
+    private class MuxerTaskVod extends AsyncTask<Void, Long, Boolean> {
+        @Override
+        protected Boolean doInBackground(Void... params) {
+//            finalMixVideo = composeFile;//FINAL_MIX_VIDEO_FILE 合成的video
+//            VideoMuxerVod videoMuxer = VideoMuxerVod.createVideoMuxer(pathfirst);//传入第一次合成后文件地址，
+//
+//            videoMuxer.mixRawAudio(new File(recordVideo),//视频
+//                    new File(decodeFileUrl),///下载的“mp3”解码后的文件
+//                    new File(recordAudio), offsetNum / 1000, Compose_begin / 1000, true, true, Compose_finish);////录制的录音文件
+            try {
+                combineFiles(composeFile, recordVideo, recordAudio);//第二次合成
+//                combineVideo(composeFile, recordVideo, recordAudio);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return true;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            super.onPostExecute(result);
+            LogUtils.sysout("mVideoMuxer3合成成功。");
+            isCompose = true;
+            handler.sendEmptyMessageDelayed(2002, 10);//isdecoded
+            closeProgressDialogC();
+        }
+    }
+
     /**
      * @param composeFile：最終合成的地址
      * @param recordUrl：录制的视频
      * @param pathfirst：第一次合成的音视频
      */
+
     private void combineFiles(String composeFile, String recordUrl, String pathfirst) {
 //        countend = 95;
         FileChannel fc = null;
@@ -1608,5 +1667,106 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
+    }
+
+    /**
+     * 视频合成：
+     *
+     * @param output       合成之后的路径
+     * @param output_video 视频轨道
+     * @param output_audio 音频轨道
+     */
+    private void combineVideo(String output, String output_video, String output_audio) {
+        try {
+            MediaExtractor videoExtractor = new MediaExtractor();
+            videoExtractor.setDataSource(output_video);
+            MediaFormat videoFormat = null;
+            int videoTrackIndex = -1;
+            int videoTrackCount = videoExtractor.getTrackCount();
+            for (int i = 0; i < videoTrackCount; i++) {
+                videoFormat = videoExtractor.getTrackFormat(i);
+                String mimeType = videoFormat.getString(MediaFormat.KEY_MIME);
+                if (mimeType.startsWith("video/")) {
+                    videoTrackIndex = i;
+                    break;
+                }
+            }
+
+            MediaExtractor audioExtractor = new MediaExtractor();
+            audioExtractor.setDataSource(output_audio);
+            MediaFormat audioFormat = null;
+            int audioTrackIndex = -1;
+            int audioTrackCount = audioExtractor.getTrackCount();
+            for (int i = 0; i < audioTrackCount; i++) {
+                audioFormat = audioExtractor.getTrackFormat(i);
+                String mimeType = audioFormat.getString(MediaFormat.KEY_MIME);
+                if (mimeType.startsWith("audio/")) {
+                    audioTrackIndex = i;
+                    break;
+                }
+            }
+
+            videoExtractor.selectTrack(videoTrackIndex);
+            audioExtractor.selectTrack(audioTrackIndex);
+
+            MediaCodec.BufferInfo videoBufferInfo = new MediaCodec.BufferInfo();
+            MediaCodec.BufferInfo audioBufferInfo = new MediaCodec.BufferInfo();
+
+            MediaMuxer mediaMuxer = new MediaMuxer(output, MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4);
+            int writeVideoTrackIndex = mediaMuxer.addTrack(videoFormat);
+            int writeAudioTrackIndex = mediaMuxer.addTrack(audioFormat);
+            mediaMuxer.start();
+
+            ByteBuffer byteBuffer = ByteBuffer.allocate(500 * 1024);
+            long sampleTime = 0;
+            {
+                videoExtractor.readSampleData(byteBuffer, 0);
+                if (videoExtractor.getSampleFlags() == MediaExtractor.SAMPLE_FLAG_SYNC) {
+                    videoExtractor.advance();
+                }
+                videoExtractor.readSampleData(byteBuffer, 0);
+                long secondTime = videoExtractor.getSampleTime();
+                videoExtractor.advance();
+                long thirdTime = videoExtractor.getSampleTime();
+                sampleTime = Math.abs(thirdTime - secondTime);
+            }
+            videoExtractor.unselectTrack(videoTrackIndex);
+            videoExtractor.selectTrack(videoTrackIndex);
+
+            while (true) {
+                int readVideoSampleSize = videoExtractor.readSampleData(byteBuffer, 0);
+                if (readVideoSampleSize < 0) {
+                    break;
+                }
+                videoBufferInfo.size = readVideoSampleSize;
+                videoBufferInfo.presentationTimeUs += sampleTime;
+                videoBufferInfo.offset = 0;
+                videoBufferInfo.flags = videoExtractor.getSampleFlags();
+                mediaMuxer.writeSampleData(writeVideoTrackIndex, byteBuffer, videoBufferInfo);
+                videoExtractor.advance();
+            }
+
+            while (true) {
+                int readAudioSampleSize = audioExtractor.readSampleData(byteBuffer, 0);
+                if (readAudioSampleSize < 0) {
+                    break;
+                }
+
+
+                audioBufferInfo.size = readAudioSampleSize;
+                audioBufferInfo.presentationTimeUs += sampleTime;
+                audioBufferInfo.offset = 0;
+                audioBufferInfo.flags = videoExtractor.getSampleFlags();
+                mediaMuxer.writeSampleData(writeAudioTrackIndex, byteBuffer, audioBufferInfo);
+                audioExtractor.advance();
+            }
+
+            mediaMuxer.stop();
+            mediaMuxer.release();
+            videoExtractor.release();
+            audioExtractor.release();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
