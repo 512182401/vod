@@ -61,4 +61,5 @@ dependencies {
     implementation files('libs/rxjava-1.1.0.jar')
     compile 'com.jaeger.statusbarutil:library:1.4.0'
     implementation files('libs/Sunflower.jar')
+    implementation 'com.google.code.gson:gson:2.2.4'
 }

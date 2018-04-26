@@ -105,6 +105,11 @@
             </intent-filter>
         </activity>
 
+        <!--webview-->
+        <activity
+            android:name=".module.ui.StoreWebActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".module.ui.singermusic.SingerIndexNewActivity"
             android:screenOrientation="portrait" />
