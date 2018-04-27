@@ -117,6 +117,10 @@
             android:name=".module.ui.singermusic.SingerListActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!--视频对话-->
+        <activity
+            android:name=".module.ui.agora.VideoChatViewActivity"
+            android:screenOrientation="portrait" />
         <!--保存歌曲-->
         <activity
             android:name=".module.ui.saveutils.SavePracticeActivity"

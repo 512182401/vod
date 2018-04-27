@@ -158,11 +158,28 @@
             android:id="@+id/list_club"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="none"
             android:divider="@null"
-            />
+            android:scrollbars="none" />
 
     </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_no_data_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/login_lin5"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/no_data_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/empty"
+            android:gravity="center"
+            android:text="空空如也" />
+    </LinearLayout>
 
 </LinearLayout>

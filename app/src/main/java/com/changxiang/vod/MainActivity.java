@@ -23,6 +23,7 @@ import com.changxiang.vod.module.musicInfo.DisplayUtil;
 import com.changxiang.vod.module.ui.adapter.NearbyPersonAdapter;
 import com.changxiang.vod.module.ui.adapter.VideoPagerAdapter;
 import com.changxiang.vod.module.ui.addlocal.UpdateLocalVideoActivity;
+import com.changxiang.vod.module.ui.agora.VideoChatViewActivity;
 import com.changxiang.vod.module.ui.base.FragmentVideo1;
 import com.changxiang.vod.module.ui.oratorio.CameraOratorioActivity;
 import com.changxiang.vod.module.ui.singermusic.SingerIndexNewActivity;
@@ -63,9 +64,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout ll_no_data;//no_data_show
     private int bg[] = {R.mipmap.origin_detail_01, R.mipmap.origin_detail_02, R.mipmap.origin_detail_03, R.mipmap.origin_detail_05, R.mipmap.origin_detail_06,
             R.mipmap.origin_detail_07, R.mipmap.origin_detail_08, R.mipmap.origin_detail_09, R.mipmap.origin_detail_10, R.mipmap.origin_detail_04};
-
+    private String nearPersonal[] = {"张三", "李四", "王五", "赵六", "七夜", "八哥", "贝贝", "京京", "欢欢", "妮妮"};
     private int recLen = 4;
     Timer timer = new Timer();
+
     @Override
     public void handMsg(Message msg) {
         switch (msg.what) {
@@ -107,6 +109,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
 
     }
+
     TimerTask task = new TimerTask() {
         @Override
         public void run() {
@@ -126,6 +129,34 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         initView();
         creatDir();
         getBananaData();
+        getnearpersonData();
+    }
+
+    public void getnearpersonData() {
+//        private NearPerson nearperson;
+        nearperson = new NearPerson();
+        nearperson.setCurPage(1);
+        nearperson.setFirst(true);
+        nearperson.setLast(true);
+        nearperson.setPageCount(1);
+        nearperson.setPageSize(1);
+        nearperson.setTotal(10);
+        List<NearPerson.ResultsBean> resultsAll = new ArrayList<>();
+        resultsAll.clear();
+
+        for (int i = 0; i < 10; i++) {
+            NearPerson.ResultsBean mresults = new NearPerson.ResultsBean();
+            mresults.setId(bg[i] + "");
+            mresults.setName(nearPersonal[i]);//名字
+            mresults.setSex("1");
+            mresults.setDistance(100 * (i + 1) + "");//距离
+            mresults.setLevel((i + 1) + "");
+            mresults.setLevelName((i + 1) + "等级");
+            resultsAll.add(mresults);
+        }
+        nearperson.setResults(resultsAll);
+
+        handler.sendEmptyMessageDelayed(2, 100);
     }
 
     public void getBananaData() {
@@ -133,7 +164,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         listbanner.clear();
         for (int i = 0; i < 5; i++) {
             Banner mBanner = new Banner();
-            mBanner.setImg(bg[i]+"");
+            mBanner.setImg(bg[i] + "");
             mBanner.setName("轮播图");
             mBanner.setUrl("");
             listbanner.add(mBanner);
@@ -183,16 +214,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                toast( "1111111111111111" );
 
-//                Intent intent;
-//                if (user != null && user.getId().equals(nearpersonall.getResults().get(position).getId())) {
-//                    intent = new Intent(NearbyPersonActivity.this, PersonalActivity.class);
-//                } else {
-//
-//                    intent = new Intent(NearbyPersonActivity.this, HisHomeActivity.class);
-//                    intent.putExtra("hisId", nearpersonall.getResults().get(position).getId());
-//
-//                }
-//                startActivity(intent);
+                Intent intent;
+
+                intent = new Intent(MainActivity.this, VideoChatViewActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("nearperson", nearperson.getResults().get(position));
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 

@@ -140,7 +140,7 @@ public class NearPerson implements Serializable {
 		this.results = results;
 	}
 
-	public static class ResultsBean {
+	public static class ResultsBean implements Serializable{
 		/**
 		 * id : 402883ec57bced620157bcf15d270000
 		 * sex : 1

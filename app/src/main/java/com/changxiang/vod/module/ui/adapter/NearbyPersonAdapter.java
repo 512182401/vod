@@ -45,8 +45,8 @@ public class NearbyPersonAdapter extends BaseAdapter implements OnClickListener 
 
     @Override
     public int getCount() {
-//        return singerList == null ? 0 : singerList.size();
-        return 5;
+        return singerList == null ? 0 : singerList.size();
+//        return 5;
     }
 
     @Override
