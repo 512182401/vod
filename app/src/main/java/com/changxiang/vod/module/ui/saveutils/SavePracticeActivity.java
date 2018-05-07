@@ -1167,11 +1167,12 @@ public class SavePracticeActivity extends BaseActivity implements View.OnClickLi
         @Override
         protected Boolean doInBackground(Void... params) {
 //            finalMixVideo = composeFile;//FINAL_MIX_VIDEO_FILE 合成的video
-//            VideoMuxerVod videoMuxer = VideoMuxerVod.createVideoMuxer(pathfirst);//传入第一次合成后文件地址，
-//
-//            videoMuxer.mixRawAudio(new File(recordVideo),//视频
-//                    new File(decodeFileUrl),///下载的“mp3”解码后的文件
-//                    new File(recordAudio), offsetNum / 1000, Compose_begin / 1000, true, true, Compose_finish);////录制的录音文件
+            VideoMuxerVod videoMuxer = VideoMuxerVod.createVideoMuxer(pathfirst);//传入第一次合成后文件地址，
+
+            videoMuxer.mixRawAudio(new File(recordVideo),//视频
+                    new File(decodeFileUrl),///下载的“mp3”解码后的文件
+                    new File(recordAudio),//录制的wav
+                    offsetNum / 1000, Compose_begin / 1000, true, true, Compose_finish);////录制的录音文件
             try {
                 combineFiles(composeFile, recordVideo, recordAudio);//第二次合成
 //                combineVideo(composeFile, recordVideo, recordAudio);
