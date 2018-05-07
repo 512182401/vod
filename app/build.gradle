@@ -11,7 +11,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         multiDexEnabled true//解决方法数超过65k的限制；
-
+//        useOldManifestMerger true
 
         ndk {
             abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
